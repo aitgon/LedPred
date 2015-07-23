@@ -1,0 +1,5213 @@
+AC dTCF
+XX
+ID  dTCF
+XX
+DE  sgCCTTTGATttt
+PO       A     C     G     T
+1       12    18    24    11
+2       15    13    24    13
+3        6    57     2     0
+4        0    65     0     0
+5        0     0     0    65
+6        0     2     1    62
+7        0    11     0    54
+8        0     2    58     5
+9       51     0     0    14
+10       3     3     0    59
+11       6    11     9    39
+12      15    16    14    20
+13      11    15    10    29
+XX
+CC  program: transfac
+CC  matrix.nb: 2
+CC  accession: oligos_6nt_mkv3_m2
+CC  AC: oligos_6nt_mkv3_m2
+CC  id: oligos_6nt_mkv3_m2
+CC  version: 
+CC  name: oligos_6nt_mkv3_m2
+CC  description: sgCCTTTGATttt
+CC  transfac_consensus: 
+CC  matrix.nb: 2
+CC  bg_markov_order: 1
+CC  consensus.strict: ggCCTTTGATttt
+CC  consensus.strict.rc: AAAATCAAAGGCC
+CC  consensus.IUPAC: sgCCTTTGATtyy
+CC  consensus.IUPAC.rc: RRAATCAAAGGCS
+CC  consensus.regexp: [cg]gCCTTTGATt[ct][ct]
+CC  consensus.regexp.rc: [AG][AG]AATCAAAGGC[CG]
+XX
+//
+
+AC tin
+XX
+ID  tin
+XX
+DE  msTCAAGTGgcyr
+PO       A     C     G     T
+1       15    18    12    12
+2        5    21    19    12
+3        8     6     3    40
+4        0    57     0     0
+5       54     1     1     1
+6       56     0     0     1
+7        0     0    57     0
+8        0     0     0    57
+9        0     0    57     0
+10       3    12    38     4
+11      10    28     9    10
+12      13    15     9    20
+13      17    11    15    14
+XX
+CC  program: transfac
+CC  matrix.nb: 1
+CC  accession: oligos_6nt_mkv2_m1
+CC  AC: oligos_6nt_mkv2_m1
+CC  id: oligos_6nt_mkv2_m1
+CC  version: 
+CC  name: oligos_6nt_mkv2_m1
+CC  description: msTCAAGTGgcyr
+CC  transfac_consensus: 
+CC  matrix.nb: 1
+CC  bg_markov_order: 1
+CC  consensus.strict: cctCAAGTGGctg
+CC  consensus.strict.rc: CAGCCACTTGAGG
+CC  consensus.IUPAC: cstCAAGTGGcyr
+CC  consensus.IUPAC.rc: YRGCCACTTGASG
+CC  consensus.regexp: c[cg]tCAAGTGGc[ct][ag]
+CC  consensus.regexp.rc: [CT][AG]GCCACTTGA[CG]G
+XX
+//
+
+AC doc
+XX
+ID  doc
+XX
+DE  arCAGRTAGhs
+PO       A     C     G     T
+1       73    48    46    46
+2       54    45    73    41
+3        0   213     0     0
+4      213     0     0     0
+5        0     0   213     0
+6       58     0   155     0
+7        0     0     0   213
+8      213     0     0     0
+9        0     0   213     0
+10      61    61    34    57
+11      49    60    59    45
+XX
+CC  program: transfac
+CC  matrix.nb: 1
+CC  accession: oligos_6nt_mkv3_m1
+CC  AC: oligos_6nt_mkv3_m1
+CC  id: oligos_6nt_mkv3_m1
+CC  version: 
+CC  name: oligos_6nt_mkv3_m1
+CC  description: arCAGRTAGhs
+CC  transfac_consensus: 
+CC  matrix.nb: 1
+CC  bg_markov_order: 1
+CC  consensus.strict: agCAGGTAGcg
+CC  consensus.strict.rc: CGCTACCTGCT
+CC  consensus.IUPAC: agCAGRTAGms
+CC  consensus.IUPAC.rc: SKCTAYCTGCT
+CC  consensus.regexp: agCAG[AG]TAG[ac][cg]
+CC  consensus.regexp.rc: [CG][GT]CTA[CT]CTGCT
+XX
+//
+
+AC pnr
+XX
+ID  pnr
+XX
+DE  amAGATACad
+PO       A     C     G     T
+1     1145   440   542   657
+2      713  1070   479   522
+3     2784     0     0     0
+4        0     0  2784     0
+5     2784     0     0     0
+6        0     0     0  2784
+7     2784     0     0     0
+8        0  2784     0     0
+9     1261   387   495   641
+10     740   590   758   696
+XX
+CC  program: transfac
+CC  matrix.nb: 3
+CC  accession: oligos_6nt_mkv4_m3
+CC  AC: oligos_6nt_mkv4_m3
+CC  id: oligos_6nt_mkv4_m3
+CC  version: 
+CC  name: oligos_6nt_mkv4_m3
+CC  description: amAGATACad
+CC  transfac_consensus: 
+CC  matrix.nb: 3
+CC  bg_markov_order: 1
+CC  consensus.strict: acAGATACag
+CC  consensus.strict.rc: CTGTATCTGT
+CC  consensus.IUPAC: acAGATACas
+CC  consensus.IUPAC.rc: STGTATCTGT
+CC  consensus.regexp: acAGATACa[cg]
+CC  consensus.regexp.rc: [CG]TGTATCTGT
+XX
+//
+
+AC Pmad
+XX
+ID  Pmad
+XX
+DE  swGGCGCCws
+PO       A     C     G     T
+1       56   112    92    59
+2       87    68    49   115
+3        0     0   319     0
+4        0     0   319     0
+5        0   319     0     0
+6        0     0   319     0
+7        0   319     0     0
+8        0   319     0     0
+9      115    49    68    87
+10      59    92   103    65
+XX
+CC  program: transfac
+CC  matrix.nb: 5
+CC  accession: positions_6nt_m2
+CC  AC: positions_6nt_m2
+CC  id: positions_6nt_m2
+CC  version: 
+CC  name: positions_6nt_m2
+CC  description: swGGCGCCws
+CC  transfac_consensus: 
+CC  matrix.nb: 5
+CC  bg_markov_order: 1
+CC  consensus.strict: ctGGCGCCag
+CC  consensus.strict.rc: CTGGCGCCAG
+CC  consensus.IUPAC: stGGCGCCas
+CC  consensus.IUPAC.rc: STGGCGCCAS
+CC  consensus.regexp: [cg]tGGCGCCa[cg]
+CC  consensus.regexp.rc: [CG]TGGCGCCA[CG]
+XX
+//
+
+AC AbdB_Cell_FBgn0000015
+XX
+ID AbdB_Cell_FBgn0000015
+XX
+DE AbdB
+PO	A	C	G	T
+1	1	5	12	3
+2	6	1	2	12
+3	1	0	0	20
+4	0	0	0	21
+5	5	0	0	16
+6	21	0	0	0
+7	0	3	0	18
+8	3	0	11	7
+9	13	0	5	3
+XX
+//
+
+AC Achi_Cell_FBgn0033749
+XX
+ID Achi_Cell_FBgn0033749
+XX
+DE Achi
+PO	A	C	G	T
+1	4	3	1	15
+2	6	4	1	12
+3	0	0	0	23
+4	0	0	23	0
+5	23	0	0	0
+6	0	22	0	1
+7	23	0	0	0
+XX
+//
+
+AC Al_Cell_FBgn0000061
+XX
+ID Al_Cell_FBgn0000061
+XX
+DE Al
+PO	A	C	G	T
+1	0	0	0	20
+2	20	0	0	0
+3	20	0	0	0
+4	0	0	0	20
+5	0	0	0	20
+6	17	0	3	0
+7	18	0	2	0
+XX
+//
+
+AC Antp_Cell_FBgn0000095
+XX
+ID Antp_Cell_FBgn0000095
+XX
+DE Antp
+PO	A	C	G	T
+1	1	5	2	8
+2	1	1	0	14
+3	0	0	0	16
+4	16	0	0	0
+5	16	0	0	0
+6	0	0	0	16
+7	0	0	9	7
+8	15	0	1	0
+XX
+//
+
+AC Ap_Cell_FBgn0000099
+XX
+ID Ap_Cell_FBgn0000099
+XX
+DE Ap
+PO	A	C	G	T
+1	5	4	9	1
+2	2	10	0	7
+3	1	0	0	18
+4	19	0	0	0
+5	19	0	0	0
+6	0	0	0	19
+7	0	0	6	13
+8	16	0	3	0
+XX
+//
+
+AC Ara_Cell_FBgn0015904
+XX
+ID Ara_Cell_FBgn0015904
+XX
+DE Ara
+PO	A	C	G	T
+1	12	5	10	7
+2	16	7	6	5
+3	24	1	1	8
+4	14	0	5	15
+5	23	0	0	11
+6	34	0	0	0
+7	0	34	0	0
+8	34	0	0	0
+XX
+//
+
+AC Awh_Cell_FBgn0013751
+XX
+ID Awh_Cell_FBgn0013751
+XX
+DE Awh
+PO	A	C	G	T
+1	3	16	0	21
+2	1	0	0	39
+3	33	0	7	0
+4	40	0	0	0
+5	0	0	1	39
+6	0	0	8	32
+7	34	0	4	2
+XX
+//
+
+AC Bap_Cell_FBgn0004862
+XX
+ID Bap_Cell_FBgn0004862
+XX
+DE Bap
+PO	A	C	G	T
+1	7	4	4	8
+2	1	9	5	8
+3	0	0	1	22
+4	0	0	0	23
+5	23	0	0	0
+6	23	0	0	0
+7	0	0	23	0
+8	1	0	0	22
+9	7	0	16	0
+10	3	8	9	3
+XX
+//
+
+AC Bcd_Cell_FBgn0000166
+XX
+ID Bcd_Cell_FBgn0000166
+XX
+DE Bcd
+PO	A	C	G	T
+1	1	6	10	5
+2	3	5	3	11
+3	0	0	0	22
+4	20	0	0	2
+5	22	0	0	0
+6	0	0	1	21
+7	0	22	0	0
+8	0	21	0	1
+XX
+//
+
+AC BH1_Cell_FBgn0011758
+XX
+ID BH1_Cell_FBgn0011758
+XX
+DE BH1
+PO	A	C	G	T
+1	1	5	12	3
+2	4	4	0	13
+3	0	0	0	21
+4	21	0	0	0
+5	21	0	0	0
+6	8	0	0	13
+7	1	7	0	13
+8	1	0	20	0
+9	7	3	8	3
+XX
+//
+
+AC BH2_Cell_FBgn0004854
+XX
+ID BH2_Cell_FBgn0004854
+XX
+DE BH2
+PO	A	C	G	T
+1	2	7	7	5
+2	6	2	1	12
+3	0	0	0	21
+4	21	0	0	0
+5	21	0	0	0
+6	5	0	0	16
+7	3	1	2	15
+8	0	0	21	0
+9	5	4	11	1
+XX
+//
+
+AC Bsh_Cell_FBgn0000529
+XX
+ID Bsh_Cell_FBgn0000529
+XX
+DE Bsh
+PO	A	C	G	T
+1	3	5	1	7
+2	1	3	2	10
+3	0	0	0	16
+4	16	0	0	0
+5	16	0	0	0
+6	0	1	0	15
+7	0	3	6	7
+8	7	0	9	0
+9	3	3	9	1
+XX
+//
+
+AC Cad_Cell_FBgn0000251
+XX
+ID Cad_Cell_FBgn0000251
+XX
+DE Cad
+PO	A	C	G	T
+1	12	6	4	16
+2	3	3	3	29
+3	4	0	0	34
+4	12	0	2	24
+5	38	0	0	0
+6	0	0	0	38
+7	4	0	7	27
+8	22	0	15	1
+XX
+//
+
+AC Caup_Cell_FBgn0015919
+XX
+ID Caup_Cell_FBgn0015919
+XX
+DE Caup
+PO	A	C	G	T
+1	4	9	2	4
+2	9	0	3	7
+3	8	0	4	7
+4	4	1	2	12
+5	14	0	2	3
+6	19	0	0	0
+7	0	19	0	0
+8	19	0	0	0
+XX
+//
+
+AC Dfd_Cell_FBgn0000439
+XX
+ID Dfd_Cell_FBgn0000439
+XX
+DE Dfd
+PO	A	C	G	T
+1	8	9	4	3
+2	1	4	3	16
+3	0	0	0	24
+4	24	0	0	0
+5	24	0	0	0
+6	0	0	0	24
+7	1	0	19	4
+8	21	0	3	0
+XX
+//
+
+AC Dll_Cell_FBgn0000157
+XX
+ID Dll_Cell_FBgn0000157
+XX
+DE Dll
+PO	A	C	G	T
+1	1	0	0	22
+2	21	0	2	0
+3	23	0	0	0
+4	0	0	0	23
+5	4	0	2	17
+6	11	0	8	4
+7	0	12	4	7
+XX
+//
+
+AC Dr_Cell_FBgn0000492
+XX
+ID Dr_Cell_FBgn0000492
+XX
+DE Dr
+PO	A	C	G	T
+1	4	8	9	0
+2	11	2	4	4
+3	1	13	6	1
+4	0	16	0	5
+5	21	0	0	0
+6	21	0	0	0
+7	0	0	0	21
+8	0	0	0	21
+9	21	0	0	0
+XX
+//
+
+AC E5_Cell_FBgn0008646
+XX
+ID E5_Cell_FBgn0008646
+XX
+DE E5
+PO	A	C	G	T
+1	11	9	12	11
+2	5	15	6	17
+3	3	0	0	40
+4	43	0	0	0
+5	42	0	0	1
+6	1	0	1	41
+7	5	0	16	22
+8	34	0	9	0
+XX
+//
+
+AC En_Cell_FBgn0000577
+XX
+ID En_Cell_FBgn0000577
+XX
+DE En
+PO	A	C	G	T
+1	3	3	12	5
+2	2	8	2	11
+3	0	0	0	23
+4	23	0	0	0
+5	23	0	0	0
+6	0	0	0	23
+7	0	0	2	21
+8	13	0	10	0
+XX
+//
+
+AC Exd_Cell_FBgn0000611
+XX
+ID Exd_Cell_FBgn0000611
+XX
+DE Exd
+PO	A	C	G	T
+1	4	4	4	5
+2	1	0	2	14
+3	0	0	0	17
+4	0	0	0	17
+5	0	0	17	0
+6	17	0	0	0
+7	0	12	0	5
+8	11	0	6	0
+XX
+//
+
+AC Ftz_Cell_FBgn0001077
+XX
+ID Ftz_Cell_FBgn0001077
+XX
+DE Ftz
+PO	A	C	G	T
+1	3	5	8	2
+2	1	2	0	15
+3	1	0	0	17
+4	18	0	0	0
+5	18	0	0	0
+6	0	0	0	18
+7	0	0	9	9
+8	14	0	4	0
+XX
+//
+
+AC Gsc_Cell_FBgn0010323
+XX
+ID Gsc_Cell_FBgn0010323
+XX
+DE Gsc
+PO	A	C	G	T
+1	8	8	5	1
+2	4	5	4	9
+3	0	0	0	22
+4	22	0	0	0
+5	22	0	0	0
+6	0	0	0	22
+7	0	22	0	0
+8	0	14	2	6
+XX
+//
+
+AC Hgtx_Cell_FBgn0040318
+XX
+ID Hgtx_Cell_FBgn0040318
+XX
+DE Hgtx
+PO	A	C	G	T
+1	4	1	5	10
+2	4	2	3	11
+3	0	0	0	20
+4	20	0	0	0
+5	20	0	0	0
+6	0	0	0	20
+7	1	0	6	13
+8	15	0	5	0
+XX
+//
+
+AC Hmx_Cell_FBgn0085448
+XX
+ID Hmx_Cell_FBgn0085448
+XX
+DE Hmx
+PO	A	C	G	T
+1	1	3	0	16
+2	0	0	0	20
+3	20	0	0	0
+4	20	0	0	0
+5	1	0	0	19
+6	0	3	0	17
+7	4	0	16	0
+XX
+//
+
+AC Ind_Cell_FBgn0025776
+XX
+ID Ind_Cell_FBgn0025776
+XX
+DE Ind
+PO	A	C	G	T
+1	1	9	2	9
+2	9	4	6	2
+3	0	12	0	9
+4	0	0	0	21
+5	21	0	0	0
+6	21	0	0	0
+7	0	0	1	20
+8	0	0	8	13
+9	19	0	2	0
+XX
+//
+
+AC Inv_Cell_FBgn0001269
+XX
+ID Inv_Cell_FBgn0001269
+XX
+DE Inv
+PO	A	C	G	T
+1	4	0	3	9
+2	1	9	0	6
+3	0	0	0	16
+4	16	0	0	0
+5	16	0	0	0
+6	0	0	0	16
+7	0	0	0	16
+8	11	0	5	0
+XX
+//
+
+AC Lab_Cell_FBgn0002522
+XX
+ID Lab_Cell_FBgn0002522
+XX
+DE Lab
+PO	A	C	G	T
+1	1	3	0	12
+2	0	0	0	16
+3	16	0	0	0
+4	16	0	0	0
+5	1	0	0	15
+6	0	0	6	10
+7	16	0	0	0
+XX
+//
+
+AC Lag1_Cell_FBgn0040918
+XX
+ID Lag1_Cell_FBgn0040918
+XX
+DE Lag1
+PO	A	C	G	T
+1	0	19	0	0
+2	0	9	0	10
+3	17	2	0	0
+4	1	18	0	0
+5	0	12	0	7
+6	18	0	1	0
+7	12	0	4	3
+8	10	3	4	2
+9	10	1	0	8
+10	3	2	1	13
+XX
+//
+
+AC Lbl_Cell_FBgn0008651
+XX
+ID Lbl_Cell_FBgn0008651
+XX
+DE Lbl
+PO	A	C	G	T
+1	5	5	11	2
+2	5	10	0	8
+3	0	0	0	23
+4	23	0	0	0
+5	23	0	0	0
+6	0	5	0	18
+7	1	3	7	12
+8	17	0	6	0
+XX
+//
+
+AC Lim1_Cell_FBgn0026411
+XX
+ID Lim1_Cell_FBgn0026411
+XX
+DE Lim1
+PO	A	C	G	T
+1	0	2	0	16
+2	0	0	0	18
+3	18	0	0	0
+4	18	0	0	0
+5	0	0	0	18
+6	0	0	0	18
+7	17	0	1	0
+XX
+//
+
+AC Lim3_Cell_FBgn0002023
+XX
+ID Lim3_Cell_FBgn0002023
+XX
+DE Lim3
+PO	A	C	G	T
+1	8	5	2	5
+2	3	7	2	8
+3	4	0	0	16
+4	16	0	3	1
+5	20	0	0	0
+6	0	0	0	20
+7	0	2	4	14
+8	16	0	4	0
+XX
+//
+
+AC Mirr_Cell_FBgn0014343
+XX
+ID Mirr_Cell_FBgn0014343
+XX
+DE Mirr
+PO	A	C	G	T
+1	18	6	6	11
+2	18	4	10	9
+3	22	7	6	6
+4	20	1	1	19
+5	29	0	2	10
+6	41	0	0	0
+7	0	41	0	0
+8	41	0	0	0
+XX
+//
+
+AC NK7_1_Cell_FBgn0024321
+XX
+ID NK7_1_Cell_FBgn0024321
+XX
+DE NK7_1
+PO	A	C	G	T
+1	13	9	5	8
+2	5	5	1	24
+3	0	0	0	35
+4	33	0	2	0
+5	35	0	0	0
+6	4	0	5	26
+7	6	0	7	22
+8	13	0	22	0
+XX
+//
+
+AC Oc_Cell_FBgn0004102
+XX
+ID Oc_Cell_FBgn0004102
+XX
+DE Oc
+PO	A	C	G	T
+1	5	2	1	11
+2	0	0	0	19
+3	19	0	0	0
+4	19	0	0	0
+5	0	0	2	17
+6	0	19	0	0
+7	0	17	1	1
+XX
+//
+
+AC Odsh_Cell_FBgn0026058
+XX
+ID Odsh_Cell_FBgn0026058
+XX
+DE Odsh
+PO	A	C	G	T
+1	0	11	4	7
+2	0	0	0	22
+3	22	0	0	0
+4	22	0	0	0
+5	0	0	0	22
+6	0	0	0	22
+7	13	0	8	1
+XX
+//
+
+AC onecut_Cell_FBgn0028996
+XX
+ID onecut_Cell_FBgn0028996
+XX
+DE onecut
+PO	A	C	G	T
+1	1	2	0	12
+2	0	0	0	15
+3	0	0	15	0
+4	15	0	0	0
+5	0	0	0	15
+6	0	0	0	15
+7	5	0	4	6
+XX
+//
+
+AC Pb_Cell_FBgn0051481
+XX
+ID Pb_Cell_FBgn0051481
+XX
+DE Pb
+PO	A	C	G	T
+1	3	3	10	8
+2	4	9	0	11
+3	0	0	0	24
+4	24	0	0	0
+5	24	0	0	0
+6	0	0	0	24
+7	0	0	11	13
+8	24	0	0	0
+XX
+//
+
+AC Repo_Cell_FBgn0011701
+XX
+ID Repo_Cell_FBgn0011701
+XX
+DE Repo
+PO	A	C	G	T
+1	6	3	6	13
+2	1	4	4	19
+3	1	0	0	27
+4	27	0	0	1
+5	28	0	0	0
+6	0	0	0	28
+7	0	0	0	28
+8	21	0	7	0
+XX
+//
+
+AC Ro_Cell_FBgn0003267
+XX
+ID Ro_Cell_FBgn0003267
+XX
+DE Ro
+PO	A	C	G	T
+1	5	4	11	3
+2	1	12	3	7
+3	0	0	0	23
+4	23	0	0	0
+5	23	0	0	0
+6	0	0	0	23
+7	0	0	3	20
+8	19	0	4	0
+XX
+//
+
+AC Rx_Cell_FBgn0020617
+XX
+ID Rx_Cell_FBgn0020617
+XX
+DE Rx
+PO	A	C	G	T
+1	7	5	12	3
+2	3	13	0	11
+3	0	0	0	27
+4	27	0	0	0
+5	27	0	0	0
+6	0	0	0	27
+7	0	0	0	27
+8	17	0	10	0
+XX
+//
+
+AC Scr_Cell_FBgn0003339
+XX
+ID Scr_Cell_FBgn0003339
+XX
+DE Scr
+PO	A	C	G	T
+1	5	14	1	5
+2	8	5	9	3
+3	3	7	0	15
+4	0	0	0	25
+5	25	0	0	0
+6	25	0	0	0
+7	0	0	0	25
+8	0	0	18	7
+9	23	0	2	0
+XX
+//
+
+AC Six4_Cell_FBgn0027364
+XX
+ID Six4_Cell_FBgn0027364
+XX
+DE Six4
+PO	A	C	G	T
+1	10	2	2	6
+2	4	2	3	11
+3	6	2	3	9
+4	0	0	0	20
+5	0	0	20	0
+6	20	0	0	0
+7	0	7	4	9
+8	20	0	0	0
+9	1	19	0	0
+XX
+//
+
+AC Slou_Cell_FBgn0002941
+XX
+ID Slou_Cell_FBgn0002941
+XX
+DE Slou
+PO	A	C	G	T
+1	2	3	6	11
+2	3	5	1	13
+3	0	1	0	21
+4	22	0	0	0
+5	21	0	1	0
+6	0	0	0	22
+7	2	1	5	14
+8	11	0	11	0
+XX
+//
+
+AC So_Cell_FBgn0003460
+XX
+ID So_Cell_FBgn0003460
+XX
+DE So
+PO	A	C	G	T
+1	12	4	5	6
+2	13	1	10	3
+3	0	0	1	26
+4	0	0	27	0
+5	27	0	0	0
+6	0	0	1	26
+7	27	0	0	0
+XX
+//
+
+AC Ubx_Cell_FBgn0003944
+XX
+ID Ubx_Cell_FBgn0003944
+XX
+DE Ubx
+PO	A	C	G	T
+1	3	5	3	9
+2	0	0	0	20
+3	0	0	0	20
+4	17	0	0	3
+5	20	0	0	0
+6	0	0	0	20
+7	0	0	6	14
+8	14	0	6	0
+XX
+//
+
+AC Unc4_Cell_FBgn0024184
+XX
+ID Unc4_Cell_FBgn0024184
+XX
+DE Unc4
+PO	A	C	G	T
+1	2	9	5	5
+2	1	5	2	13
+3	0	0	0	21
+4	21	0	0	0
+5	21	0	0	0
+6	0	0	0	21
+7	1	0	0	20
+8	6	1	14	0
+XX
+//
+
+AC Unpg_Cell_FBgn0015561
+XX
+ID Unpg_Cell_FBgn0015561
+XX
+DE Unpg
+PO	A	C	G	T
+1	5	10	3	3
+2	1	6	4	10
+3	1	0	0	20
+4	21	0	0	0
+5	21	0	0	0
+6	0	0	0	21
+7	0	0	2	19
+8	14	0	7	0
+XX
+//
+
+AC Vnd_Cell_FBgn0003986
+XX
+ID Vnd_Cell_FBgn0003986
+XX
+DE Vnd
+PO	A	C	G	T
+1	4	0	2	13
+2	1	8	1	9
+3	0	0	0	19
+4	0	15	2	2
+5	19	0	0	0
+6	19	0	0	0
+7	0	0	19	0
+8	2	0	0	17
+9	9	0	10	0
+XX
+//
+
+AC Zen_Cell_FBgn0004053
+XX
+ID Zen_Cell_FBgn0004053
+XX
+DE Zen
+PO	A	C	G	T
+1	3	5	4	4
+2	2	8	4	2
+3	2	9	0	5
+4	0	0	0	16
+5	16	0	0	0
+6	16	0	0	0
+7	0	0	0	16
+8	0	0	11	5
+9	16	0	0	0
+XX
+//
+
+AC Zen2_Cell_FBgn0004054
+XX
+ID Zen2_Cell_FBgn0004054
+XX
+DE Zen2
+PO	A	C	G	T
+1	4	7	2	13
+2	7	9	6	4
+3	3	7	5	11
+4	1	0	0	25
+5	26	0	0	0
+6	26	0	0	0
+7	0	1	0	25
+8	0	0	10	16
+9	22	0	4	0
+XX
+//
+
+AC CG11085_Cell_FBgn0030408
+XX
+ID CG11085_Cell_FBgn0030408
+XX
+DE CG11085
+PO	A	C	G	T
+1	2	4	2	5
+2	0	3	0	10
+3	0	0	0	13
+4	13	0	0	0
+5	13	0	0	0
+6	1	0	0	12
+7	2	1	2	8
+8	1	0	12	0
+9	2	4	6	1
+XX
+//
+
+AC CG11294_Cell_FBgn0030058
+XX
+ID CG11294_Cell_FBgn0030058
+XX
+DE CG11294
+PO	A	C	G	T
+1	0	3	0	12
+2	0	2	0	13
+3	15	0	0	0
+4	15	0	0	0
+5	0	0	0	15
+6	0	0	0	15
+7	15	0	0	0
+XX
+//
+
+AC CG11617_Cell_FBgn0031232
+XX
+ID CG11617_Cell_FBgn0031232
+XX
+DE CG11617
+PO	A	C	G	T
+1	7	0	3	7
+2	2	0	1	14
+3	1	0	0	16
+4	0	0	0	17
+5	10	0	3	4
+6	17	0	0	0
+7	0	17	0	0
+8	17	0	0	0
+XX
+//
+
+AC CG18599_Cell_FBgn0038592
+XX
+ID CG18599_Cell_FBgn0038592
+XX
+DE CG18599
+PO	A	C	G	T
+1	4	10	1	10
+2	0	0	0	25
+3	25	0	0	0
+4	25	0	0	0
+5	0	0	0	25
+6	0	1	8	16
+7	23	0	2	0
+XX
+//
+
+AC CG32105_Cell_FBgn0052105
+XX
+ID CG32105_Cell_FBgn0052105
+XX
+DE CG32105
+PO	A	C	G	T
+1	9	1	0	9
+2	2	4	0	13
+3	2	0	0	17
+4	17	0	0	2
+5	19	0	0	0
+6	0	0	1	18
+7	0	0	1	18
+8	15	0	4	0
+9	6	4	9	0
+XX
+//
+
+AC CG32532_Cell_FBgn0052532
+XX
+ID CG32532_Cell_FBgn0052532
+XX
+DE CG32532
+PO	A	C	G	T
+1	2	6	2	13
+2	0	0	0	23
+3	23	0	0	0
+4	23	0	0	0
+5	0	0	0	23
+6	0	0	2	21
+7	12	0	10	1
+XX
+//
+
+AC CG34031_Cell_FBgn0054031
+XX
+ID CG34031_Cell_FBgn0054031
+XX
+DE CG34031
+PO	A	C	G	T
+1	2	4	4	15
+2	0	1	1	23
+3	0	0	0	25
+4	22	0	0	3
+5	25	0	0	0
+6	2	0	0	23
+7	7	0	1	17
+8	3	0	22	0
+XX
+//
+
+AC CG7056_Cell_FBgn0038852
+XX
+ID CG7056_Cell_FBgn0038852
+XX
+DE CG7056
+PO	A	C	G	T
+1	7	3	2	14
+2	0	7	0	19
+3	0	6	7	13
+4	21	0	2	3
+5	26	0	0	0
+6	0	3	3	20
+7	7	0	1	18
+8	22	0	4	0
+XX
+//
+
+AC Blimp_1_NAR_FBgn0035625
+XX
+ID Blimp_1_NAR_FBgn0035625
+XX
+DE Blimp_1
+PO	A	C	G	T
+1	4	0	8	0
+2	11	0	0	1
+3	10	1	1	0
+4	12	0	0	0
+5	1	0	11	0
+6	0	2	1	9
+7	0	0	12	0
+8	12	0	0	0
+9	11	0	1	0
+10	12	0	0	0
+11	1	0	11	0
+12	0	3	0	9
+XX
+//
+
+AC btd_NAR_FBgn0000233
+XX
+ID btd_NAR_FBgn0000233
+XX
+DE btd
+PO	A	C	G	T
+1	14	3	7	5
+2	10	0	19	0
+3	4	0	18	7
+4	2	0	27	0
+5	0	0	29	0
+6	0	0	29	0
+7	2	27	0	0
+8	0	0	29	0
+9	0	0	20	9
+10	15	1	9	4
+XX
+//
+
+AC D_NAR_FBgn0000411
+XX
+ID D_NAR_FBgn0000411
+XX
+DE D
+PO	A	C	G	T
+1	20	2	1	11
+2	9	6	11	8
+3	22	3	8	1
+4	34	0	0	0
+5	0	34	0	0
+6	31	3	0	0
+7	30	0	4	0
+8	8	0	0	26
+9	12	0	18	4
+10	5	1	28	0
+11	16	9	8	1
+XX
+//
+
+AC fkh_NAR_FBgn0000659
+XX
+ID fkh_NAR_FBgn0000659
+XX
+DE fkh
+PO	A	C	G	T
+1	3	0	0	24
+2	5	0	22	0
+3	0	0	0	27
+4	0	0	0	27
+5	0	0	1	26
+6	13	0	14	0
+7	4	13	2	8
+8	6	7	3	11
+9	0	11	2	14
+10	23	0	1	3
+11	15	4	4	4
+XX
+//
+
+AC gt_NAR_FBgn0001150
+XX
+ID gt_NAR_FBgn0001150
+XX
+DE gt
+PO	A	C	G	T
+1	2	10	8	9
+2	0	8	13	8
+3	6	7	10	6
+4	2	3	4	20
+5	14	0	15	0
+6	0	0	0	29
+7	0	0	0	29
+8	24	0	5	0
+9	0	29	0	0
+10	5	0	24	0
+11	0	1	0	28
+12	26	3	0	0
+13	29	0	0	0
+14	0	10	5	14
+XX
+//
+
+AC hkb_NAR_FBgn0001204
+XX
+ID hkb_NAR_FBgn0001204
+XX
+DE hkb
+PO	A	C	G	T
+1	3	0	18	11
+2	8	0	24	0
+3	0	0	32	0
+4	0	0	32	0
+5	0	32	0	0
+6	0	0	32	0
+7	0	0	3	29
+8	0	0	31	1
+9	24	3	2	3
+XX
+//
+
+AC Kr_NAR_FBgn0001325
+XX
+ID Kr_NAR_FBgn0001325
+XX
+DE Kr
+PO	A	C	G	T
+1	3	17	5	6
+2	11	4	10	6
+3	24	0	7	0
+4	30	0	0	1
+5	18	6	7	0
+6	0	0	31	0
+7	2	0	29	0
+8	2	0	29	0
+9	0	1	7	23
+10	4	0	5	22
+11	20	4	3	4
+XX
+//
+
+AC nub_NAR_FBgn0085424
+XX
+ID nub_NAR_FBgn0085424
+XX
+DE nub
+PO	A	C	G	T
+1	2	1	1	25
+2	29	0	0	0
+3	0	0	0	29
+4	0	0	25	4
+5	0	19	1	9
+6	24	0	0	5
+7	28	0	1	0
+8	28	0	0	1
+9	4	1	0	24
+10	6	5	8	10
+11	19	5	1	4
+12	4	3	15	7
+XX
+//
+
+AC odd_NAR_FBgn0002985
+XX
+ID odd_NAR_FBgn0002985
+XX
+DE odd
+PO	A	C	G	T
+1	7	5	0	3
+2	10	5	0	0
+3	0	14	1	0
+4	12	0	3	0
+5	0	0	15	0
+6	0	0	0	15
+7	15	0	0	0
+8	0	0	15	0
+9	0	15	0	0
+10	11	3	1	0
+11	5	4	6	0
+XX
+//
+
+AC opa_NAR_FBgn0003002
+XX
+ID opa_NAR_FBgn0003002
+XX
+DE opa
+PO	A	C	G	T
+1	0	1	15	2
+2	10	7	1	0
+3	1	16	0	1
+4	1	15	1	1
+5	0	16	1	1
+6	0	18	0	0
+7	0	18	0	0
+8	0	14	0	4
+9	4	0	13	1
+10	0	14	2	2
+11	3	1	4	10
+12	2	0	16	0
+XX
+//
+
+AC slp1_NAR_FBgn0003430
+XX
+ID slp1_NAR_FBgn0003430
+XX
+DE slp1
+PO	A	C	G	T
+1	8	3	14	16
+2	0	0	0	41
+3	3	0	38	0
+4	0	0	0	41
+5	0	0	1	40
+6	0	0	2	39
+7	27	0	4	10
+8	1	22	7	11
+9	17	8	15	1
+10	4	13	3	21
+11	15	3	4	19
+XX
+//
+
+AC tll_NAR_FBgn0003720
+XX
+ID tll_NAR_FBgn0003720
+XX
+DE tll
+PO	A	C	G	T
+1	20	4	4	5
+2	29	0	4	0
+3	33	0	0	0
+4	31	1	1	0
+5	0	0	33	0
+6	0	2	0	31
+7	0	33	0	0
+8	33	0	0	0
+9	31	0	1	1
+10	17	10	2	4
+XX
+//
+
+AC ttk_NAR_FBgn0003870
+XX
+ID ttk_NAR_FBgn0003870
+XX
+DE ttk
+PO	A	C	G	T
+1	10	8	3	1
+2	22	0	0	0
+3	0	0	22	0
+4	0	0	22	0
+5	22	0	0	0
+6	0	5	0	17
+7	21	0	0	1
+8	22	0	0	0
+9	1	5	3	13
+XX
+//
+
+AC dl_NBT_FBgn0000462
+XX
+ID dl_NBT_FBgn0000462
+XX
+DE dl
+PO	A	C	G	T
+1	0	0	32	0
+2	0	0	32	0
+3	2	0	24	6
+4	18	0	0	14
+5	18	0	0	14
+6	8	0	0	24
+7	2	8	0	22
+8	0	32	0	0
+9	0	30	0	2
+10	7	20	5	0
+XX
+//
+
+AC run_Bgb_NBT_FBgn0003300
+XX
+ID run_Bgb_NBT_FBgn0003300
+XX
+DE run
+PO	A	C	G	T
+1	13	3	0	15
+2	28	0	2	1
+3	29	0	2	0
+4	0	31	0	0
+5	0	30	1	0
+6	7	1	23	0
+7	0	31	0	0
+8	30	0	0	1
+9	22	0	9	0
+XX
+//
+
+AC AbdA_FlyReg_FBgn0000014
+XX
+ID AbdA_FlyReg_FBgn0000014
+XX
+DE AbdA
+PO	A	C	G	T
+1	5	2	13	17
+2	10	15	3	9
+3	22	15	0	0
+4	36	0	0	1
+5	0	0	0	37
+6	11	2	0	24
+7	33	1	0	3
+8	18	2	4	13
+XX
+//
+
+AC Adf1_FlyReg_FBgn0000054
+XX
+ID Adf1_FlyReg_FBgn0000054
+XX
+DE Adf1
+PO	A	C	G	T
+1	1	6	0	0
+2	0	0	7	0
+3	5	0	2	0
+4	0	6	0	1
+5	0	4	0	3
+6	0	0	7	0
+7	0	7	0	0
+8	2	0	5	0
+XX
+//
+
+AC Aef1_FlyReg_FBgn0005694
+XX
+ID Aef1_FlyReg_FBgn0005694
+XX
+DE Aef1
+PO	A	C	G	T
+1	0	3	0	0
+2	3	0	0	0
+3	3	0	0	0
+4	0	3	0	0
+5	2	0	0	1
+6	3	0	0	0
+7	0	3	0	0
+8	2	0	0	1
+XX
+//
+
+AC bab1_FlyReg_FBgn0004870
+XX
+ID bab1_FlyReg_FBgn0004870
+XX
+DE bab1
+PO	A	C	G	T
+1	1	0	0	5
+2	6	0	0	0
+3	0	0	0	6
+4	2	0	0	4
+5	4	0	1	1
+6	2	0	0	4
+7	0	0	0	6
+8	3	0	3	0
+9	0	0	0	6
+10	0	0	1	5
+XX
+//
+
+AC brk_FlyReg_FBgn0024250
+XX
+ID brk_FlyReg_FBgn0024250
+XX
+DE brk
+PO	A	C	G	T
+1	1	5	4	0
+2	0	4	0	6
+3	0	0	10	0
+4	0	0	10	0
+5	0	10	0	0
+6	1	0	9	0
+7	1	8	0	1
+8	0	5	1	4
+XX
+//
+
+AC brZ1_FlyReg_FBgn0000210
+XX
+ID brZ1_FlyReg_FBgn0000210
+XX
+DE brZ1
+PO	A	C	G	T
+1	12	0	2	3
+2	12	2	3	0
+3	9	0	0	8
+4	0	3	0	14
+5	14	0	2	1
+6	1	4	9	3
+7	11	3	2	1
+8	16	1	0	0
+XX
+//
+
+AC brZ2_FlyReg_FBgn0000210
+XX
+ID brZ2_FlyReg_FBgn0000210
+XX
+DE brZ2
+PO	A	C	G	T
+1	7	3	1	10
+2	0	15	4	2
+3	0	0	0	21
+4	21	0	0	0
+5	1	0	5	15
+6	2	5	5	9
+7	12	1	1	7
+8	11	4	1	5
+XX
+//
+
+AC brZ3_FlyReg_FBgn0000210
+XX
+ID brZ3_FlyReg_FBgn0000210
+XX
+DE brZ3
+PO	A	C	G	T
+1	7	3	3	3
+2	12	1	0	3
+3	10	0	6	0
+4	1	11	0	4
+5	0	0	1	15
+6	7	0	3	6
+7	0	0	10	6
+8	0	0	1	15
+XX
+//
+
+AC brZ4_FlyReg_FBgn0000210
+XX
+ID brZ4_FlyReg_FBgn0000210
+XX
+DE brZ4
+PO	A	C	G	T
+1	5	0	3	0
+2	2	5	0	1
+3	1	0	0	7
+4	8	0	0	0
+5	8	0	0	0
+6	1	0	0	7
+XX
+//
+
+AC byn_FlyReg_FBgn0011723
+XX
+ID byn_FlyReg_FBgn0011723
+XX
+DE byn
+PO	A	C	G	T
+1	8	0	0	1
+2	4	0	2	3
+3	0	0	8	1
+4	0	1	0	8
+5	0	0	9	0
+6	1	7	0	1
+7	3	0	4	2
+8	7	0	0	2
+XX
+//
+
+AC Cf2_II_FlyReg_FBgn0000286
+XX
+ID Cf2_II_FlyReg_FBgn0000286
+XX
+DE Cf2_II
+PO	A	C	G	T
+1	1	0	2	0
+2	1	1	0	1
+3	0	0	3	0
+4	0	0	0	3
+5	3	0	0	0
+6	0	0	0	3
+7	3	0	0	0
+8	2	0	0	1
+XX
+//
+
+AC Deaf1_FlyReg_FBgn0013799
+XX
+ID Deaf1_FlyReg_FBgn0013799
+XX
+DE Deaf1
+PO	A	C	G	T
+1	0	3	0	7
+2	0	0	0	10
+3	0	10	0	0
+4	0	0	10	0
+5	0	0	5	5
+6	1	3	4	2
+XX
+//
+
+AC Dref_FlyReg_FBgn0015664
+XX
+ID Dref_FlyReg_FBgn0015664
+XX
+DE Dref
+PO	A	C	G	T
+1	3	0	1	4
+2	2	2	2	2
+3	4	0	0	4
+4	0	0	0	8
+5	8	0	0	0
+6	0	0	0	8
+7	0	8	0	0
+8	0	0	8	0
+9	6	2	0	0
+10	2	1	0	5
+11	5	1	1	1
+12	4	1	3	0
+XX
+//
+
+AC dsxF_FlyReg_FBgn0000504
+XX
+ID dsxF_FlyReg_FBgn0000504
+XX
+DE dsxF
+PO	A	C	G	T
+1	0	3	0	0
+2	0	0	0	3
+3	2	0	1	0
+4	0	3	0	0
+5	2	0	0	1
+6	3	0	0	0
+7	2	0	0	1
+8	0	0	3	0
+9	0	0	0	3
+10	0	1	1	1
+11	2	0	1	0
+12	0	1	0	2
+13	1	1	0	1
+14	3	0	0	0
+XX
+//
+
+AC dsxM_FlyReg_FBgn0000504
+XX
+ID dsxM_FlyReg_FBgn0000504
+XX
+DE dsxM
+PO	A	C	G	T
+1	0	3	0	0
+2	0	0	0	3
+3	2	0	1	0
+4	0	3	0	0
+5	2	0	0	1
+6	3	0	0	0
+7	2	0	0	1
+8	0	0	3	0
+9	0	0	0	3
+10	0	1	1	1
+11	2	0	1	0
+12	0	1	0	2
+13	1	1	0	1
+14	3	0	0	0
+XX
+//
+
+AC Eip74EF_FlyReg_FBgn0000567
+XX
+ID Eip74EF_FlyReg_FBgn0000567
+XX
+DE Eip74EF
+PO	A	C	G	T
+1	6	0	1	1
+2	2	5	0	1
+3	0	0	0	8
+4	0	0	0	8
+5	0	7	1	0
+6	0	7	0	1
+7	0	0	2	6
+8	0	0	5	3
+9	2	0	2	4
+10	2	0	1	5
+XX
+//
+
+AC Espl_FlyReg_FBgn0000591
+XX
+ID Espl_FlyReg_FBgn0000591
+XX
+DE Espl
+PO	A	C	G	T
+1	0	1	0	3
+2	0	0	3	1
+3	0	0	0	4
+4	0	0	4	0
+5	1	2	1	0
+6	0	4	0	0
+7	1	1	1	1
+8	0	2	1	1
+9	0	1	3	0
+10	0	0	0	4
+11	0	0	4	0
+12	0	3	1	0
+XX
+//
+
+AC ftzf1_FlyReg_FBgn0001078
+XX
+ID ftzf1_FlyReg_FBgn0001078
+XX
+DE ftzf1
+PO	A	C	G	T
+1	0	0	2	1
+2	0	3	0	0
+3	1	0	2	0
+4	0	0	3	0
+5	0	1	0	2
+6	0	0	3	0
+7	2	0	0	1
+8	0	3	0	0
+9	0	3	0	0
+10	0	0	0	3
+11	0	0	0	3
+12	0	2	1	0
+13	1	0	2	0
+14	1	0	2	0
+15	2	1	0	0
+16	0	2	0	1
+17	0	0	1	2
+18	0	0	2	1
+XX
+//
+
+AC grh_FlyReg_FBgn0259211
+XX
+ID grh_FlyReg_FBgn0259211
+XX
+DE grh
+PO	A	C	G	T
+1	2	6	0	0
+2	0	1	0	7
+3	0	0	6	2
+4	1	0	6	1
+5	0	1	0	7
+6	0	0	0	8
+7	0	3	1	4
+8	2	1	1	4
+9	3	2	3	0
+10	1	3	0	4
+XX
+//
+
+AC Hsf_FlyReg_FBgn0001222
+XX
+ID Hsf_FlyReg_FBgn0001222
+XX
+DE Hsf
+PO	A	C	G	T
+1	0	0	0	5
+2	0	5	0	0
+3	0	0	2	3
+4	3	2	0	0
+5	0	0	5	0
+6	4	0	0	1
+7	4	0	0	1
+8	1	1	2	1
+9	2	1	0	2
+10	0	0	0	5
+11	0	0	0	5
+12	0	5	0	0
+13	0	0	3	2
+14	3	2	0	0
+XX
+//
+
+AC Mad_FlyReg_FBgn0011648
+XX
+ID Mad_FlyReg_FBgn0011648
+XX
+DE Mad
+PO	A	C	G	T
+1	1	12	5	2
+2	1	5	7	7
+3	3	0	16	1
+4	3	8	8	1
+5	0	16	1	3
+6	0	0	20	0
+7	6	2	6	6
+8	0	15	4	1
+9	5	0	15	0
+10	1	15	0	4
+XX
+//
+
+AC Med_FlyReg_FBgn0011655
+XX
+ID Med_FlyReg_FBgn0011655
+XX
+DE Med
+PO	A	C	G	T
+1	0	1	5	2
+2	0	7	0	1
+3	0	0	8	0
+4	1	2	3	2
+5	0	8	0	0
+6	2	0	3	3
+7	0	0	5	3
+8	0	1	4	3
+9	1	4	3	0
+10	3	2	1	2
+11	3	1	3	1
+12	0	1	1	6
+XX
+//
+
+AC pan_FlyReg_FBgn0085432
+XX
+ID pan_FlyReg_FBgn0085432
+XX
+DE pan
+PO	A	C	G	T
+1	4	10	3	8
+2	2	3	0	20
+3	2	0	1	22
+4	2	0	0	23
+5	0	2	20	3
+6	17	0	5	3
+7	8	0	0	17
+8	7	11	3	4
+XX
+//
+
+AC sd_FlyReg_FBgn0003345
+XX
+ID sd_FlyReg_FBgn0003345
+XX
+DE sd
+PO	A	C	G	T
+1	3	0	8	3
+2	8	1	1	4
+3	4	8	1	1
+4	14	0	0	0
+5	1	1	0	12
+6	3	0	1	10
+7	0	8	0	6
+8	3	5	3	3
+9	4	1	2	7
+10	5	6	3	0
+11	5	1	7	1
+12	4	3	4	3
+XX
+//
+
+AC slbo_FlyReg_FBgn0005638
+XX
+ID slbo_FlyReg_FBgn0005638
+XX
+DE slbo
+PO	A	C	G	T
+1	9	1	1	1
+2	0	1	0	11
+3	0	0	3	9
+4	3	2	7	0
+5	2	10	0	0
+6	7	2	2	1
+7	6	5	1	0
+8	11	1	0	0
+XX
+//
+
+AC srp_FlyReg_FBgn0003507
+XX
+ID srp_FlyReg_FBgn0003507
+XX
+DE srp
+PO	A	C	G	T
+1	0	2	1	1
+2	0	0	0	4
+3	3	1	0	0
+4	1	0	0	3
+5	0	3	1	0
+6	0	0	4	0
+7	1	1	2	0
+8	0	1	0	3
+9	2	0	0	2
+10	0	0	4	0
+11	3	1	0	0
+12	0	1	1	2
+XX
+//
+
+AC SuH_FlyReg_FBgn0004837
+XX
+ID SuH_FlyReg_FBgn0004837
+XX
+DE SuH
+PO	A	C	G	T
+1	1	0	0	2
+2	2	0	1	0
+3	0	0	3	0
+4	0	0	0	3
+5	0	0	0	3
+6	0	2	0	1
+7	0	1	0	2
+8	0	3	0	0
+9	3	0	0	0
+10	1	2	0	0
+11	1	1	1	0
+12	1	0	0	2
+13	0	0	0	3
+14	0	2	1	0
+XX
+//
+
+AC suHw_FlyReg_FBgn0003567
+XX
+ID suHw_FlyReg_FBgn0003567
+XX
+DE suHw
+PO	A	C	G	T
+1	2	0	4	0
+2	2	0	4	0
+3	1	0	5	0
+4	0	0	0	6
+5	6	0	0	0
+6	0	0	0	6
+7	0	0	6	0
+8	0	6	0	0
+9	6	0	0	0
+10	5	0	1	0
+11	0	3	0	3
+12	1	0	5	0
+13	2	1	0	3
+14	4	0	0	2
+15	2	0	0	4
+16	3	0	0	3
+17	0	0	0	6
+18	0	0	1	5
+XX
+//
+
+AC tin_FlyReg_FBgn0004110
+XX
+ID tin_FlyReg_FBgn0004110
+XX
+DE tin
+PO	A	C	G	T
+1	0	2	3	6
+2	0	8	2	1
+3	0	1	0	10
+4	0	8	1	2
+5	11	0	0	0
+6	11	0	0	0
+7	0	0	11	0
+8	0	0	1	10
+9	0	0	11	0
+10	1	4	6	0
+11	2	5	3	1
+12	2	3	3	3
+XX
+//
+
+AC toy_FlyReg_FBgn0019650
+XX
+ID toy_FlyReg_FBgn0019650
+XX
+DE toy
+PO	A	C	G	T
+1	0	5	0	0
+2	1	4	0	0
+3	2	2	1	0
+4	1	4	0	0
+5	0	0	0	5
+6	0	5	0	0
+7	5	0	0	0
+8	0	3	0	2
+9	0	1	1	3
+10	0	3	2	0
+11	3	0	2	0
+12	0	1	1	3
+XX
+//
+
+AC Trl_FlyReg_FBgn0013263
+XX
+ID Trl_FlyReg_FBgn0013263
+XX
+DE Trl
+PO	A	C	G	T
+1	4	22	9	36
+2	6	23	11	31
+3	12	6	30	23
+4	0	64	3	4
+5	3	0	14	54
+6	1	70	0	0
+7	13	0	2	56
+8	5	54	7	5
+9	7	13	11	40
+10	9	33	10	19
+XX
+//
+
+AC z_FlyReg_FBgn0004050
+XX
+ID z_FlyReg_FBgn0004050
+XX
+DE z
+PO	A	C	G	T
+1	11	3	5	22
+2	1	7	3	30
+3	1	0	40	0
+4	41	0	0	0
+5	1	0	40	0
+6	8	10	0	23
+7	2	6	29	4
+8	18	7	11	5
+9	10	5	12	14
+10	14	6	2	19
+XX
+//
+
+AC Btn_SOLEXA_FBgn0014949
+XX
+ID Btn_SOLEXA_FBgn0014949
+XX
+DE Btn
+PO	A	C	G	T
+1	87	132	61	246
+2	5	4	0	517
+3	509	8	5	4
+4	521	4	1	0
+5	0	19	17	490
+6	4	20	245	257
+7	409	0	102	15
+XX
+//
+
+AC C15_SOLEXA_FBgn0004863
+XX
+ID C15_SOLEXA_FBgn0004863
+XX
+DE C15
+PO	A	C	G	T
+1	158	206	216	311
+2	128	120	77	566
+3	0	0	0	891
+4	862	0	0	29
+5	891	0	0	0
+6	211	80	56	544
+7	98	64	309	420
+8	565	0	326	0
+XX
+//
+
+AC Ct_SOLEXA_FBgn0004198
+XX
+ID Ct_SOLEXA_FBgn0004198
+XX
+DE Ct
+PO	A	C	G	T
+1	60	55	98	112
+2	58	88	79	100
+3	22	142	128	33
+4	10	50	29	236
+5	0	13	29	283
+6	167	0	158	0
+7	325	0	0	0
+8	285	0	6	34
+9	0	325	0	0
+XX
+//
+
+AC Ems_SOLEXA_FBgn0000576
+XX
+ID Ems_SOLEXA_FBgn0000576
+XX
+DE Ems
+PO	A	C	G	T
+1	38	187	54	199
+2	11	4	25	438
+3	452	13	9	4
+4	465	13	0	0
+5	8	3	42	425
+6	42	3	145	288
+7	353	9	110	6
+XX
+//
+
+AC Eve_SOLEXA_FBgn0000606
+XX
+ID Eve_SOLEXA_FBgn0000606
+XX
+DE Eve
+PO	A	C	G	T
+1	63	75	92	50
+2	14	109	22	135
+3	0	0	12	268
+4	275	5	0	0
+5	268	8	0	4
+6	0	12	10	258
+7	6	28	94	152
+8	210	9	56	5
+XX
+//
+
+AC Exex_SOLEXA_FBgn0041156
+XX
+ID Exex_SOLEXA_FBgn0041156
+XX
+DE Exex
+PO	A	C	G	T
+1	41	0	0	3507
+2	3548	0	0	0
+3	3548	0	0	0
+4	0	0	0	3548
+5	178	595	891	1884
+6	1707	68	1461	312
+XX
+//
+
+AC H2_0_SOLEXA_FBgn0001170
+XX
+ID H2_0_SOLEXA_FBgn0001170
+XX
+DE H2_0
+PO	A	C	G	T
+1	164	28	71	262
+2	58	13	31	423
+3	171	2	20	332
+4	500	16	0	9
+5	23	0	53	449
+6	9	39	99	378
+7	312	10	175	28
+8	165	140	146	74
+XX
+//
+
+AC Hbn_SOLEXA_FBgn0008636
+XX
+ID Hbn_SOLEXA_FBgn0008636
+XX
+DE Hbn
+PO	A	C	G	T
+1	282	381	473	398
+2	222	489	187	636
+3	51	69	115	1299
+4	1461	59	8	6
+5	1483	51	0	0
+6	0	0	212	1322
+7	44	43	250	1197
+8	1013	14	428	79
+XX
+//
+
+AC Lbe_SOLEXA_FBgn0011278
+XX
+ID Lbe_SOLEXA_FBgn0011278
+XX
+DE Lbe
+PO	A	C	G	T
+1	36	92	31	143
+2	14	0	13	275
+3	292	10	0	0
+4	302	0	0	0
+5	0	105	25	172
+6	33	70	81	118
+7	248	12	42	0
+XX
+//
+
+AC Optix_SOLEXA_FBgn0025360
+XX
+ID Optix_SOLEXA_FBgn0025360
+XX
+DE Optix
+PO	A	C	G	T
+1	204	91	126	143
+2	183	111	119	151
+3	139	93	216	116
+4	0	67	0	497
+5	0	0	564	0
+6	564	0	0	0
+7	0	0	0	564
+8	504	43	17	0
+XX
+//
+
+AC Otp_SOLEXA_FBgn0015524
+XX
+ID Otp_SOLEXA_FBgn0015524
+XX
+DE Otp
+PO	A	C	G	T
+1	70	198	52	246
+2	7	2	4	553
+3	551	6	5	4
+4	551	11	4	0
+5	4	6	6	550
+6	20	25	60	461
+7	370	2	179	15
+XX
+//
+
+AC PhdP_SOLEXA_FBgn0025334
+XX
+ID PhdP_SOLEXA_FBgn0025334
+XX
+DE PhdP
+PO	A	C	G	T
+1	101	227	67	365
+2	17	0	0	743
+3	745	0	0	15
+4	760	0	0	0
+5	0	0	0	760
+6	37	20	52	651
+XX
+//
+
+AC Pph13_SOLEXA_FBgn0023489
+XX
+ID Pph13_SOLEXA_FBgn0023489
+XX
+DE Pph13
+PO	A	C	G	T
+1	59	179	26	234
+2	3	3	3	489
+3	495	1	0	2
+4	495	1	0	2
+5	0	2	3	493
+6	15	11	23	449
+7	297	15	154	32
+XX
+//
+
+AC Ptx1_SOLEXA_FBgn0020912
+XX
+ID Ptx1_SOLEXA_FBgn0020912
+XX
+DE Ptx1
+PO	A	C	G	T
+1	71	87	139	65
+2	52	110	14	186
+3	3	11	0	348
+4	359	0	3	0
+5	352	4	6	0
+6	0	4	3	355
+7	0	361	0	1
+8	4	329	6	23
+XX
+//
+
+AC Tup_SOLEXA_FBgn0003896
+XX
+ID Tup_SOLEXA_FBgn0003896
+XX
+DE Tup
+PO	A	C	G	T
+1	31	141	18	191
+2	11	0	0	370
+3	381	0	0	0
+4	381	0	0	0
+5	0	0	36	345
+6	13	0	164	204
+7	128	7	227	19
+XX
+//
+
+AC Vis_SOLEXA_FBgn0033748
+XX
+ID Vis_SOLEXA_FBgn0033748
+XX
+DE Vis
+PO	A	C	G	T
+1	68	53	34	199
+2	0	0	0	354
+3	0	0	341	13
+4	354	0	0	0
+5	0	354	0	0
+6	318	0	36	0
+XX
+//
+
+AC CG13424_SOLEXA_FBgn0034520
+XX
+ID CG13424_SOLEXA_FBgn0034520
+XX
+DE CG13424
+PO	A	C	G	T
+1	25	75	20	164
+2	0	0	0	284
+3	284	0	0	0
+4	284	0	0	0
+5	0	0	0	284
+6	30	0	58	196
+7	144	0	140	0
+XX
+//
+
+AC CG15696_SOLEXA_FBgn0038833
+XX
+ID CG15696_SOLEXA_FBgn0038833
+XX
+DE CG15696
+PO	A	C	G	T
+1	108	125	115	204
+2	74	103	56	319
+3	70	10	11	461
+4	354	0	71	127
+5	549	0	3	0
+6	0	2	11	539
+7	1	1	11	539
+8	233	0	318	1
+XX
+//
+
+AC CG4136_SOLEXA_FBgn0029775
+XX
+ID CG4136_SOLEXA_FBgn0029775
+XX
+DE CG4136
+PO	A	C	G	T
+1	100	178	71	284
+2	12	2	3	616
+3	620	4	7	2
+4	632	1	0	0
+5	0	0	11	622
+6	33	14	70	516
+7	376	8	218	31
+XX
+//
+
+AC CG4328_SOLEXA_FBgn0036274
+XX
+ID CG4328_SOLEXA_FBgn0036274
+XX
+DE CG4328
+PO	A	C	G	T
+1	289	212	182	362
+2	222	158	177	488
+3	217	3	8	817
+4	576	0	40	429
+5	1043	2	0	0
+6	4	0	16	1025
+7	0	5	153	887
+8	715	1	324	5
+XX
+//
+
+AC CG9876_SOLEXA_FBgn0034821
+XX
+ID CG9876_SOLEXA_FBgn0034821
+XX
+DE CG9876
+PO	A	C	G	T
+1	53	91	21	144
+2	4	2	0	303
+3	305	4	0	0
+4	309	0	0	0
+5	0	0	0	309
+6	5	0	15	289
+7	182	7	108	12
+XX
+//
+
+AC dsf_SANGER_5_FBgn0015381
+XX
+ID dsf_SANGER_5_FBgn0015381
+XX
+DE dsf
+PO	A	C	G	T
+1	18	1	2	2
+2	18	0	4	1
+3	23	0	0	0
+4	22	0	0	1
+5	0	0	23	0
+6	0	0	0	23
+7	0	21	0	2
+8	22	0	1	0
+9	11	4	3	5
+10	11	8	0	4
+XX
+//
+
+AC EcR_SANGER_5_FBgn0000546
+XX
+ID EcR_SANGER_5_FBgn0000546
+XX
+DE EcR
+PO	A	C	G	T
+1	9	0	0	5
+2	0	0	0	14
+3	0	0	14	0
+4	14	0	0	0
+5	0	13	1	0
+6	0	14	0	0
+7	0	2	0	12
+8	0	7	0	7
+XX
+//
+
+AC eg_SANGER_5_FBgn0000560
+XX
+ID eg_SANGER_5_FBgn0000560
+XX
+DE eg
+PO	A	C	G	T
+1	9	1	7	0
+2	12	1	1	3
+3	17	0	0	0
+4	16	0	0	1
+5	3	4	4	6
+6	0	1	1	15
+7	17	0	0	0
+8	0	0	17	0
+9	10	0	7	0
+10	0	1	14	2
+11	0	17	0	0
+12	15	0	2	0
+13	6	7	4	0
+XX
+//
+
+AC Eip78C_SANGER_5_FBgn0004865
+XX
+ID Eip78C_SANGER_5_FBgn0004865
+XX
+DE Eip78C
+PO	A	C	G	T
+1	16	0	6	0
+2	0	1	21	0
+3	0	0	22	0
+4	0	0	1	21
+5	0	22	0	0
+6	20	0	2	0
+XX
+//
+
+AC ERR_SANGER_5_FBgn0035849
+XX
+ID ERR_SANGER_5_FBgn0035849
+XX
+DE ERR
+PO	A	C	G	T
+1	7	14	3	0
+2	23	0	0	1
+3	24	0	0	0
+4	0	0	24	0
+5	0	0	24	0
+6	0	0	2	22
+7	0	21	0	3
+8	22	0	2	0
+XX
+//
+
+AC Hnf4_SANGER_10_FBgn0004914
+XX
+ID Hnf4_SANGER_10_FBgn0004914
+XX
+DE Hnf4
+PO	A	C	G	T
+1	0	0	0	19
+2	0	0	19	0
+3	18	0	1	0
+4	2	17	0	0
+5	0	19	0	0
+6	0	18	0	1
+7	0	17	0	2
+8	5	4	6	4
+9	2	9	6	2
+10	3	10	6	0
+11	8	2	2	7
+12	12	4	3	0
+13	6	6	4	3
+14	12	5	1	1
+15	9	4	0	6
+XX
+//
+
+AC Hr4_SANGER_5_FBgn0023546
+XX
+ID Hr4_SANGER_5_FBgn0023546
+XX
+DE Hr4
+PO	A	C	G	T
+1	16	0	1	0
+2	17	0	0	0
+3	1	0	16	0
+4	0	0	17	0
+5	0	0	0	17
+6	0	17	0	0
+7	16	1	0	0
+XX
+//
+
+AC Hr46_SANGER_5_FBgn0000448
+XX
+ID Hr46_SANGER_5_FBgn0000448
+XX
+DE Hr46
+PO	A	C	G	T
+1	0	4	0	17
+2	1	0	20	0
+3	18	0	0	3
+4	0	20	1	0
+5	0	21	0	0
+6	0	5	0	16
+7	12	3	4	2
+8	4	6	5	6
+9	9	0	0	12
+10	4	1	5	11
+XX
+//
+
+AC Hr78_SANGER_5_FBgn0015239
+XX
+ID Hr78_SANGER_5_FBgn0015239
+XX
+DE Hr78
+PO	A	C	G	T
+1	10	3	1	5
+2	7	3	8	1
+3	15	1	3	0
+4	0	0	19	0
+5	0	0	19	0
+6	0	1	0	18
+7	0	19	0	0
+8	19	0	0	0
+XX
+//
+
+AC Hr83_SANGER_5_FBgn0037436
+XX
+ID Hr83_SANGER_5_FBgn0037436
+XX
+DE Hr83
+PO	A	C	G	T
+1	11	2	5	0
+2	16	1	1	0
+3	15	0	3	0
+4	2	0	16	0
+5	0	0	0	18
+6	0	18	0	0
+7	18	0	0	0
+8	5	7	3	3
+9	8	5	2	3
+10	5	6	7	0
+11	4	2	2	10
+12	8	3	5	2
+13	0	3	13	2
+14	7	8	0	2
+XX
+//
+
+AC kni_SANGER_5_FBgn0001320
+XX
+ID kni_SANGER_5_FBgn0001320
+XX
+DE kni
+PO	A	C	G	T
+1	13	3	6	0
+2	14	1	1	7
+3	23	0	0	0
+4	21	0	0	2
+5	3	7	8	5
+6	0	2	3	18
+7	17	0	6	0
+8	1	0	22	0
+9	13	1	9	0
+10	3	3	12	5
+11	0	23	0	0
+12	23	0	0	0
+XX
+//
+
+AC svp_SANGER_5_FBgn0003651
+XX
+ID svp_SANGER_5_FBgn0003651
+XX
+DE svp
+PO	A	C	G	T
+1	10	3	1	0
+2	10	0	4	0
+3	0	0	14	0
+4	0	0	14	0
+5	0	0	0	14
+6	0	14	0	0
+7	13	0	1	0
+XX
+//
+
+AC usp_SANGER_5_FBgn0003964
+XX
+ID usp_SANGER_5_FBgn0003964
+XX
+DE usp
+PO	A	C	G	T
+1	11	6	0	4
+2	9	0	12	0
+3	15	0	6	0
+4	0	0	21	0
+5	0	0	21	0
+6	0	0	0	21
+7	0	21	0	0
+8	21	0	0	0
+9	9	7	1	4
+XX
+//
+
+AC bin_SANGER_5_FBgn0045759
+XX
+ID bin_SANGER_5_FBgn0045759
+XX
+DE bin
+PO	A	C	G	T
+1	9	0	10	1
+2	0	0	0	20
+3	20	0	0	0
+4	20	0	0	0
+5	20	0	0	0
+6	0	20	0	0
+7	19	0	0	1
+XX
+//
+
+AC CG16899_SANGER_5_FBgn0037735
+XX
+ID CG16899_SANGER_5_FBgn0037735
+XX
+DE CG16899
+PO	A	C	G	T
+1	6	5	8	0
+2	10	2	8	0
+3	1	2	0	18
+4	21	0	0	0
+5	20	0	0	1
+6	21	0	0	0
+7	0	18	0	3
+8	21	0	0	0
+9	15	2	0	4
+XX
+//
+
+AC fd64A_SANGER_5_FBgn0004895
+XX
+ID fd64A_SANGER_5_FBgn0004895
+XX
+DE fd64A
+PO	A	C	G	T
+1	3	0	4	13
+2	7	5	6	2
+3	4	3	0	13
+4	20	0	0	0
+5	19	1	0	0
+6	20	0	0	0
+7	0	17	0	3
+8	20	0	0	0
+XX
+//
+
+AC foxo_SANGER_10_FBgn0038197
+XX
+ID foxo_SANGER_10_FBgn0038197
+XX
+DE foxo
+PO	A	C	G	T
+1	0	0	0	20
+2	2	0	18	0
+3	0	0	0	20
+4	0	0	4	16
+5	3	0	1	16
+6	12	0	0	8
+7	1	11	0	8
+8	2	3	12	3
+9	11	3	6	0
+XX
+//
+
+AC slp2_SANGER_5_FBgn0004567
+XX
+ID slp2_SANGER_5_FBgn0004567
+XX
+DE slp2
+PO	A	C	G	T
+1	6	0	12	0
+2	0	1	0	17
+3	18	0	0	0
+4	18	0	0	0
+5	18	0	0	0
+6	0	18	0	0
+7	18	0	0	0
+8	11	3	3	1
+XX
+//
+
+AC cic_SANGER_5_FBgn0028386
+XX
+ID cic_SANGER_5_FBgn0028386
+XX
+DE cic
+PO	A	C	G	T
+1	1	10	0	6
+2	0	11	0	7
+3	0	18	0	0
+4	18	0	0	0
+5	0	0	0	18
+6	0	0	0	18
+7	0	10	8	0
+8	18	0	0	0
+XX
+//
+
+AC Sox14_SANGER_10_FBgn0005612
+XX
+ID Sox14_SANGER_10_FBgn0005612
+XX
+DE Sox14
+PO	A	C	G	T
+1	5	9	6	0
+2	1	7	2	10
+3	0	14	2	4
+4	0	16	0	4
+5	4	0	0	16
+6	0	0	0	20
+7	0	0	0	20
+8	0	0	20	0
+9	0	0	0	20
+10	0	11	2	7
+11	1	15	0	4
+XX
+//
+
+AC Sox15_SANGER_5_FBgn0005613
+XX
+ID Sox15_SANGER_5_FBgn0005613
+XX
+DE Sox15
+PO	A	C	G	T
+1	12	1	5	3
+2	13	2	2	4
+3	21	0	0	0
+4	0	21	0	0
+5	21	0	0	0
+6	21	0	0	0
+7	3	0	0	18
+8	6	0	14	1
+XX
+//
+
+AC Atf_2_SANGER_5_FBgn0050420
+XX
+ID Atf_2_SANGER_5_FBgn0050420
+XX
+DE Atf_2
+PO	A	C	G	T
+1	5	0	3	0
+2	0	1	0	7
+3	0	4	4	0
+4	7	0	0	1
+5	1	7	0	0
+6	0	0	8	0
+7	0	0	0	8
+8	0	8	0	0
+9	7	0	1	0
+10	0	0	0	8
+11	2	5	0	1
+XX
+//
+
+AC CrebA_SANGER_5_FBgn0004396
+XX
+ID CrebA_SANGER_5_FBgn0004396
+XX
+DE CrebA
+PO	A	C	G	T
+1	1	3	3	13
+2	0	0	20	0
+3	1	13	0	6
+4	0	14	6	0
+5	20	0	0	0
+6	0	20	0	0
+7	0	0	20	0
+8	0	0	0	20
+9	8	6	6	0
+10	11	0	4	5
+11	3	6	5	6
+12	1	14	2	2
+XX
+//
+
+AC vri_SANGER_5_FBgn0016076
+XX
+ID vri_SANGER_5_FBgn0016076
+XX
+DE vri
+PO	A	C	G	T
+1	12	4	1	0
+2	0	0	0	18
+3	0	0	1	17
+4	18	0	0	0
+5	0	14	0	4
+6	5	0	13	0
+7	0	4	0	14
+8	14	4	0	0
+9	18	0	0	0
+10	0	13	0	5
+11	9	6	0	2
+XX
+//
+
+AC ac_da_SANGER_5_FBgn0000022
+XX
+ID ac_da_SANGER_5_FBgn0000022
+XX
+DE ac
+PO	A	C	G	T
+1	10	1	7	1
+2	0	19	0	0
+3	19	0	0	0
+4	0	18	1	0
+5	0	19	0	0
+6	0	0	0	19
+7	0	0	19	0
+8	0	15	0	4
+XX
+//
+
+AC amos_da_SANGER_10_FBgn0003270
+XX
+ID amos_da_SANGER_10_FBgn0003270
+XX
+DE amos
+PO	A	C	G	T
+1	13	1	8	1
+2	7	13	0	3
+3	0	23	0	0
+4	23	0	0	0
+5	0	7	1	15
+6	7	16	0	0
+7	0	0	0	23
+8	0	0	23	0
+9	2	9	6	6
+10	2	13	3	5
+11	6	7	10	0
+XX
+//
+
+AC ase_da_SANGER_10_FBgn0000137
+XX
+ID ase_da_SANGER_10_FBgn0000137
+XX
+DE ase
+PO	A	C	G	T
+1	0	22	1	0
+2	23	0	0	0
+3	0	19	1	3
+4	0	23	0	0
+5	0	0	0	23
+6	0	0	23	0
+7	0	17	0	6
+XX
+//
+
+AC ato_da_SANGER_10_FBgn0010433
+XX
+ID ato_da_SANGER_10_FBgn0010433
+XX
+DE ato
+PO	A	C	G	T
+1	8	11	4	0
+2	0	23	0	0
+3	23	0	0	0
+4	0	14	1	8
+5	8	15	0	0
+6	0	0	0	23
+7	0	0	23	0
+8	7	3	3	10
+9	0	19	0	4
+10	11	3	7	2
+11	3	13	2	5
+XX
+//
+
+AC cato_da_SANGER_10_FBgn0024249
+XX
+ID cato_da_SANGER_10_FBgn0024249
+XX
+DE cato
+PO	A	C	G	T
+1	9	11	1	2
+2	11	5	7	0
+3	0	23	0	0
+4	22	0	1	0
+5	2	6	10	5
+6	7	15	1	0
+7	1	0	0	22
+8	0	0	23	0
+9	12	2	3	6
+10	0	19	0	4
+XX
+//
+
+AC CG33557_da_SANGER_5_FBgn0053557
+XX
+ID CG33557_da_SANGER_5_FBgn0053557
+XX
+DE CG33557
+PO	A	C	G	T
+1	7	13	3	0
+2	0	23	0	0
+3	19	1	3	0
+4	0	7	12	4
+5	17	6	0	0
+6	0	1	1	21
+7	2	0	18	3
+8	1	3	11	8
+9	5	9	3	6
+10	11	4	8	0
+11	7	10	0	6
+12	6	6	8	3
+13	7	6	8	2
+14	11	10	0	2
+15	5	8	6	4
+16	15	4	0	4
+17	4	9	3	7
+18	10	4	2	7
+19	11	5	4	3
+20	8	9	2	2
+21	14	2	0	1
+XX
+//
+
+AC Clk_cyc_SANGER_5_FBgn0023076
+XX
+ID Clk_cyc_SANGER_5_FBgn0023076
+XX
+DE Clk
+PO	A	C	G	T
+1	10	10	0	0
+2	0	20	0	0
+3	18	0	0	2
+4	0	20	0	0
+5	0	0	20	0
+6	0	0	0	20
+7	0	0	20	0
+8	11	3	5	1
+XX
+//
+
+AC dei_da_SANGER_5_FBgn0008649
+XX
+ID dei_da_SANGER_5_FBgn0008649
+XX
+DE dei
+PO	A	C	G	T
+1	13	4	0	0
+2	7	10	0	0
+3	0	17	0	0
+4	17	0	0	0
+5	0	9	0	8
+6	6	11	0	0
+7	0	0	0	17
+8	0	0	17	0
+9	1	0	5	11
+10	5	4	0	8
+XX
+//
+
+AC dimm_da_SANGER_5_FBgn0023091
+XX
+ID dimm_da_SANGER_5_FBgn0023091
+XX
+DE dimm
+PO	A	C	G	T
+1	1	14	0	4
+2	8	1	10	0
+3	3	15	1	0
+4	0	19	0	0
+5	19	0	0	0
+6	0	0	1	18
+7	19	0	0	0
+8	0	0	0	19
+9	0	0	19	0
+10	0	0	15	4
+11	6	0	4	9
+XX
+//
+
+AC dm_Max_SANGER_10_FBgn0000472
+XX
+ID dm_Max_SANGER_10_FBgn0000472
+XX
+DE dm
+PO	A	C	G	T
+1	9	1	12	2
+2	9	8	4	3
+3	0	24	0	0
+4	24	0	0	0
+5	0	24	0	0
+6	1	0	23	0
+7	0	0	0	24
+8	0	0	24	0
+9	1	3	20	0
+10	5	1	5	13
+XX
+//
+
+AC dys_tgo_SANGER_5_FBgn0039411
+XX
+ID dys_tgo_SANGER_5_FBgn0039411
+XX
+DE dys
+PO	A	C	G	T
+1	15	1	4	3
+2	6	1	16	0
+3	0	1	1	21
+4	0	23	0	0
+5	23	0	0	0
+6	0	23	0	0
+7	0	0	23	0
+8	23	0	0	0
+9	6	8	0	9
+10	4	5	0	14
+11	2	7	2	12
+XX
+//
+
+AC Fer3_da_SANGER_5_FBgn0037937
+XX
+ID Fer3_da_SANGER_5_FBgn0037937
+XX
+DE Fer3
+PO	A	C	G	T
+1	2	17	0	0
+2	18	0	1	0
+3	1	5	8	5
+4	3	15	1	0
+5	0	1	0	18
+6	0	0	19	0
+7	3	2	0	14
+8	0	7	4	8
+9	11	4	2	2
+10	3	15	0	1
+XX
+//
+
+AC HLH54F_da_SANGER_5_FBgn0022740
+XX
+ID HLH54F_da_SANGER_5_FBgn0022740
+XX
+DE HLH54F
+PO	A	C	G	T
+1	12	10	1	1
+2	12	10	2	0
+3	0	23	0	1
+4	24	0	0	0
+5	0	24	0	0
+6	0	23	0	1
+7	0	1	2	21
+8	0	0	24	0
+9	0	10	1	13
+10	0	6	3	14
+11	7	7	9	0
+XX
+//
+
+AC l_1_sc_da_SANGER_5_FBgn0002561
+XX
+ID l_1_sc_da_SANGER_5_FBgn0002561
+XX
+DE l_1_sc
+PO	A	C	G	T
+1	4	0	19	0
+2	0	23	0	0
+3	21	0	1	1
+4	1	0	22	0
+5	0	0	22	1
+6	0	0	0	23
+7	1	0	22	0
+XX
+//
+
+AC net_da_SANGER_10_FBgn0002931
+XX
+ID net_da_SANGER_10_FBgn0002931
+XX
+DE net
+PO	A	C	G	T
+1	10	4	7	1
+2	6	13	3	0
+3	0	22	0	0
+4	22	0	0	0
+5	0	14	2	6
+6	0	22	0	0
+7	0	1	0	21
+8	0	0	22	0
+9	1	4	7	10
+XX
+//
+
+AC sage_da_SANGER_5_FBgn0037672
+XX
+ID sage_da_SANGER_5_FBgn0037672
+XX
+DE sage
+PO	A	C	G	T
+1	12	0	6	5
+2	17	3	3	0
+3	21	2	0	0
+4	16	6	1	0
+5	0	23	0	0
+6	23	0	0	0
+7	0	10	9	4
+8	5	18	0	0
+9	1	1	0	21
+10	0	0	23	0
+11	0	5	2	15
+XX
+//
+
+AC sc_da_SANGER_10_FBgn0004170
+XX
+ID sc_da_SANGER_10_FBgn0004170
+XX
+DE sc
+PO	A	C	G	T
+1	11	5	7	0
+2	0	23	0	0
+3	24	0	0	0
+4	0	21	1	2
+5	0	24	0	0
+6	0	0	0	24
+7	0	0	24	0
+8	0	16	1	7
+XX
+//
+
+AC tgo_ss_SANGER_5_FBgn0015014
+XX
+ID tgo_ss_SANGER_5_FBgn0015014
+XX
+DE tgo
+PO	A	C	G	T
+1	0	1	0	9
+2	0	0	10	0
+3	0	9	0	1
+4	0	1	9	0
+5	0	0	0	10
+6	0	0	10	0
+7	10	0	0	0
+8	0	8	0	2
+XX
+//
+
+AC ss_tgo_SANGER_10_FBgn0003513
+XX
+ID ss_tgo_SANGER_10_FBgn0003513
+XX
+DE ss
+PO	A	C	G	T
+1	3	0	10	0
+2	0	0	0	13
+3	0	13	0	0
+4	13	0	0	0
+5	0	13	0	0
+6	0	0	13	0
+7	0	13	0	0
+8	10	0	3	0
+9	13	0	0	0
+10	2	2	1	8
+11	0	5	8	0
+XX
+//
+
+AC tap_da_SANGER_5_FBgn0015550
+XX
+ID tap_da_SANGER_5_FBgn0015550
+XX
+DE tap
+PO	A	C	G	T
+1	6	0	11	0
+2	0	4	3	10
+3	7	0	10	0
+4	12	3	2	0
+5	0	17	0	0
+6	17	0	0	0
+7	0	0	6	11
+8	12	3	2	0
+9	0	0	0	17
+10	0	0	15	0
+11	0	2	8	5
+XX
+//
+
+AC twi_da_SANGER_5_FBgn0003900
+XX
+ID twi_da_SANGER_5_FBgn0003900
+XX
+DE twi
+PO	A	C	G	T
+1	12	4	7	0
+2	1	19	2	1
+3	0	22	0	1
+4	23	0	0	0
+5	0	3	16	4
+6	22	0	1	0
+7	0	0	0	23
+8	0	1	22	0
+9	0	2	4	17
+10	0	7	7	8
+XX
+//
+
+AC crp_SANGER_10_FBgn0001994
+XX
+ID crp_SANGER_10_FBgn0001994
+XX
+DE crp
+PO	A	C	G	T
+1	7	3	7	0
+2	12	2	1	3
+3	7	7	1	3
+4	0	18	0	0
+5	18	0	0	0
+6	0	0	15	3
+7	4	14	0	0
+8	0	0	0	18
+9	0	0	18	0
+10	16	0	2	0
+11	0	7	1	10
+XX
+//
+
+AC cwo_SANGER_5_FBgn0259938
+XX
+ID cwo_SANGER_5_FBgn0259938
+XX
+DE cwo
+PO	A	C	G	T
+1	5	0	5	0
+2	1	0	0	9
+3	0	10	0	0
+4	9	0	0	1
+5	0	10	0	0
+6	0	0	9	1
+7	0	0	0	10
+8	0	1	9	0
+9	10	0	0	0
+10	0	10	0	0
+11	0	8	1	1
+12	7	1	2	0
+XX
+//
+
+AC da_SANGER_10_FBgn0000413
+XX
+ID da_SANGER_10_FBgn0000413
+XX
+DE da
+PO	A	C	G	T
+1	3	10	1	9
+2	6	0	17	0
+3	0	23	0	0
+4	23	0	0	0
+5	0	8	15	0
+6	0	3	20	0
+7	0	0	0	23
+8	0	0	23	0
+9	0	4	4	15
+10	1	8	12	2
+11	2	14	0	7
+XX
+//
+
+AC dpn_SANGER_10_FBgn0010109
+XX
+ID dpn_SANGER_10_FBgn0010109
+XX
+DE dpn
+PO	A	C	G	T
+1	2	0	17	0
+2	4	1	13	2
+3	0	20	0	0
+4	14	0	6	0
+5	0	20	0	0
+6	0	0	20	0
+7	0	0	0	20
+8	0	0	20	0
+9	0	14	6	0
+10	0	20	0	0
+11	10	3	7	0
+XX
+//
+
+AC E_spl_SANGER_5_FBgn0000591
+XX
+ID E_spl_SANGER_5_FBgn0000591
+XX
+DE E_spl
+PO	A	C	G	T
+1	2	1	11	0
+2	0	14	0	0
+3	14	0	1	0
+4	0	15	0	0
+5	0	0	15	0
+6	1	2	0	12
+7	0	0	15	0
+8	1	11	1	2
+9	0	14	0	1
+10	11	0	4	0
+XX
+//
+
+AC Fer1_SANGER_5_FBgn0037475
+XX
+ID Fer1_SANGER_5_FBgn0037475
+XX
+DE Fer1
+PO	A	C	G	T
+1	9	2	1	5
+2	1	11	2	3
+3	6	2	8	1
+4	7	6	0	4
+5	0	17	0	0
+6	17	0	0	0
+7	0	3	14	0
+8	0	16	1	0
+9	0	0	0	17
+10	0	0	17	0
+11	17	0	0	0
+12	0	16	0	1
+13	1	0	15	1
+XX
+//
+
+AC h_SANGER_5_FBgn0001168
+XX
+ID h_SANGER_5_FBgn0001168
+XX
+DE h
+PO	A	C	G	T
+1	0	0	18	0
+2	3	7	8	0
+3	0	18	0	0
+4	18	0	0	0
+5	0	18	0	0
+6	0	0	18	0
+7	0	13	0	5
+8	0	0	18	0
+9	9	9	0	0
+10	0	17	0	0
+XX
+//
+
+AC Hey_SANGER_5_FBgn0027788
+XX
+ID Hey_SANGER_5_FBgn0027788
+XX
+DE Hey
+PO	A	C	G	T
+1	0	7	0	3
+2	4	4	0	2
+3	3	1	4	2
+4	0	6	4	0
+5	0	7	0	3
+6	0	1	8	1
+7	7	0	3	0
+8	0	10	0	0
+9	9	0	0	1
+10	0	10	0	0
+11	0	0	10	0
+12	0	0	0	10
+13	0	0	10	0
+14	3	4	0	3
+15	2	8	0	0
+16	3	4	3	0
+17	3	7	0	0
+XX
+//
+
+AC HLH106_SANGER_10_FBgn0261283
+XX
+ID HLH106_SANGER_10_FBgn0261283
+XX
+DE HLH106
+PO	A	C	G	T
+1	22	0	13	0
+2	4	0	0	31
+3	0	35	0	0
+4	35	0	0	0
+5	0	30	2	3
+6	1	0	34	0
+7	0	20	0	15
+8	0	14	20	1
+9	34	0	1	0
+10	0	23	2	10
+XX
+//
+
+AC HLH4C_SANGER_5_FBgn0011277
+XX
+ID HLH4C_SANGER_5_FBgn0011277
+XX
+DE HLH4C
+PO	A	C	G	T
+1	4	0	4	0
+2	3	1	4	0
+3	1	7	0	0
+4	0	0	7	1
+5	0	8	0	0
+6	8	0	0	0
+7	0	1	7	0
+8	0	8	0	0
+9	0	0	0	8
+10	0	0	8	0
+11	4	0	4	0
+12	0	0	4	4
+13	1	2	5	0
+14	0	8	0	0
+15	1	5	0	2
+XX
+//
+
+AC HLHm3_SANGER_5_FBgn0002609
+XX
+ID HLHm3_SANGER_5_FBgn0002609
+XX
+DE HLHm3
+PO	A	C	G	T
+1	0	18	0	0
+2	21	0	1	0
+3	0	22	0	0
+4	1	0	21	0
+5	1	3	0	18
+6	0	0	22	0
+7	3	14	3	2
+8	0	18	0	4
+9	15	4	1	2
+XX
+//
+
+AC HLHm5_SANGER_5_FBgn0002631
+XX
+ID HLHm5_SANGER_5_FBgn0002631
+XX
+DE HLHm5
+PO	A	C	G	T
+1	6	3	9	0
+2	4	2	13	0
+3	0	19	0	0
+4	16	0	2	1
+5	0	19	0	0
+6	0	0	19	0
+7	0	0	0	19
+8	0	0	19	0
+9	0	19	0	0
+10	0	18	0	1
+11	19	0	0	0
+XX
+//
+
+AC HLHm7_SANGER_5_FBgn0002633
+XX
+ID HLHm7_SANGER_5_FBgn0002633
+XX
+DE HLHm7
+PO	A	C	G	T
+1	0	1	16	1
+2	0	18	0	0
+3	18	0	1	0
+4	0	19	0	0
+5	0	0	19	0
+6	2	0	0	17
+7	0	0	19	0
+8	0	17	1	1
+9	0	18	1	0
+10	17	1	1	0
+11	12	5	2	0
+XX
+//
+
+AC HLHmbeta_SANGER_10_FBgn0002733
+XX
+ID HLHmbeta_SANGER_10_FBgn0002733
+XX
+DE HLHmbeta
+PO	A	C	G	T
+1	0	13	0	1
+2	7	0	9	0
+3	0	16	0	0
+4	0	0	16	0
+5	0	0	0	16
+6	0	0	16	0
+7	1	13	2	0
+8	0	12	1	2
+XX
+//
+
+AC HLHmdelta_SANGER_10_FBgn0002734
+XX
+ID HLHmdelta_SANGER_10_FBgn0002734
+XX
+DE HLHmdelta
+PO	A	C	G	T
+1	4	1	2	16
+2	2	0	21	0
+3	5	1	13	4
+4	0	23	0	0
+5	18	0	3	2
+6	0	22	0	1
+7	0	0	23	0
+8	0	6	0	17
+9	0	0	22	0
+XX
+//
+
+AC HLHmgamma_SANGER_10_FBgn0002735
+XX
+ID HLHmgamma_SANGER_10_FBgn0002735
+XX
+DE HLHmgamma
+PO	A	C	G	T
+1	1	6	14	0
+2	0	21	0	0
+3	22	0	2	0
+4	0	24	0	0
+5	0	0	24	0
+6	1	5	0	18
+7	0	0	24	0
+8	2	20	0	2
+9	0	22	0	2
+10	16	0	4	3
+XX
+//
+
+AC nau_SANGER_5_FBgn0002922
+XX
+ID nau_SANGER_5_FBgn0002922
+XX
+DE nau
+PO	A	C	G	T
+1	13	0	5	0
+2	16	1	1	0
+3	0	17	0	1
+4	18	0	0	0
+5	1	4	12	1
+6	0	15	3	0
+7	0	1	0	17
+8	0	0	18	0
+9	17	0	0	1
+10	0	18	0	0
+11	3	0	13	2
+12	1	12	0	1
+XX
+//
+
+AC Side_SANGER_5_FBgn0032741
+XX
+ID Side_SANGER_5_FBgn0032741
+XX
+DE Side
+PO	A	C	G	T
+1	12	0	6	5
+2	17	3	3	0
+3	21	2	0	0
+4	16	6	1	0
+5	0	23	0	0
+6	23	0	0	0
+7	0	10	9	4
+8	5	18	0	0
+9	1	1	0	21
+10	0	0	23	0
+11	0	5	2	15
+XX
+//
+
+AC acj6_SOLEXA_5_FBgn0000028
+XX
+ID acj6_SOLEXA_5_FBgn0000028
+XX
+DE acj6
+PO	A	C	G	T
+1	508	633	903	820
+2	498	631	881	930
+3	397	723	977	900
+4	372	710	1019	896
+5	350	900	733	1014
+6	714	706	856	721
+7	278	344	425	1950
+8	129	44	2526	298
+9	1400	1447	93	57
+10	2667	91	52	187
+11	43	13	32	2909
+12	1240	256	474	1027
+13	909	525	459	1104
+14	583	483	514	1417
+15	484	274	349	1890
+16	1461	195	597	744
+17	2321	99	301	276
+18	362	257	622	1756
+19	418	395	1257	927
+20	970	498	871	537
+21	425	462	1002	432
+XX
+//
+
+AC ey_SOLEXA_5_FBgn0005558
+XX
+ID ey_SOLEXA_5_FBgn0005558
+XX
+DE ey
+PO	A	C	G	T
+1	18	167	34	137
+2	223	46	152	200
+3	19	242	83	298
+4	23	174	263	182
+5	21	27	444	150
+6	57	12	63	509
+7	47	25	567	3
+8	20	165	20	437
+9	1	131	379	131
+10	13	537	3	89
+11	407	2	231	2
+12	33	99	173	336
+13	1	59	14	565
+14	8	282	337	15
+15	322	0	300	18
+16	217	34	197	192
+17	8	66	545	21
+18	7	304	11	317
+19	28	5	592	15
+20	27	13	151	445
+21	227	10	357	38
+22	462	71	45	57
+23	359	52	166	61
+24	184	93	200	158
+25	122	112	242	160
+XX
+//
+
+AC gsb_n_SOLEXA_5_FBgn0001147
+XX
+ID gsb_n_SOLEXA_5_FBgn0001147
+XX
+DE gsb_n
+PO	A	C	G	T
+1	415	827	587	529
+2	573	605	400	966
+3	1119	515	616	395
+4	425	446	1108	666
+5	949	150	824	722
+6	34	914	1657	40
+7	5	2359	7	272
+8	70	7	2553	14
+9	25	67	225	2328
+10	612	24	1901	108
+11	1737	49	376	483
+12	171	2353	7	114
+13	285	329	818	1213
+14	1556	71	494	232
+15	1482	131	229	187
+XX
+//
+
+AC gsb_SOLEXA_5_FBgn0001148
+XX
+ID gsb_SOLEXA_5_FBgn0001148
+XX
+DE gsb
+PO	A	C	G	T
+1	534	456	518	692
+2	294	492	824	1073
+3	594	396	844	960
+4	771	229	1240	554
+5	1183	76	1004	531
+6	7	862	1918	7
+7	1	2676	1	115
+8	69	0	2721	3
+9	8	5	156	2625
+10	290	2	2496	6
+11	2508	14	79	193
+12	51	2737	0	6
+13	144	209	1651	790
+14	1251	153	1088	207
+15	1334	231	735	331
+XX
+//
+
+AC pdm2_SOLEXA_5_FBgn0004394
+XX
+ID pdm2_SOLEXA_5_FBgn0004394
+XX
+DE pdm2
+PO	A	C	G	T
+1	314	457	83	1521
+2	2378	20	42	54
+3	15	72	29	2491
+4	4	3	2358	242
+5	74	2251	61	221
+6	2159	8	13	427
+7	1961	39	201	406
+8	2496	20	85	6
+9	358	268	173	1808
+10	377	708	535	882
+11	1114	440	574	359
+XX
+//
+
+AC pdm3_SOLEXA_5_FBgn0033288
+XX
+ID pdm3_SOLEXA_5_FBgn0033288
+XX
+DE pdm3
+PO	A	C	G	T
+1	383	673	631	966
+2	136	11	0	2506
+3	2635	0	11	7
+4	2643	10	0	0
+5	5	0	112	2536
+6	161	250	886	1356
+7	1393	364	541	355
+8	218	455	1559	421
+9	323	621	1078	631
+10	465	552	538	1098
+11	687	493	716	757
+12	493	462	926	772
+13	297	551	934	871
+14	282	600	730	1041
+15	644	493	643	873
+16	361	564	972	756
+17	512	558	815	768
+18	517	628	764	744
+19	450	581	802	820
+20	347	543	1076	687
+21	411	611	951	680
+22	506	600	826	721
+23	447	555	920	731
+24	426	555	971	701
+25	490	570	838	746
+XX
+//
+
+AC Poxm_SOLEXA_5_FBgn0003129
+XX
+ID Poxm_SOLEXA_5_FBgn0003129
+XX
+DE Poxm
+PO	A	C	G	T
+1	280	248	123	1915
+2	88	1929	81	468
+3	2186	158	83	139
+4	8	1563	45	950
+5	53	22	2491	0
+6	19	1166	1371	10
+7	341	381	475	1369
+8	245	624	327	1370
+9	352	566	1103	545
+10	950	281	840	495
+11	468	554	704	840
+12	215	368	635	1348
+13	259	296	1278	733
+14	475	835	698	558
+15	588	558	554	866
+16	366	570	653	977
+17	524	541	608	893
+18	412	678	637	783
+19	406	499	854	713
+XX
+//
+
+AC Poxn_SOLEXA_5_FBgn0003130
+XX
+ID Poxn_SOLEXA_5_FBgn0003130
+XX
+DE Poxn
+PO	A	C	G	T
+1	73	1722	175	164
+2	4	1	2036	130
+3	132	25	0	2798
+4	0	2436	0	519
+5	2698	257	0	0
+6	0	2893	0	62
+7	61	0	2894	0
+8	0	1749	1206	0
+9	234	942	113	1666
+XX
+//
+
+AC prd_SOLEXA_5_FBgn0003145
+XX
+ID prd_SOLEXA_5_FBgn0003145
+XX
+DE prd
+PO	A	C	G	T
+1	704	760	354	866
+2	603	1198	196	796
+3	415	1794	380	289
+4	9	0	2702	167
+5	309	115	7	2447
+6	12	2528	7	331
+7	2766	96	4	12
+8	0	2826	0	52
+9	117	0	2761	0
+10	25	1900	953	0
+11	448	886	172	1372
+12	576	1116	412	774
+13	753	989	609	527
+14	928	717	516	322
+XX
+//
+
+AC sv_SOLEXA_5_FBgn0005561
+XX
+ID sv_SOLEXA_5_FBgn0005561
+XX
+DE sv
+PO	A	C	G	T
+1	546	130	259	96
+2	370	588	609	828
+3	25	756	58	1954
+4	219	1164	1281	129
+5	1175	25	1382	211
+6	802	209	671	1111
+7	10	787	1979	17
+8	0	2379	11	403
+9	289	0	2484	20
+10	76	85	333	2299
+11	931	28	1752	82
+12	2189	68	184	352
+13	447	2169	79	98
+14	387	394	1583	357
+15	323	490	1024	733
+XX
+//
+
+AC vvl_SOLEXA_5_FBgn0086680
+XX
+ID vvl_SOLEXA_5_FBgn0086680
+XX
+DE vvl
+PO	A	C	G	T
+1	912	234	338	1218
+2	987	321	131	1410
+3	2943	0	0	0
+4	47	23	0	2873
+5	102	1	1644	1196
+6	658	2095	56	134
+7	1868	253	570	252
+8	1008	631	585	719
+9	1378	532	619	414
+10	860	830	512	741
+11	898	825	687	533
+12	947	902	644	450
+13	841	912	744	446
+14	886	869	689	397
+15	726	772	553	420
+XX
+//
+
+AC CG12361_SOLEXA_2_FBgn0250756
+XX
+ID CG12361_SOLEXA_2_FBgn0250756
+XX
+DE CG12361
+PO	A	C	G	T
+1	339	296	263	588
+2	283	142	180	954
+3	0	0	0	1692
+4	870	13	183	626
+5	1692	0	0	0
+6	0	0	0	1692
+7	0	0	635	1057
+8	1122	0	570	0
+9	201	289	363	193
+XX
+//
+
+AC CG33980_SOLEXA_2_0_FBgn0053980
+XX
+ID CG33980_SOLEXA_2_0_FBgn0053980
+XX
+DE CG33980
+PO	A	C	G	T
+1	46	82	60	74
+2	53	63	53	104
+3	0	0	0	286
+4	286	0	0	0
+5	286	0	0	0
+6	0	0	0	286
+7	0	0	13	273
+8	152	0	134	0
+9	95	20	145	8
+10	55	82	32	80
+XX
+//
+
+AC lim_SOLEXA_2_FBgn0026411
+XX
+ID lim_SOLEXA_2_FBgn0026411
+XX
+DE lim
+PO	A	C	G	T
+1	218	285	400	188
+2	281	296	109	611
+3	61	1	0	1339
+4	1361	0	40	0
+5	1401	0	0	0
+6	0	0	0	1401
+7	61	33	149	1158
+8	852	58	448	43
+9	398	369	373	130
+XX
+//
+
+AC hth_SOLEXA_2_FBgn0001235
+XX
+ID hth_SOLEXA_2_FBgn0001235
+XX
+DE hth
+PO	A	C	G	T
+1	572	586	589	951
+2	618	459	527	1115
+3	50	69	25	2585
+4	0	0	2681	48
+5	2696	0	33	0
+6	86	2621	0	22
+7	2358	40	291	13
+8	216	172	783	322
+XX
+//
+
+AC ovo_SANGER_5_FBgn0003028
+XX
+ID ovo_SANGER_5_FBgn0003028
+XX
+DE ovo
+PO	A	C	G	T
+1	14	2	2	1
+2	0	0	0	19
+3	19	0	0	0
+4	19	0	0	0
+5	0	19	0	0
+6	0	0	19	0
+7	0	0	19	0
+8	3	1	7	8
+9	17	0	2	0
+10	3	13	0	3
+11	2	4	0	10
+XX
+//
+
+AC ab_SANGER_10_FBgn0259750
+XX
+ID ab_SANGER_10_FBgn0259750
+XX
+DE ab
+PO	A	C	G	T
+1	0	6	8	6
+2	10	3	1	6
+3	4	5	10	1
+4	7	0	13	0
+5	0	20	0	0
+6	0	20	0	0
+7	20	0	0	0
+8	0	0	20	0
+9	0	0	20	0
+10	11	2	0	7
+11	7	13	0	0
+12	1	14	1	4
+13	4	9	1	6
+14	9	5	3	3
+15	4	2	1	13
+16	2	5	4	9
+17	8	5	1	6
+18	8	2	3	7
+19	5	2	11	2
+20	10	5	3	2
+21	6	5	9	0
+XX
+//
+
+AC pho_SANGER_10_FBgn0002521
+XX
+ID pho_SANGER_10_FBgn0002521
+XX
+DE pho
+PO	A	C	G	T
+1	7	11	1	3
+2	17	0	5	0
+3	14	3	1	4
+4	12	2	5	3
+5	22	0	0	0
+6	0	0	0	22
+7	0	0	22	0
+8	0	0	22	0
+9	0	22	0	0
+10	0	3	19	0
+11	3	2	17	0
+12	5	14	2	1
+XX
+//
+
+AC lmd_SANGER_5_FBgn0039039
+XX
+ID lmd_SANGER_5_FBgn0039039
+XX
+DE lmd
+PO	A	C	G	T
+1	2	15	1	3
+2	3	3	7	9
+3	0	4	18	0
+4	0	10	1	11
+5	5	0	16	1
+6	0	0	22	0
+7	0	0	22	0
+8	0	0	22	0
+9	0	0	22	0
+10	2	0	20	0
+11	0	4	5	13
+12	7	11	3	1
+13	2	3	9	8
+14	1	2	8	10
+XX
+//
+
+AC CG5669_SANGER_10_FBgn0039169
+XX
+ID CG5669_SANGER_10_FBgn0039169
+XX
+DE CG5669
+PO	A	C	G	T
+1	9	2	6	6
+2	7	4	11	1
+3	1	1	14	8
+4	1	0	23	0
+5	0	0	24	0
+6	0	0	24	0
+7	2	20	1	1
+8	0	0	24	0
+9	0	0	14	10
+10	3	1	20	0
+11	3	0	21	0
+12	0	18	0	6
+13	4	13	2	5
+14	13	2	3	6
+15	15	7	1	1
+XX
+//
+
+AC sqz_SANGER_5_FBgn0010768
+XX
+ID sqz_SANGER_5_FBgn0010768
+XX
+DE sqz
+PO	A	C	G	T
+1	7	3	8	1
+2	5	9	5	0
+3	4	4	0	11
+4	7	3	3	6
+5	5	7	1	6
+6	14	2	2	1
+7	3	7	1	8
+8	11	4	4	0
+9	16	3	0	0
+10	19	0	0	0
+11	19	0	0	0
+12	19	0	0	0
+13	19	0	0	0
+14	18	0	0	1
+15	19	0	0	0
+16	9	8	1	1
+XX
+//
+
+AC sr_SANGER_5_FBgn0003499
+XX
+ID sr_SANGER_5_FBgn0003499
+XX
+DE sr
+PO	A	C	G	T
+1	4	1	9	5
+2	2	1	5	11
+3	6	1	10	2
+4	0	8	5	6
+5	0	0	19	0
+6	1	0	7	11
+7	0	0	19	0
+8	0	1	18	0
+9	0	0	19	0
+10	2	14	0	3
+11	1	0	16	2
+12	0	1	9	9
+13	1	4	9	5
+14	5	0	8	5
+XX
+//
+
+AC pad_SANGER_5_FBgn0038418
+XX
+ID pad_SANGER_5_FBgn0038418
+XX
+DE pad
+PO	A	C	G	T
+1	8	1	12	3
+2	10	4	8	2
+3	20	3	0	1
+4	0	0	24	0
+5	0	0	24	0
+6	0	0	24	0
+7	0	0	24	0
+8	11	1	0	12
+9	19	0	0	5
+XX
+//
+
+AC phol_SANGER_5_FBgn0035997
+XX
+ID phol_SANGER_5_FBgn0035997
+XX
+DE phol
+PO	A	C	G	T
+1	4	12	0	0
+2	16	0	0	0
+3	16	0	0	0
+4	4	1	6	5
+5	16	0	0	0
+6	0	0	0	16
+7	0	0	16	0
+8	0	0	16	0
+9	0	16	0	0
+10	0	1	15	0
+XX
+//
+
+AC klu_SANGER_10_FBgn0013469
+XX
+ID klu_SANGER_10_FBgn0013469
+XX
+DE klu
+PO	A	C	G	T
+1	2	2	2	12
+2	3	0	16	0
+3	1	10	0	9
+4	0	0	20	0
+5	0	0	7	13
+6	1	0	19	0
+7	0	0	20	0
+8	0	0	20	0
+9	2	0	0	18
+10	0	0	20	0
+11	0	2	11	7
+XX
+//
+
+AC esg_SANGER_2_5_FBgn0001981
+XX
+ID esg_SANGER_2_5_FBgn0001981
+XX
+DE esg
+PO	A	C	G	T
+1	0	11	0	0
+2	11	0	0	0
+3	0	11	0	0
+4	0	10	0	1
+5	0	0	0	11
+6	0	0	11	0
+7	2	2	0	7
+XX
+//
+
+AC sens_2_SANGER_2_5_FBgn0051632
+XX
+ID sens_2_SANGER_2_5_FBgn0051632
+XX
+DE sens_2
+PO	A	C	G	T
+1	7	1	3	0
+2	1	4	0	6
+3	9	1	1	0
+4	11	0	0	0
+5	11	0	0	0
+6	1	0	0	10
+7	0	11	0	0
+8	8	0	0	3
+9	1	7	3	0
+10	5	0	3	3
+11	2	0	9	0
+12	1	9	0	1
+13	8	0	1	2
+14	1	5	1	4
+15	2	3	3	3
+16	1	9	0	1
+XX
+//
+
+AC CG12236_SANGER_10_FBgn0029822
+XX
+ID CG12236_SANGER_10_FBgn0029822
+XX
+DE CG12236
+PO	A	C	G	T
+1	1	3	16	1
+2	2	6	8	5
+3	4	1	10	6
+4	7	1	7	6
+5	2	0	19	0
+6	0	0	0	21
+7	0	0	0	21
+8	0	21	0	0
+9	21	0	0	0
+10	0	2	0	19
+11	0	10	0	11
+12	5	10	5	1
+13	0	5	9	7
+14	3	1	8	9
+XX
+//
+
+AC CG7928_SANGER_10_FBgn0039740
+XX
+ID CG7928_SANGER_10_FBgn0039740
+XX
+DE CG7928
+PO	A	C	G	T
+1	1	13	4	1
+2	19	0	0	0
+3	0	0	19	0
+4	0	0	19	0
+5	0	0	19	0
+6	8	10	0	1
+7	1	2	0	16
+8	4	1	13	1
+9	3	11	5	0
+10	12	6	1	0
+11	5	4	5	5
+12	14	1	2	2
+13	14	4	0	1
+14	7	9	2	1
+15	7	5	2	5
+16	2	11	0	6
+17	3	8	5	3
+18	3	14	0	0
+XX
+//
+
+AC CG7368_SANGER_5_FBgn0036179
+XX
+ID CG7368_SANGER_5_FBgn0036179
+XX
+DE CG7368
+PO	A	C	G	T
+1	0	0	6	2
+2	2	1	3	2
+3	0	0	8	0
+4	0	1	6	1
+5	2	0	5	1
+6	0	0	8	0
+7	0	0	5	3
+8	0	0	7	1
+9	0	0	8	0
+10	0	0	8	0
+11	1	0	7	0
+12	0	0	8	0
+13	1	0	7	0
+14	0	0	8	0
+15	1	1	6	0
+16	6	0	0	2
+17	4	0	0	4
+18	5	0	0	3
+19	4	2	2	0
+20	0	0	2	6
+XX
+//
+
+AC hb_SANGER_2_5_FBgn0001180
+XX
+ID hb_SANGER_2_5_FBgn0001180
+XX
+DE hb
+PO	A	C	G	T
+1	2	0	5	10
+2	0	8	6	3
+3	2	6	6	3
+4	4	0	6	7
+5	0	0	0	17
+6	0	0	0	17
+7	0	0	0	17
+8	0	0	0	17
+9	0	0	0	17
+10	0	0	0	17
+11	15	0	1	1
+12	3	6	2	6
+13	0	2	8	7
+XX
+//
+
+AC jim_SANGER_2_5_FBgn0027339
+XX
+ID jim_SANGER_2_5_FBgn0027339
+XX
+DE jim
+PO	A	C	G	T
+1	12	0	0	0
+2	12	0	0	0
+3	11	1	0	0
+4	11	1	0	0
+5	11	1	0	0
+6	12	0	0	0
+7	12	0	0	0
+8	8	2	2	0
+9	5	6	0	1
+10	0	6	5	1
+11	12	0	0	0
+XX
+//
+
+AC l3_neo38_SANGER_2_5_FBgn0086910
+XX
+ID l3_neo38_SANGER_2_5_FBgn0086910
+XX
+DE l3_neo38
+PO	A	C	G	T
+1	8	0	9	3
+2	0	3	17	0
+3	2	1	15	2
+4	0	0	17	3
+5	5	0	15	0
+6	0	0	14	6
+7	0	1	12	7
+8	1	0	19	0
+9	0	0	18	2
+10	4	1	15	0
+11	1	1	18	0
+12	1	1	15	3
+13	1	5	10	4
+14	12	5	1	2
+15	2	7	5	6
+16	6	2	11	1
+17	3	0	6	11
+18	2	1	13	4
+19	3	4	1	10
+XX
+//
+
+AC rn_SANGER_10_FBgn0259172
+XX
+ID rn_SANGER_10_FBgn0259172
+XX
+DE rn
+PO	A	C	G	T
+1	6	11	4	2
+2	6	1	12	4
+3	9	2	7	5
+4	8	8	1	6
+5	3	12	7	1
+6	13	6	1	3
+7	17	2	3	1
+8	21	1	0	1
+9	23	0	0	0
+10	23	0	0	0
+11	23	0	0	0
+12	23	0	0	0
+13	17	4	2	0
+14	3	12	4	4
+15	10	4	7	2
+16	8	8	3	4
+17	6	3	7	7
+18	3	14	5	1
+19	8	7	2	6
+20	11	4	6	2
+21	16	3	3	1
+22	8	0	9	6
+23	5	9	5	4
+24	9	4	8	2
+25	1	22	0	0
+XX
+//
+
+AC gl_SANGER_5_FBgn0004618
+XX
+ID gl_SANGER_5_FBgn0004618
+XX
+DE gl
+PO	A	C	G	T
+1	0	0	19	1
+2	20	0	0	0
+3	20	0	0	0
+4	5	0	12	3
+5	0	20	0	0
+6	0	20	0	0
+7	7	8	3	2
+8	0	3	0	17
+9	20	0	0	0
+10	0	12	0	8
+11	17	0	1	2
+12	17	0	2	1
+XX
+//
+
+AC CG2052_SANGER_2_5_FBgn0039905
+XX
+ID CG2052_SANGER_2_5_FBgn0039905
+XX
+DE CG2052
+PO	A	C	G	T
+1	13	4	5	0
+2	12	3	4	3
+3	8	3	8	3
+4	10	5	6	1
+5	2	8	6	6
+6	1	9	4	8
+7	20	0	2	0
+8	22	0	0	0
+9	22	0	0	0
+10	22	0	0	0
+11	22	0	0	0
+12	22	0	0	0
+13	22	0	0	0
+14	4	1	4	13
+XX
+//
+
+AC CG3407_SOLEXA_2_5_FBgn0031573
+XX
+ID CG3407_SOLEXA_2_5_FBgn0031573
+XX
+DE CG3407
+PO	A	C	G	T
+1	119	33	37	78
+2	81	20	0	166
+3	0	0	261	6
+4	0	5	4	258
+5	3	260	0	4
+6	267	0	0	0
+7	265	0	0	2
+8	10	95	125	37
+9	73	105	20	69
+10	62	98	79	28
+11	63	98	43	63
+12	89	69	39	70
+13	141	56	41	29
+14	123	56	52	36
+15	89	91	37	50
+16	90	80	45	52
+17	82	61	65	59
+18	69	67	68	63
+19	104	68	43	52
+20	83	85	56	43
+21	76	90	45	56
+22	77	66	66	58
+23	91	91	54	31
+24	96	91	54	21
+25	95	57	55	49
+XX
+//
+
+AC CG8319_SOLEXA_2_5_FBgn0037722
+XX
+ID CG8319_SOLEXA_2_5_FBgn0037722
+XX
+DE CG8319
+PO	A	C	G	T
+1	30	10	129	25
+2	79	5	115	2
+3	0	0	196	5
+4	1	0	194	6
+5	0	0	0	201
+6	0	184	0	17
+7	187	2	1	11
+8	2	199	0	0
+9	10	190	0	1
+10	100	28	30	42
+11	31	79	42	44
+XX
+//
+
+AC disco_SOLEXA_5_FBgn0000459
+XX
+ID disco_SOLEXA_5_FBgn0000459
+XX
+DE disco
+PO	A	C	G	T
+1	140	82	60	51
+2	161	84	92	98
+3	275	61	82	163
+4	258	32	129	162
+5	127	48	185	221
+6	0	2	2	577
+7	0	0	552	29
+8	0	11	0	570
+9	6	563	0	12
+10	566	0	11	4
+11	119	455	0	7
+12	137	422	10	12
+13	126	180	63	212
+XX
+//
+
+AC ken_SOLEXA_5_FBgn0011236
+XX
+ID ken_SOLEXA_5_FBgn0011236
+XX
+DE ken
+PO	A	C	G	T
+1	133	190	123	77
+2	124	192	125	93
+3	147	199	110	80
+4	131	181	119	105
+5	208	20	269	39
+6	45	1	467	23
+7	247	11	18	260
+8	0	0	530	6
+9	527	0	0	9
+10	532	2	1	1
+11	535	0	0	1
+12	2	0	528	6
+13	2	184	46	304
+14	215	89	121	108
+15	133	147	151	64
+XX
+//
+
+AC luna_SOLEXA_5_FBgn0040765
+XX
+ID luna_SOLEXA_5_FBgn0040765
+XX
+DE luna
+PO	A	C	G	T
+1	163	157	142	95
+2	208	142	142	89
+3	269	111	121	111
+4	180	36	120	276
+5	36	0	558	18
+6	4	0	579	29
+7	1	5	588	18
+8	17	468	1	126
+9	0	0	607	5
+10	5	24	149	434
+11	59	18	462	73
+12	37	27	463	85
+13	35	396	26	155
+14	84	283	68	132
+XX
+//
+
+AC sens_SOLEXA_5_FBgn0002573
+XX
+ID sens_SOLEXA_5_FBgn0002573
+XX
+DE sens
+PO	A	C	G	T
+1	66	35	120	183
+2	52	8	354	27
+3	17	361	10	84
+4	65	188	4	215
+5	10	42	394	26
+6	80	4	0	388
+7	17	0	449	6
+8	467	5	0	0
+9	12	0	1	459
+10	7	0	0	465
+11	21	21	81	349
+12	202	66	138	66
+13	60	132	118	162
+14	91	103	134	143
+15	70	102	144	148
+XX
+//
+
+AC sug_SOLEXA_5_FBgn0033782
+XX
+ID sug_SOLEXA_5_FBgn0033782
+XX
+DE sug
+PO	A	C	G	T
+1	60	75	91	194
+2	46	389	27	245
+3	43	342	85	245
+4	65	96	518	36
+5	22	343	31	319
+6	96	0	515	104
+7	0	0	705	10
+8	0	0	705	10
+9	10	0	690	15
+10	10	0	671	34
+11	3	0	687	25
+12	0	92	135	488
+13	75	456	107	77
+14	78	178	179	269
+15	71	138	251	237
+XX
+//
+
+AC CG10267_SOLEXA_5_FBgn0037446
+XX
+ID CG10267_SOLEXA_5_FBgn0037446
+XX
+DE CG10267
+PO	A	C	G	T
+1	15	101	17	30
+2	76	48	40	41
+3	55	58	83	73
+4	55	132	29	53
+5	92	41	28	108
+6	157	11	31	70
+7	149	67	4	49
+8	10	157	2	100
+9	264	0	1	4
+10	223	29	0	17
+11	35	212	7	15
+12	222	44	1	2
+13	26	243	0	0
+14	4	1	0	264
+15	208	0	60	1
+16	23	117	107	22
+17	92	94	43	40
+18	133	71	20	45
+19	85	45	36	103
+20	40	57	40	129
+XX
+//
+
+AC CG3065_F1_3_SOLEXA_2_5_FBgn0034946
+XX
+ID CG3065_F1_3_SOLEXA_2_5_FBgn0034946
+XX
+DE CG3065
+PO	A	C	G	T
+1	71	25	48	41
+2	67	39	95	40
+3	34	10	181	38
+4	14	1	77	171
+5	33	0	217	13
+6	0	0	253	10
+7	1	0	253	9
+8	4	255	0	4
+9	3	0	249	11
+10	0	0	29	234
+11	2	0	260	1
+12	4	8	211	40
+13	5	166	7	85
+14	44	59	52	105
+15	47	53	110	47
+XX
+//
+
+AC CG4854_SOLEXA_5_FBgn0038766
+XX
+ID CG4854_SOLEXA_5_FBgn0038766
+XX
+DE CG4854
+PO	A	C	G	T
+1	115	52	51	60
+2	44	96	62	114
+3	34	99	168	91
+4	46	72	165	109
+5	143	53	154	42
+6	57	85	135	115
+7	43	64	131	154
+8	55	109	128	100
+9	114	107	98	73
+10	133	63	118	78
+11	58	33	188	113
+12	31	78	196	87
+13	21	75	42	254
+14	132	19	188	53
+15	37	3	339	13
+16	16	1	4	371
+17	31	2	9	350
+18	29	0	361	2
+19	14	5	369	4
+20	21	340	0	31
+21	379	7	1	5
+22	378	5	7	2
+23	2	320	1	69
+24	148	24	132	88
+25	52	186	36	59
+XX
+//
+
+AC CG9895_SOLEXA_5_FBgn0034810
+XX
+ID CG9895_SOLEXA_5_FBgn0034810
+XX
+DE CG9895
+PO	A	C	G	T
+1	239	52	200	494
+2	44	0	921	24
+3	2	0	957	31
+4	0	0	959	31
+5	19	644	0	327
+6	2	0	961	27
+7	3	15	212	760
+8	68	18	818	86
+9	63	45	781	101
+10	73	503	29	376
+11	109	425	126	274
+XX
+//
+
+AC fru_SOLEXA_5_FBgn0004652
+XX
+ID fru_SOLEXA_5_FBgn0004652
+XX
+DE fru
+PO	A	C	G	T
+1	79	123	64	55
+2	95	131	89	50
+3	89	126	81	69
+4	94	128	83	60
+5	115	124	72	54
+6	113	108	88	56
+7	95	133	82	55
+8	81	128	76	80
+9	95	131	71	68
+10	59	165	80	61
+11	157	71	107	30
+12	144	203	0	18
+13	365	0	0	0
+14	2	0	362	1
+15	0	1	1	363
+16	341	3	0	21
+17	361	3	1	0
+18	52	187	20	106
+19	145	62	87	71
+20	143	103	68	51
+21	121	115	83	46
+22	138	100	89	38
+23	126	103	73	63
+24	98	118	67	67
+XX
+//
+
+AC lola_SOLEXA_5_FBgn0005630
+XX
+ID lola_SOLEXA_5_FBgn0005630
+XX
+DE lola
+PO	A	C	G	T
+1	12	33	13	34
+2	32	14	36	10
+3	86	2	0	5
+4	90	0	0	3
+5	93	0	0	0
+6	1	0	90	2
+7	0	93	0	0
+8	0	0	0	93
+9	0	78	0	15
+XX
+//
+
+AC scrt_SOLEXA_2_5_2_FBgn0004880
+XX
+ID scrt_SOLEXA_2_5_2_FBgn0004880
+XX
+DE scrt
+PO	A	C	G	T
+1	122	59	67	13
+2	61	184	33	20
+3	23	263	11	24
+4	317	0	3	1
+5	0	319	0	2
+6	0	307	0	14
+7	1	2	4	314
+8	0	0	317	4
+9	3	0	0	318
+10	28	1	34	258
+11	36	3	275	7
+12	123	142	22	34
+13	123	55	73	70
+XX
+//
+
+AC wor_SOLEXA_2_5_FBgn0001983
+XX
+ID wor_SOLEXA_2_5_FBgn0001983
+XX
+DE wor
+PO	A	C	G	T
+1	428	645	383	150
+2	127	1499	5	78
+3	1724	19	0	51
+4	0	1770	0	24
+5	22	1743	0	29
+6	0	0	8	1786
+7	9	1	1759	20
+8	86	1085	5	548
+XX
+//
+
+AC vfl_SOLEXA_5_FBgn0259789
+XX
+ID vfl_SOLEXA_5_FBgn0259789
+XX
+DE vfl
+PO	A	C	G	T
+1	110	150	196	229
+2	149	123	254	235
+3	144	119	234	264
+4	116	212	237	196
+5	54	0	478	229
+6	7	749	0	5
+7	756	1	1	3
+8	0	0	731	30
+9	1	0	750	10
+10	4	0	3	754
+11	756	5	0	0
+12	76	75	566	44
+13	145	203	230	183
+14	140	227	167	217
+15	169	99	277	160
+XX
+//
+
+AC br_SOLEXA_10_FBgn0000210
+XX
+ID br_SOLEXA_10_FBgn0000210
+XX
+DE br
+PO	A	C	G	T
+1	89	87	118	44
+2	86	78	41	147
+3	9	1	344	8
+4	304	21	0	37
+5	4	4	1	353
+6	3	0	0	359
+7	362	0	0	0
+8	0	0	362	0
+9	322	1	37	2
+10	212	54	21	73
+11	156	32	125	47
+XX
+//
+
+AC Bteb2_SOLEXA_2_5_FBgn0025679
+XX
+ID Bteb2_SOLEXA_2_5_FBgn0025679
+XX
+DE Bteb2
+PO	A	C	G	T
+1	74	42	91	91
+2	100	66	49	101
+3	154	14	109	48
+4	79	2	237	7
+5	3	0	249	73
+6	5	0	311	9
+7	1	0	305	19
+8	3	0	318	4
+9	8	299	0	18
+10	2	0	317	6
+11	0	0	110	215
+12	144	27	89	65
+13	83	56	57	129
+14	82	119	53	68
+XX
+//
+
+AC CG12029_SOLEXA_5_FBgn0035454
+XX
+ID CG12029_SOLEXA_5_FBgn0035454
+XX
+DE CG12029
+PO	A	C	G	T
+1	200	114	297	227
+2	248	147	377	198
+3	259	19	203	595
+4	60	2	980	34
+5	9	3	1031	33
+6	10	0	1062	4
+7	97	237	0	742
+8	9	0	1058	9
+9	11	44	109	912
+10	12	0	1052	12
+11	9	21	911	135
+12	18	767	0	291
+13	214	328	174	360
+14	164	278	331	274
+15	175	170	334	311
+XX
+//
+
+AC CG12605_SOLEXA_5_FBgn0035481
+XX
+ID CG12605_SOLEXA_5_FBgn0035481
+XX
+DE CG12605
+PO	A	C	G	T
+1	104	227	51	33
+2	66	350	22	41
+3	477	1	5	14
+4	4	493	0	0
+5	7	450	1	39
+6	15	1	2	479
+7	1	0	489	7
+8	9	3	1	484
+9	76	7	91	323
+10	70	21	384	22
+11	158	208	70	61
+12	152	126	138	81
+13	91	197	84	125
+XX
+//
+
+AC CG14962_SOLEXA_5_FBgn0035407
+XX
+ID CG14962_SOLEXA_5_FBgn0035407
+XX
+DE CG14962
+PO	A	C	G	T
+1	75	37	28	21
+2	150	3	0	8
+3	102	11	19	29
+4	20	38	96	7
+5	44	0	7	110
+6	0	5	0	156
+7	0	0	158	3
+8	155	0	4	2
+9	152	9	0	0
+10	82	8	45	26
+11	10	149	0	2
+12	146	1	10	4
+13	12	108	14	24
+XX
+//
+
+AC CG17181_SOLEXA_5_FBgn0035144
+XX
+ID CG17181_SOLEXA_5_FBgn0035144
+XX
+DE CG17181
+PO	A	C	G	T
+1	200	55	90	73
+2	298	140	108	25
+3	96	490	27	20
+4	37	565	12	19
+5	597	3	2	31
+6	3	624	0	6
+7	0	607	6	20
+8	6	0	7	620
+9	0	0	610	23
+10	29	143	9	452
+11	104	119	75	335
+12	219	116	234	64
+13	247	181	126	79
+14	161	211	127	126
+15	166	201	130	109
+XX
+//
+
+AC CG31670_SOLEXA_5_FBgn0031375
+XX
+ID CG31670_SOLEXA_5_FBgn0031375
+XX
+DE CG31670
+PO	A	C	G	T
+1	57	109	35	70
+2	136	97	46	34
+3	307	3	16	7
+4	316	1	5	11
+5	272	1	56	4
+6	200	3	3	127
+7	2	3	325	3
+8	254	44	24	11
+9	41	15	253	24
+10	9	311	4	9
+11	332	0	1	0
+12	262	0	35	36
+13	23	207	2	101
+14	70	148	71	41
+15	114	81	83	15
+XX
+//
+
+AC CG32830_SOLEXA_5_FBgn0052830
+XX
+ID CG32830_SOLEXA_5_FBgn0052830
+XX
+DE CG32830
+PO	A	C	G	T
+1	83	74	126	98
+2	105	120	163	161
+3	111	98	153	187
+4	71	108	169	201
+5	51	123	188	187
+6	117	100	155	177
+7	72	95	191	191
+8	263	21	133	132
+9	0	6	0	543
+10	0	0	0	549
+11	548	1	0	0
+12	535	14	0	0
+13	0	115	0	434
+14	40	345	95	69
+15	239	32	197	81
+16	99	114	171	165
+17	125	114	137	173
+18	130	106	151	162
+19	98	111	155	185
+20	56	116	201	176
+21	82	127	191	149
+22	112	113	170	154
+23	112	127	175	131
+24	91	135	184	128
+XX
+//
+
+AC her_SOLEXA_10_FBgn0001185
+XX
+ID her_SOLEXA_10_FBgn0001185
+XX
+DE her
+PO	A	C	G	T
+1	212	6	158	5
+2	5	367	0	9
+3	6	0	371	5
+4	29	328	15	10
+5	274	19	78	11
+6	163	36	82	101
+7	112	50	46	174
+8	111	33	42	196
+9	202	26	100	54
+10	3	15	0	364
+11	0	0	379	3
+12	371	6	0	5
+13	2	0	376	4
+14	63	149	5	119
+15	201	26	42	54
+XX
+//
+
+AC sna_SOLEXA_5_FBgn0003448
+XX
+ID sna_SOLEXA_5_FBgn0003448
+XX
+DE sna
+PO	A	C	G	T
+1	177	163	424	238
+2	158	221	401	287
+3	185	227	380	305
+4	171	133	528	265
+5	101	232	295	469
+6	549	38	409	101
+7	804	0	191	102
+8	32	1059	6	0
+9	1096	0	0	1
+10	8	1	1083	5
+11	3	4	1088	2
+12	12	11	18	1056
+13	29	2	1009	57
+14	58	159	630	228
+XX
+//
+
+AC sob_SOLEXA_5_FBgn0004892
+XX
+ID sob_SOLEXA_5_FBgn0004892
+XX
+DE sob
+PO	A	C	G	T
+1	46	230	195	225
+2	157	77	262	251
+3	59	10	666	28
+4	13	750	0	0
+5	19	20	1	723
+6	610	14	10	129
+7	64	699	0	0
+8	83	268	0	412
+9	48	1	670	44
+10	34	42	282	405
+11	146	55	273	289
+12	86	239	141	297
+13	158	98	226	281
+14	162	129	191	268
+XX
+//
+
+AC Sp1_SOLEXA_2_5_FBgn0020378
+XX
+ID Sp1_SOLEXA_2_5_FBgn0020378
+XX
+DE Sp1
+PO	A	C	G	T
+1	177	140	175	74
+2	246	74	180	76
+3	128	33	356	59
+4	66	2	237	271
+5	73	0	494	9
+6	3	0	563	10
+7	0	0	569	7
+8	27	510	0	39
+9	3	0	558	15
+10	0	1	281	294
+11	129	16	339	92
+12	157	66	260	93
+13	93	369	30	68
+XX
+//
+
+AC MEF2_04
+XX
+ID  MEF2_04
+XX
+DE  msTGTTaCTAwAAATAGAAmmt
+PO       A     C     G     T
+1       41    27    15    17
+2       13    43    32    12
+3        7     9     7    77
+4        7     0    84     9
+5        9     0     7    84
+6        0     1     4    86
+7       63     1    20    16
+8        0    98     2     0
+9        0     2     0    98
+10      91     2     0     7
+11      68     0     0    32
+12     100     0     0     0
+13     100     0     0     0
+14     100     0     0     0
+15       0     2     0    98
+16     100     0     0     0
+17       2     0    98     0
+18      80     9     6     5
+19      72     6     0    22
+20      43    36     2    18
+21      27    48     9    16
+22      21    23    17    39
+XX
+CC  program: clusterbuster
+CC  matrix.nb: 2662
+CC  consensus.strict: acTGTTaCTAaAAATAGAAact
+CC  consensus.strict.rc: AGTTTCTATTTTTAGTAACAGT
+XX
+//
