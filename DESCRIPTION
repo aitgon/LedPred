@@ -1,16 +1,8 @@
 Package: LedPred
 Title: Learning from DNA to Predict enhancers
-Description: This package aims at creating a predictive model of
-        regulatory sequences used to score unknown sequences based on
-        the content of DNA motifs, next-generation sequencing (NGS)
-        peaks and signals and other numerical scores of the sequences
-        using supervised classification. The package contains a
-        workflow based on the support vector machine (SVM) algorithm
-        that maps features to sequences, optimize SVM parameters and
-        feature number and creates a model that can be stored and used
-        to score the regulatory potential of unknown sequences.
-Version: 0.99.4
-Date: 2015-04-20
+Description: This package aims at creating a predictive model of regulatory sequences used to score unknown sequences based on the content of DNA motifs, next-generation sequencing (NGS) peaks and signals and other numerical scores of the sequences using supervised classification. The package contains a workflow based on the support vector machine (SVM) algorithm that maps features to sequences, optimize SVM parameters and feature number and creates a model that can be stored and used to score the regulatory potential of unknown sequences.
+Version: 0.99.5
+Date: 2015-07-20
 Author: Elodie Darbo, Denis Seyres, Aitor Gonzalez
 Maintainer: Aitor Gonzalez <aitor.gonzalez@univ-amu.fr>
 Depends: R (>= 3.2.0), e1071 (>= 1.6)
@@ -19,5 +11,6 @@ Imports: akima, GenomicRanges (>= 1.18.4), irr, jsonlite, parallel,
 Suggests: BiocStyle
 License: MIT | file LICENSE
 LazyData: true
+Packaged: 2015-07-24 13:30:09 UTC; gonzalez
 biocViews: SupportVectorMachine, Software, MotifAnnotation, ChIPSeq
 NeedsCompilation: no

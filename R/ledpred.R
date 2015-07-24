@@ -1244,8 +1244,8 @@ LedPred <-
     feature.nb = feature.obj$best.feature.nb
     svm.model <-
       createModel(
-        data = data, data.granges = data.granges, cl = cl, kernel = kernel,scale = scale,cost = cost,gamma = gamma,feature.ranking =
-          feature.ranking,feature.nb = feature.nb
+        data = data, data.granges = data.granges, cl = cl, kernel=kernel, scale=scale, cost=cost, gamma = gamma, feature.ranking =
+          feature.ranking, feature.nb=feature.nb, file.prefix=file.prefix,
       )
     probs.label.list <-
       evaluateModelPerformance(
