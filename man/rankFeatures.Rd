@@ -39,10 +39,10 @@ A 3-columns data frame with ranked features. First column contains the feature n
 The \code{rankFeatures} function  performs a Recursive Feature Elimination (RFE) on subsets of the feature matrix. For each subset the features are ranked according to the weight attributed by SVM at each round of elimination and the average rank of each feature over the subsets is returned. We recommand to save the object containing the ranked features for the following steps.
 }
 \examples{
-data(seq.features)
+data(crm.features)
 cost <- 1
 gamma <- 1
- feature.ranking <- rankFeatures(data.granges=seq.features, cost=cost,gamma=gamma,
+ feature.ranking <- rankFeatures(data.granges=crm.features, cost=cost,gamma=gamma,
      kernel='linear', file.prefix = "test", halve.above=10)
 }
 

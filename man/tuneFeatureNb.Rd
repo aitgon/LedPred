@@ -43,11 +43,11 @@ A list with two objects.
 \code{tuneFeatureNb} iterates through increasing feature numbers to calculate kappa values which represents the performance of the model computed with the given features.  We recommand to save the object containing the optimal number of features for the following steps.
 }
 \examples{
-data(seq.features)
+data(crm.features)
 data(feature.ranking)
 cost <- 1
 gamma <- 1
- feature.nb.obj <- tuneFeatureNb(data.granges=seq.features,
+ feature.nb.obj <- tuneFeatureNb(data.granges=crm.features,
      feature.ranking=feature.ranking, kernel='linear', cost=cost,gamma=gamma,
      file.prefix = "test")
  names(feature.nb.obj)

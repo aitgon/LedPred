@@ -36,10 +36,10 @@ A list with two objects.
 \code{evaluateModelPerformance} function computes the precision and recall measures to evaluate the model through cross validation steps using \code{ROCR} package.
 }
 \examples{
-data(seq.features)
+data(crm.features)
 data(feature.ranking)
 data(svm.model)
-probs.labels.list <- evaluateModelPerformance(data.granges=seq.features,
+probs.labels.list <- evaluateModelPerformance(data.granges=crm.features,
    feature.ranking=feature.ranking, feature.nb=50, svm.model=svm.model,
    file.prefix = "test")
 names(probs.labels.list[[1]])

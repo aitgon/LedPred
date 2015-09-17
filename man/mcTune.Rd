@@ -23,7 +23,7 @@ mcTune(data = NULL, data.granges = NULL, cl = 1, ranges = NULL,
 
 \item{valid.times}{Integer indicating how many times the training set will be split for the cross validation step (default = 10). This number must be smaller than positive and negative sets sizes.}
 
-\item{file.prefix}{A character string that will be used as a prefix followed by "_c.g_eval.png" for result plot files, if it is NULL (default), no plot is returned}
+\item{file.prefix}{A character string that will be used as a prefix followed by "_c_g_eval.png" for result plot files, if it is NULL (default), no plot is returned}
 
 \item{numcores}{Number of cores to use for parallel computing (default: the number of available cores in the machine - 1)}
 }
@@ -42,10 +42,10 @@ A list of class \code{tune}
 The \code{mcTune} function is a modified version of the function \code{tune}  from package e1071  [6]. It tests the different combinations of C and gamma parameters given as vectors in a list and will return the prediction error computed during the cross-validation step.
 }
 \examples{
-data(seq.features)
+data(crm.features)
 cost.vector <- c(1,3,10,30)
 gamma.vector <- c(1,3,10,30)
-c.g.obj <- mcTune(data.granges= seq.features, ranges = list(cost=cost.vector,
+c.g.obj <- mcTune(data.granges= crm.features, ranges = list(cost=cost.vector,
     gamma=gamma.vector), kernel='linear', file.prefix = "test")
 names(c.g.obj)
  cost <- c.g.obj$best.parameters$cost

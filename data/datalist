@@ -1,4 +1,4 @@
+crm.features
 feature.matrix
 feature.ranking
-seq.features
 svm.model

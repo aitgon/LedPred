@@ -38,12 +38,12 @@ the best SVM model
 \code{createModel} function creates a SVM model from the training data set with the selected features.
 }
 \examples{
-data(seq.features)
+data(crm.features)
     cost <- 1
     gamma <- 1
     data(feature.ranking)
     feature.nb <- 70
-svm.model <- createModel(data.granges=seq.features, cost=cost, gamma=gamma,
+svm.model <- createModel(data.granges=crm.features, cost=cost, gamma=gamma,
     feature.ranking=feature.ranking, feature.nb=feature.nb)
 feature.weights <- as.data.frame(t(t(svm.model$coefs) \%*\% svm.model$SV))
 }

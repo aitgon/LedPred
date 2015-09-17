@@ -8,7 +8,7 @@ NULL
 
 #' This is data to be included in my package
 #'
-#' @name seq.features
+#' @name crm.features
 #' @docType data
 NULL
 
@@ -24,9 +24,9 @@ NULL
 #' @docType data
 NULL
 
-.seqFeatureDfToGranges <- function(seq.feature.tab, genome = TRUE) {
+.crmFeatureDfToGranges <- function(crm.feature.tab, genome = TRUE) {
   mat <-
-    matrix(unlist(strsplit(rownames(seq.feature.tab), "_")), nrow = dim(seq.feature.tab)[1], byrow =
+    matrix(unlist(strsplit(rownames(crm.feature.tab), "_")), nrow = dim(crm.feature.tab)[1], byrow =
              TRUE)
   if (genome) {
     colnames(mat) <- c("genome", "seqnames", "start", "end", "strand")
@@ -36,17 +36,17 @@ NULL
   df <- as.data.frame(mat)
   df[,"start"] <- as.numeric(as.character(df[,"start"]))
   df[,"end"] <- as.numeric(as.character(df[,"end"]))
-  seq.feature.gr <- GenomicRanges::makeGRangesFromDataFrame(df)
-  mcols(seq.feature.gr) <- seq.feature.tab
-  #genome(seq.feature.gr)=mat[1]
-  return(seq.feature.gr)
+  crm.feature.gr <- GenomicRanges::makeGRangesFromDataFrame(df)
+  GenomicRanges::mcols(crm.feature.gr) <- crm.feature.tab
+  #genome(crm.feature.gr)=mat[1]
+  return(crm.feature.gr)
 }
 
-.seqFeaturesToDf <- function(seq.features) {
-  seq.feature.df = as.data.frame(seq.features, row.names = gsub(" ", "", apply(
+.crmFeaturesToDf <- function(crm.features) {
+  seq.feature.df = as.data.frame(crm.features, row.names = gsub(" ", "", apply(
     data.frame(
-      seqnames = seqnames(seq.features), start = start(seq.features), end = end(seq.features), strand =
-        strand(seq.features)
+      seqnames = seqnames(crm.features), start = start(crm.features), end = end(crm.features), strand =
+        strand(crm.features)
     ), 1, paste, collapse = "_"
   )))[,-1:-5]
   
@@ -55,7 +55,7 @@ NULL
 
 #' R interface to bed_to_matrix REST in server
 #'
-#' The \code{mapFeaturesToSeqs} function allows the user to create a training set matrix to build a predictive model. The training set is composed of positive regions (known to be involved in the pathway of interest) and negative regions (randomly picked or known to not be involved in the pathway of interest) that will be described (scored) by features. Three types of features file format are accepted: Position specific scoring matrices modeling motifs recognised by transcription factors, bed files containing region coordinates for any discrete feature (NGS peaks, conservation blocks) and wig/bigWig files containing signal data. This function uses a REST interface in order to access the different tools needed for this step.
+#' The \code{mapFeaturesToCRMs} function allows the user to create a training set matrix to build a predictive model. The training set is composed of positive regions (known to be involved in the pathway of interest) and negative regions (randomly picked or known to not be involved in the pathway of interest) that will be described (scored) by features. Three types of features file format are accepted: Position specific scoring matrices modeling motifs recognised by transcription factors, bed files containing region coordinates for any discrete feature (NGS peaks, conservation blocks) and wig/bigWig files containing signal data. This script has been tested with version 0.99 of the online server. Go here to see current version of the server http://ifbprod.aitorgonzalezlab.org/map_features_to_crms.php
 #'
 #' @param URL URL of the server REST target
 #' @param positive.bed Positive bed file path. Compulsory
@@ -71,13 +71,13 @@ NULL
 #' @param my.values Bed file where fourth column are values to append to the SVM matrix
 #' @param feature.ranking File with ranked features (Output of rankFeatures). It is used for scoring a query bed file
 #' @param feature.nb Integer with feature.nb
-#' @param seq.feature.file  Path to feature matrix file
+#' @param crm.feature.file  Path to feature matrix file
 #' @param stdout.log.file  Path to standard output log
 #' @param stderr.log.file  Path to error log
 #' @return A list
 #' \item{feature.matrix}{a data frame where each row is a region and each column a feature, each cell carry a score, the first column is the response vector}
-#' \item{stdout.log}{Standard output log of mapFeaturesToSeqs script in server}
-#' \item{stderr.log}{Standard error log of mapFeaturesToSeqs script in server}
+#' \item{stdout.log}{Standard output log of mapFeaturesToCRMs script in server}
+#' \item{stderr.log}{Standard error log of mapFeaturesToCRMs script in server}
 #' @examples
 #' \dontrun{
 #'  dirPath <- system.file("extdata", package="LedPred")
@@ -88,25 +88,25 @@ NULL
 #'  TF.matrices <-  file.list[grep("tf", file.list)]
 #'  ngs.path <- system.file("extdata/ngs", package="LedPred")
 #'  ngs.files=list.files(ngs.path, full.names=TRUE)
-#'  seq.features.list <- mapFeaturesToSeqs(positive.bed=positive.regions,
+#'  crm.features.list <- mapFeaturesToCRMs(positive.bed=positive.regions,
 #'      negative.bed=negative.regions,  background.freqs=background.freqs,
 #'      pssm=TF.matrices, genome="dm3", ngs=ngs.files,
-#'      seq.feature.file = "seq.features.tab",
+#'      crm.feature.file = "crm.features.tab",
 #'      stderr.log.file = "stderr.log", stdout.log.file = "stdout.log")
-#'  names(seq.features.list)
-#'  class(seq.features.list$seq.features)
-#'  seq.features.list$stdout.log
-#'  seq.features.list$stderr.log
+#'  names(crm.features.list)
+#'  class(crm.features.list$crm.features)
+#'  crm.features.list$stdout.log
+#'  crm.features.list$stderr.log
 #'}
 
-mapFeaturesToSeqs <-
-  function(URL = 'http://aitorgonzalezlab.org/bed_to_matrix.php', positive.bed =
+mapFeaturesToCRMs <-
+  function(URL = 'http://ifbprod.aitorgonzalezlab.org/map_features_to_crms.php', positive.bed =
              NULL, genome = NULL, negative.bed = NULL, shuffling = NULL, background.seqs =
              NULL, genome.info = NULL, pssm = NULL, background.freqs = NULL, ngs = NULL, bed.overlap =
              NULL, my.values =
-             NULL, feature.ranking = NULL, feature.nb = NULL, seq.feature.file = NULL, stderr.log.file =
+             NULL, feature.ranking = NULL, feature.nb = NULL, crm.feature.file = NULL, stderr.log.file =
              NULL, stdout.log.file = NULL) {
-    message("mapFeaturesToSeqs is running ...")
+    message("mapFeaturesToCRMs is running ...")
     postForm.cmd = "RCurl::postForm("
     if (!is.null(URL)) {
       postForm.cmd = paste(postForm.cmd,"uri='",URL,"'", sep = "")
@@ -213,26 +213,28 @@ mapFeaturesToSeqs <-
     }
     
     postForm.cmd = paste(postForm.cmd,", .encoding='utf-8')", sep = "")
-    
     json = eval(parse(text = postForm.cmd))
     json.decoded <- jsonlite::fromJSON(json)
-    seq.feature.tab <-
-      read.table(json.decoded$featureMatrix, fill = TRUE)
-    seq.feature.gr <- .seqFeatureDfToGranges(seq.feature.tab)
-    stdout.log = RCurl::getURL(json.decoded$accessLog)
-    stderr.log = RCurl::getURL(json.decoded$errorLog)
-    if (!is.null(seq.feature.file)) {
-      write.table(seq.feature.tab, file = seq.feature.file, quote = FALSE)
+	while (!RCurl::url.exists(json.decoded[['stdoutLog']])) { Sys.sleep(5) }
+	match=FALSE
+	while (!match){ Sys.sleep(5); data=readLines(json.decoded[['stdoutLog']]); match=any(grepl('Finished', data)) };
+    crm.feature.tab <-
+      read.table(json.decoded$crmFeatures, fill = TRUE)
+    crm.feature.gr <- .crmFeatureDfToGranges(crm.feature.tab)
+    stdout.log = RCurl::getURL(json.decoded$stdoutLog)
+    stderr.log = RCurl::getURL(json.decoded$stderrLog)
+    if (!is.null(crm.feature.file)) {
+      write.table(crm.feature.tab, file = crm.feature.file, quote = FALSE, col.names=NA, sep="\t")
     }
     if (!is.null(stdout.log.file)) {
-      download.file(json.decoded$accessLog, destfile = stdout.log.file)
+      download.file(json.decoded$stdoutLog, destfile = stdout.log.file)
     }
     if (!is.null(stderr.log.file)) {
-      download.file(json.decoded$errorLog, destfile = stderr.log.file)
+      download.file(json.decoded$stderrLog, destfile = stderr.log.file)
     }
     return(
       list(
-        seq.features = seq.feature.gr, stdout.log = stdout.log, stderr.log = stderr.log
+        crm.features = crm.feature.gr, stdout.log = stdout.log, stderr.log = stderr.log
       )
     )
   }
@@ -327,7 +329,7 @@ mapFeaturesToSeqs <-
 #' @param kernel SVM kernel, a character string: "linear" or "radial". (default = "radial")
 #' @param scale Logical indicating if the data have to be scaled or not (default = FALSE)
 #' @param valid.times Integer indicating how many times the training set will be split for the cross validation step (default = 10). This number must be smaller than positive and negative sets sizes.
-#' @param file.prefix A character string that will be used as a prefix followed by "_c.g_eval.png" for result plot files, if it is NULL (default), no plot is returned
+#' @param file.prefix A character string that will be used as a prefix followed by "_c_g_eval.png" for result plot files, if it is NULL (default), no plot is returned
 #' @param numcores Number of cores to use for parallel computing (default: the number of available cores in the machine - 1)
 #' @return A list of class \code{tune}
 #' \item{best.parameters}{A list of the parameters giving the lowest misclassification error}
@@ -339,10 +341,10 @@ mapFeaturesToSeqs <-
 #' \item{performances}{A matrix summarizing the cross-validation step with the error for each tested parameter at each round and the dispersion of these errors (regarding to the average error)}
 #' \item{best.model}{The model produced by the best parameters}
 #' @examples
-#' data(seq.features)
+#' data(crm.features)
 #' cost.vector <- c(1,3,10,30)
 #' gamma.vector <- c(1,3,10,30)
-#' c.g.obj <- mcTune(data.granges= seq.features, ranges = list(cost=cost.vector,
+#' c.g.obj <- mcTune(data.granges= crm.features, ranges = list(cost=cost.vector,
 #'     gamma=gamma.vector), kernel='linear', file.prefix = "test")
 #' names(c.g.obj)
 #'  cost <- c.g.obj$best.parameters$cost
@@ -357,7 +359,7 @@ mcTune <- function(data = NULL, data.granges = NULL, cl = 1,
   call <- match.call()
   
   if (!is.null(data.granges)) {
-    data = .seqFeaturesToDf(data.granges)
+    data = .crmFeaturesToDf(data.granges)
   }
   
   
@@ -537,7 +539,7 @@ mcTune <- function(data = NULL, data.granges = NULL, cl = 1,
       
     )
   if (!is.null(file.prefix)) {
-    png(paste(file.prefix,"_c.g_eval.png",sep = ""))
+    png(paste(file.prefix,"_c_g_eval.png",sep = ""))
     .plotCostGamma(c.g.obj)
     garb = dev.off()
   }
@@ -561,10 +563,10 @@ mcTune <- function(data = NULL, data.granges = NULL, cl = 1,
 #' @param file.prefix A character string that will be used as a prefix for output file, if it is NULL (default), no file is writen.
 #' @return A 3-columns data frame with ranked features. First column contains the feature names, the second the original position of the feature in the feature.matrix and the third the average rank over the subsets.
 #' @examples
-#' data(seq.features)
+#' data(crm.features)
 #' cost <- 1
 #' gamma <- 1
-#'  feature.ranking <- rankFeatures(data.granges=seq.features, cost=cost,gamma=gamma,
+#'  feature.ranking <- rankFeatures(data.granges=crm.features, cost=cost,gamma=gamma,
 #'      kernel='linear', file.prefix = "test", halve.above=10)
 
 rankFeatures = function(data = NULL, data.granges = NULL, cl = 1, halve.above = 100, valid.times =
@@ -573,7 +575,7 @@ rankFeatures = function(data = NULL, data.granges = NULL, cl = 1, halve.above = 
   message("rankFeatures is running ...")
   
   if (!is.null(data.granges)) {
-    data = .seqFeaturesToDf(data.granges)
+    data = .crmFeaturesToDf(data.granges)
   }
   
   data[,cl] <- as.numeric(as.vector(data[,cl]))
@@ -610,7 +612,7 @@ rankFeatures = function(data = NULL, data.granges = NULL, cl = 1, halve.above = 
     sort(x$feature, index.return = TRUE)$ix), 1, mean), index = TRUE)$ix
   avg.rank  = sort(apply(sapply(feature.ranking_results, function(x)
     sort(x$feature, index.return = TRUE)$ix), 1, function (x)
-      round(mean(x))), index = TRUE)$x
+      round(mean(x),5)), index = TRUE)$x
   feature.name = colnames(data[,-col.cl])[featureID]
   #feature_coefs = feature_coefs[feature.name]
   #feature.ranking = data.frame(FeatureName=feature.name, FeatureID=featureID, AvgRank=avg.rank, FeatureCoeffs=as.numeric(feature_coefs[1,]))
@@ -824,11 +826,11 @@ rankFeatures = function(data = NULL, data.granges = NULL, cl = 1, halve.above = 
 #' \item{performance}{2-columns data frame. first column correspond to the number of tested features, second column contains the corresponding kappa value}
 #' \item{best.feature.nb}{Integer corresponding to the number of features producing the model with the highest kappa value}
 #' @examples
-#' data(seq.features)
+#' data(crm.features)
 #' data(feature.ranking)
 #' cost <- 1
 #' gamma <- 1
-#'  feature.nb.obj <- tuneFeatureNb(data.granges=seq.features,
+#'  feature.nb.obj <- tuneFeatureNb(data.granges=crm.features,
 #'      feature.ranking=feature.ranking, kernel='linear', cost=cost,gamma=gamma,
 #'      file.prefix = "test")
 #'  names(feature.nb.obj)
@@ -838,7 +840,7 @@ tuneFeatureNb = function(data = NULL, data.granges = NULL, feature.ranking = NUL
   message("tuneFeatureNb is running ...")
   
   if (!is.null(data.granges)) {
-    data = .seqFeaturesToDf(data.granges)
+    data = .crmFeaturesToDf(data.granges)
   }
   
   data[,cl] <- as.numeric(as.vector(data[,cl]))
@@ -971,12 +973,12 @@ tuneFeatureNb = function(data = NULL, data.granges = NULL, feature.ranking = NUL
 #' @param file.prefix A character string that will be used as a prefix followed by "_model.RData" for the resulting model file, if it is NULL (default), no model is saved
 #' @return the best SVM model
 #' @examples
-#'     data(seq.features)
+#'     data(crm.features)
 #'     cost <- 1
 #'     gamma <- 1
 #'     data(feature.ranking)
 #'     feature.nb <- 70
-#' svm.model <- createModel(data.granges=seq.features, cost=cost, gamma=gamma,
+#' svm.model <- createModel(data.granges=crm.features, cost=cost, gamma=gamma,
 #'     feature.ranking=feature.ranking, feature.nb=feature.nb)
 #' feature.weights <- as.data.frame(t(t(svm.model$coefs) %*% svm.model$SV))
 
@@ -987,7 +989,7 @@ createModel <-
     
     
     if (!is.null(data.granges)) {
-      data = .seqFeaturesToDf(data.granges)
+      data = .crmFeaturesToDf(data.granges)
     }
     
     data <- .checkData(data,cl)
@@ -1043,10 +1045,10 @@ createModel <-
 #' \item{probs}{The predictions computed by the model for each subset during the cross-validation}
 #' \item{labels}{The actual class for each subset}
 #' @examples
-#'data(seq.features)
+#'data(crm.features)
 #' data(feature.ranking)
 #' data(svm.model)
-#'probs.labels.list <- evaluateModelPerformance(data.granges=seq.features,
+#'probs.labels.list <- evaluateModelPerformance(data.granges=crm.features,
 #'    feature.ranking=feature.ranking, feature.nb=50, svm.model=svm.model,
 #'    file.prefix = "test")
 #'names(probs.labels.list[[1]])
@@ -1056,7 +1058,7 @@ evaluateModelPerformance = function(data = NULL, data.granges = NULL, cl = 1, va
   message("evaluateModelPerformance is running ...")
   
   if (!is.null(data.granges)) {
-    data = .seqFeaturesToDf(data.granges)
+    data = .crmFeaturesToDf(data.granges)
   }
   
   cl <- data$cl
@@ -1134,50 +1136,54 @@ evaluateModelPerformance = function(data = NULL, data.granges = NULL, cl = 1, va
 #' \code{scoreData} function predict new regulatory regions using SVM model from a test data set
 #'
 #' @param data data.frame containing the test set. This test set must have the same descriptive features as the one that were used to build the model.
-#' @param data.granges Bioconductor GenomicRanges object containing the training set
+#' @param data.granges Bioconductor GenomicRanges object containing the test set
 #' @param model the SVM model
-#' @param score.file A character string that will be used as the file name for the output file, if it is NULL (default), no file is writen
+#' @param score.bed.file A character string that will be used as the file name for the output bed file, if it is NULL (default), no bed file is writen
+#' @param score.file A character string that will be used as the file name for the output file, if it is NULL (default), no file is writen. The output file takes the form of two columns with object names and scores.
 #' @return A 2-columns dataframe. First column containg the SVM model prediction probabilities and the second containing the corresponding regions
 #' @examples
-#' data(seq.features)
+#' data(crm.features)
 #' data(svm.model)
-#' pred.test <- scoreData(data.granges=seq.features, model=svm.model,
+#' pred.test <- scoreData(data.granges=crm.features, model=svm.model,
 #'  score.file="test_prediction.tab")
 
 scoreData <-
-  function(data = NULL, data.granges = NULL, model, score.file = NULL) {
+  function(data = NULL, data.granges = NULL, model, score.file = NULL, score.bed.file = NULL) {
     message("scoreData is running ...")
     
     
     if (!is.null(data.granges)) {
-      data = .seqFeaturesToDf(data.granges)
+      data = .crmFeaturesToDf(data.granges)
     }
     library(e1071)
     pred <- stats::predict(model, data, probability = TRUE)
-    #detach("package:e1071", unload=TRUE)
     fit <- as.data.frame(attr(pred,"probabilities"))
     fit = fit[order(fit[,1], decreasing = TRUE),]
     
     scores <- data.frame(fit[,1], row.names = rownames(fit))
     colnames(scores) <- c("score")
-    if (is.null(data.granges)) {
-      gr = .seqFeatureDfToGranges(scores)
-    } else {
-      gr = .seqFeatureDfToGranges(scores, genome = FALSE)
-    }
     
     if (!is.null(score.file)) {
+		write.table(scores, file=score.file, col.names=FALSE, quote=FALSE)
+    return(scores)
+	}
+
+    if (is.null(data.granges)) {
+      gr = .crmFeatureDfToGranges(scores)
+    } else {
+      gr = .crmFeatureDfToGranges(scores, genome = FALSE)
+    }
+    
+    if (!is.null(score.bed.file)) {
       df <-
         data.frame(
-          seqnames = seqnames(gr), starts = start(gr) - 1, ends = end(gr), names =
+          seqnames = seqnames(gr), starts = start(gr), ends = end(gr), names =
             c(rep(".", length(gr))), scores = score(gr), strands = strand(gr)
         )
-      
       write.table(
-        df, file = score.file, quote = FALSE, sep = "\t", row.names = FALSE, col.names =
+        df, file = score.bed.file, quote = FALSE, sep = "\t", row.names = FALSE, col.names =
           FALSE
       )
-      
     }
     return(scores)
   }
@@ -1207,10 +1213,10 @@ scoreData <-
 #' \item{model.svm}{The best SVM model \code{createModel}}
 #' \item{probs.label.list}{The cross-validation results from \code{evaluateModelPerformance}}
 #' @examples
-#'  data(seq.features)
+#'  data(crm.features)
 #'  cost_vector <- c(1,3,10)
 #'  gamma_vector <- c(1,3,10)
-#'  ledpred.list=LedPred(data.granges=seq.features, cl=1, ranges = list(cost=cost_vector,
+#'  ledpred.list=LedPred(data.granges=crm.features, cl=1, ranges = list(cost=cost_vector,
 #'                            gamma=gamma_vector), kernel="linear", halve.above=50)
 #'  names(ledpred.list)
 
@@ -1219,7 +1225,7 @@ LedPred <-
              10, file.prefix = NULL, numcores = parallel::detectCores() - 1, step.nb =
              10, halve.above = 100) {
     # if (!is.null(data.granges)) {
-    # data = .seqFeaturesToDf(data.granges)
+    # data = .crmFeaturesToDf(data.granges)
     #}
     
     c.g.obj <-

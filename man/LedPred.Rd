@@ -44,10 +44,10 @@ A list of the object produced at each step
 The \code{LedPred} function computes the best SVM parameters, defines the optimal features for creating the SVM model by running sequentially \code{mcTune},  \code{rankFeatures},  \code{tuneFeatureNb} and  \code{createModel}. The performances of this model are then computed usong \code{evaluateModelPerformance}.
 }
 \examples{
-data(seq.features)
+data(crm.features)
  cost_vector <- c(1,3,10)
  gamma_vector <- c(1,3,10)
- ledpred.list=LedPred(data.granges=seq.features, cl=1, ranges = list(cost=cost_vector,
+ ledpred.list=LedPred(data.granges=crm.features, cl=1, ranges = list(cost=cost_vector,
                            gamma=gamma_vector), kernel="linear", halve.above=50)
  names(ledpred.list)
 }

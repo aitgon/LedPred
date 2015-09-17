@@ -21,9 +21,9 @@ test_that("Tune feature nb (granges)", {
 
 print("Takes around 39 seconds in a 4 cored machine with 'Intel(R) Core(TM) i7-3520M CPU @ 2.90GHz'")
 
-data(seq.features)
+data(crm.features)
 
-tuned.feature.nb <- tuneFeatureNb(data.granges = seq.features,cl = 1, feature.rank =feature.ranking, kernel=kernel, valid.times=valid.times, cost=cost, gamma=gamma, scale=scale, step.nb=step.nb)
+tuned.feature.nb <- tuneFeatureNb(data.granges = crm.features,cl = 1, feature.rank =feature.ranking, kernel=kernel, valid.times=valid.times, cost=cost, gamma=gamma, scale=scale, step.nb=step.nb)
 expect_true(tuned.feature.nb$best.feature.nb==60)
 
 })

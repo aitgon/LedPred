@@ -4,16 +4,19 @@
 \alias{scoreData}
 \title{Predicting new regulatory regions}
 \usage{
-scoreData(data = NULL, data.granges = NULL, model, score.file = NULL)
+scoreData(data = NULL, data.granges = NULL, model, score.file = NULL,
+  score.bed.file = NULL)
 }
 \arguments{
 \item{data}{data.frame containing the test set. This test set must have the same descriptive features as the one that were used to build the model.}
 
-\item{data.granges}{Bioconductor GenomicRanges object containing the training set}
+\item{data.granges}{Bioconductor GenomicRanges object containing the test set}
 
 \item{model}{the SVM model}
 
-\item{score.file}{A character string that will be used as the file name for the output file, if it is NULL (default), no file is writen}
+\item{score.file}{A character string that will be used as the file name for the output file, if it is NULL (default), no file is writen. The output file takes the form of two columns with object names and scores.}
+
+\item{score.bed.file}{A character string that will be used as the file name for the output bed file, if it is NULL (default), no bed file is writen}
 }
 \value{
 A 2-columns dataframe. First column containg the SVM model prediction probabilities and the second containing the corresponding regions
@@ -22,9 +25,9 @@ A 2-columns dataframe. First column containg the SVM model prediction probabilit
 \code{scoreData} function predict new regulatory regions using SVM model from a test data set
 }
 \examples{
-data(seq.features)
+data(crm.features)
 data(svm.model)
-pred.test <- scoreData(data.granges=seq.features, model=svm.model,
+pred.test <- scoreData(data.granges=crm.features, model=svm.model,
  score.file="test_prediction.tab")
 }
 
