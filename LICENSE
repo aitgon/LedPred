@@ -1,0 +1,10 @@
+The MIT License (MIT) (http://opensource.org/licenses/MIT)
+
+Copyright (c) 2015 Denis Seyres, Elodie Darbo, Aitor Gonzalez
+
+The mcTune function is a modified version of the tune of the e1071 package that has been modified again to use multicore processing
+https://geekoverdose.wordpress.com/2014/04/20/mctune-multicore-hyperparameter-tuning-in-r-on-the-example-of-car-detection
+The mcTune code inherits it's GPL-2 licence from it's original version.
+
+The rankFeature function is a modified version of the SVM-RFE implementation (Copyright (C) 2011  John Colby, https://github.com/johncolby/SVM-RFE). This function inherits it's GPL-2 licence from it's original version.
+
