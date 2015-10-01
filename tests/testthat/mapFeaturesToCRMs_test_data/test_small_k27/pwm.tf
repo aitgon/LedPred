@@ -1,0 +1,35 @@
+AC AbdA_FlyReg_FBgn0000014
+XX
+ID AbdA_FlyReg_FBgn0000014
+XX
+DE AbdA
+PO	A	C	G	T
+1	5	2	13	17
+2	10	15	3	9
+3	22	15	0	0
+4	36	0	0	1
+5	0	0	0	37
+6	11	2	0	24
+7	33	1	0	3
+8	18	2	4	13
+XX
+//
+
+AC AbdB_Cell_FBgn0000015
+XX
+ID AbdB_Cell_FBgn0000015
+XX
+DE AbdB
+PO	A	C	G	T
+1	1	5	12	3
+2	6	1	2	12
+3	1	0	0	20
+4	0	0	0	21
+5	5	0	0	16
+6	21	0	0	0
+7	0	3	0	18
+8	3	0	11	7
+9	13	0	5	3
+XX
+//
+
