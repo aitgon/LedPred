@@ -1,0 +1,13 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+.git
+.gitignore
+..Rcheck
+vignettes/.Rd2pdf*
+vignettes/test_*
+vignettes/LedPred.out
+tests/testthat/test-mapFeatures2Seqs.r
+tests/testthat/mapFeaturesToSeqs_test_data
+LetPred.BiocCheck 
+^.*\.tar.gz$
+^.*\.BiocCheck$
