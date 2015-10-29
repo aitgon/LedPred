@@ -944,12 +944,14 @@ tuneFeatureNb = function(data = NULL, data.granges = NULL, feature.ranking = NUL
   ))
 }
 
-.calculatePredictionProbability = function(testi, data = data, svm.model =
-                                             svm.model) {
+.calculatePredictionProbability = function(testi, data = data, cl=1, kernel = "radial", scale = FALSE, cost = NULL, gamma = NULL, feature.ranking=NULL, feature.nb=NULL) {
   trainset = data[-testi,]
   testset = data[testi,]
+classfit <- createModel(data = trainset, cl = cl,kernel = kernel, scale = scale,cost = cost,gamma =
+             gamma, feature.ranking = feature.ranking,feature.nb = feature.nb)
   library(e1071)
-  classpred = predict(svm.model, testset[,-1], probability = TRUE)
+  #classpred = predict(svm.model, testset[,-1], probability = TRUE)
+  classpred = predict(classfit, testset[,-1], probability = TRUE)
   #detach("package:e1071", unload=TRUE)
   probs = attr(classpred,"probabilities")[,1]
   labels = testset$cl
@@ -1006,6 +1008,7 @@ createModel <-
     cost <- svm.params$cost
     gamma <- svm.params$gamma
     data <- data.frame(cl = cl,data)
+set.seed(123)
     if (kernel == "radial") {
       classfit <-
         e1071::svm(
@@ -1015,7 +1018,7 @@ createModel <-
     } else if (kernel == "linear") {
       classfit <-
         e1071::svm(
-          cl ~ .,data = data,kernel = kernel, cost = cost, scale = scale, probability =
+          cl ~ .,data = data, kernel = kernel, cost = cost, scale = scale, probability =
             TRUE
         )
     }
@@ -1053,8 +1056,10 @@ createModel <-
 #'    file.prefix = "test")
 #'names(probs.labels.list[[1]])
 
-evaluateModelPerformance = function(data = NULL, data.granges = NULL, cl = 1, valid.times = 10, svm.model, feature.ranking, feature.nb, numcores =
-                                      parallel::detectCores() - 1, file.prefix = NULL) {
+#evaluateModelPerformance = function(data = NULL, data.granges = NULL, cl = 1, valid.times = 10, svm.model, feature.ranking, feature.nb, numcores =
+#                                      parallel::detectCores() - 1, file.prefix = NULL) {
+evaluateModelPerformance = function(data = NULL, data.granges = NULL, cl = 1, valid.times = 10, feature.ranking, feature.nb, numcores =
+                                      parallel::detectCores() - 1, file.prefix = NULL, kernel = "radial", scale = FALSE, cost = NULL, gamma = NULL) {
   message("evaluateModelPerformance is running ...")
   
   if (!is.null(data.granges)) {
@@ -1084,7 +1089,7 @@ evaluateModelPerformance = function(data = NULL, data.granges = NULL, cl = 1, va
   }
   
   cv.probs.labels = parallel::mclapply(
-    test.ind, .calculatePredictionProbability, data = data, svm.model = svm.model, mc.cores =
+    test.ind, .calculatePredictionProbability, data = data, kernel = kernel, scale = scale, cost = cost, gamma = gamma, feature.ranking = feature.ranking, feature.nb = feature.nb, mc.cores =
       numcores, mc.set.seed = FALSE, mc.preschedule = TRUE
   )
   if (!is.null(file.prefix)) {
