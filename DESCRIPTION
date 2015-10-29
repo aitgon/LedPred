@@ -14,4 +14,4 @@ LazyData: true
 Packaged: 2015-07-17 13:26:32 UTC; gonzalez
 biocViews: SupportVectorMachine, Software, MotifAnnotation, ChIPSeq
 NeedsCompilation: no
-BugReports: http://bitbucket.org/aitgon/ledpred/issues
+BugReports: https://github.com/aitgon/LedPred/issues
