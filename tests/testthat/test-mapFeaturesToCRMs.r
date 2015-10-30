@@ -1,4 +1,4 @@
-URL="http://ifbdev.aitorgonzalezlab.org/map_features_to_crms.php"
+URL="http://ifbprod.aitorgonzalezlab.org/map_features_to_crms.php"
 
 background.seqs='mapFeaturesToCRMs_test_data/data/dmel-all-intergenic_and_introns-promoters+-500bp_r5.57.bed'
 background.freqs='mapFeaturesToCRMs_test_data/data/2nt_intergenic_Drosophila_melanogaster.freq'

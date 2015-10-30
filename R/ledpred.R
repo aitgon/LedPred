@@ -1226,12 +1226,13 @@ scoreData <-
 #'  names(ledpred.list)
 
 LedPred <-
-  function(data = NULL, data.granges = NULL, cl = 1, ranges,kernel = "radial", scale = FALSE, valid.times =
+  function(data = NULL, data.granges = NULL, cl = 1, ranges = list(gamma=seq(from = 1 , to = 10 , by = 9), cost=seq(from = 1 , to = 10 , by = 9)), kernel = "radial", scale = FALSE, valid.times =
              10, file.prefix = NULL, numcores = parallel::detectCores() - 1, step.nb =
              10, halve.above = 100) {
-    # if (!is.null(data.granges)) {
-    # data = .crmFeaturesToDf(data.granges)
-    #}
+     if (!is.null(data.granges)) {
+     data = .crmFeaturesToDf(data.granges)
+    }
+#browser()
     
     c.g.obj <-
       mcTune(
@@ -1261,7 +1262,7 @@ LedPred <-
       )
     probs.label.list <-
       evaluateModelPerformance(
-        data = data, data.granges = data.granges, cl = cl, valid.times = valid.times, svm.model = svm.model, feature.ranking =
+        data = data, data.granges = data.granges, cl = cl, kernel=kernel, scale=scale, cost=cost, gamma = gamma, valid.times = valid.times, feature.ranking =
           feature.ranking, feature.nb = feature.nb, numcores = numcores, file.prefix = file.prefix
       )
     ledpred.summary <-
