@@ -351,7 +351,7 @@ mapFeaturesToCRMs <-
 #'  gamma <- c.g.obj$best.parameters$gamma
 
 mcTune <- function(data = NULL, data.granges = NULL, cl = 1,
-                   ranges = NULL, kernel = "radial",scale = FALSE,
+                   ranges = list(gamma=c(1,10), cost=c(1,10)), kernel = "linear",scale = FALSE,
                    valid.times = 10,
                    file.prefix = NULL, numcores = parallel::detectCores() -
                      1) {
@@ -570,7 +570,7 @@ mcTune <- function(data = NULL, data.granges = NULL, cl = 1,
 #'      kernel='linear', file.prefix = "test", halve.above=10)
 
 rankFeatures = function(data = NULL, data.granges = NULL, cl = 1, halve.above = 100, valid.times =
-                          10, kernel = "radial", cost = NULL, gamma = NULL, scale = FALSE, numcores =
+                          10, kernel = "linear", cost = 1, gamma = 1, scale = FALSE, numcores =
                           parallel::detectCores() - 1, file.prefix = NULL) {
   message("rankFeatures is running ...")
   
@@ -836,7 +836,7 @@ rankFeatures = function(data = NULL, data.granges = NULL, cl = 1, halve.above = 
 #'  names(feature.nb.obj)
 
 tuneFeatureNb = function(data = NULL, data.granges = NULL, feature.ranking = NULL, cl = 1, valid.times =
-                           10, cost = NULL, gamma = NULL, kernel = "radial",scale = FALSE, step.nb = 10, numcores = parallel::detectCores() - 1,file.prefix = NULL) {
+                           10, cost = 1, gamma = 1, kernel = "linear",scale = FALSE, step.nb = 10, numcores = parallel::detectCores() - 1,file.prefix = NULL) {
   message("tuneFeatureNb is running ...")
   
   if (!is.null(data.granges)) {
@@ -985,8 +985,8 @@ classfit <- createModel(data = trainset, cl = cl,kernel = kernel, scale = scale,
 #' feature.weights <- as.data.frame(t(t(svm.model$coefs) %*% svm.model$SV))
 
 createModel <-
-  function(data = NULL, data.granges = NULL, cl = 1,kernel = "radial",scale = FALSE,cost = NULL,gamma =
-             NULL, valid.times = NULL, feature.ranking = NULL,feature.nb = NULL,file.prefix = NULL) {
+  function(data = NULL, data.granges = NULL, cl = 1,kernel = "radial",scale = FALSE,cost = 1,gamma =
+             1, valid.times = 10, feature.ranking = NULL,feature.nb = NULL,file.prefix = NULL) {
     message("createModel is running ...")
     
     
@@ -1058,8 +1058,8 @@ set.seed(123)
 
 #evaluateModelPerformance = function(data = NULL, data.granges = NULL, cl = 1, valid.times = 10, svm.model, feature.ranking, feature.nb, numcores =
 #                                      parallel::detectCores() - 1, file.prefix = NULL) {
-evaluateModelPerformance = function(data = NULL, data.granges = NULL, cl = 1, valid.times = 10, feature.ranking, feature.nb, numcores =
-                                      parallel::detectCores() - 1, file.prefix = NULL, kernel = "radial", scale = FALSE, cost = NULL, gamma = NULL) {
+evaluateModelPerformance = function(data = NULL, data.granges = NULL, cl = 1, valid.times = 10, feature.ranking = NULL, feature.nb =NULL, numcores =
+                                      parallel::detectCores() - 1, file.prefix = NULL, kernel = "linear", scale = FALSE, cost = 1, gamma = 1) {
   message("evaluateModelPerformance is running ...")
   
   if (!is.null(data.granges)) {
@@ -1226,9 +1226,9 @@ scoreData <-
 #'  names(ledpred.list)
 
 LedPred <-
-  function(data = NULL, data.granges = NULL, cl = 1, ranges = list(gamma=seq(from = 1 , to = 10 , by = 9), cost=seq(from = 1 , to = 10 , by = 9)), kernel = "radial", scale = FALSE, valid.times =
+  function(data = NULL, data.granges = NULL, cl = 1, ranges = list(gamma=seq(from = 1 , to = 10 , by = 9), cost=seq(from = 1 , to = 10 , by = 9)), kernel = "linear", scale = FALSE, valid.times =
              10, file.prefix = NULL, numcores = parallel::detectCores() - 1, step.nb =
-             10, halve.above = 100) {
+             20, halve.above = 100) {
      if (!is.null(data.granges)) {
      data = .crmFeaturesToDf(data.granges)
     }
