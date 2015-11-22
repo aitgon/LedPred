@@ -1,0 +1,7 @@
+.svnignore
+.Rbuildignore
+.git
+.gitignore
+mapFeaturesToCRMs_test_data
+test-mapFeaturesToCRMs.r
+todo.md
