@@ -224,7 +224,7 @@ The \textit{evaluateModelPerformance} function returns a list of prediction prob
 
 <<echo=TRUE,eval=TRUE>>=
 probs.labels.list <- evaluateModelPerformance(data.granges=crm.features, 
-    feature.ranking=feature.ranking, feature.nb=50, svm.model=svm.model, 
+    feature.ranking=feature.ranking, feature.nb=50, 
     file.prefix = "test")
 names(probs.labels.list[[1]])
 @
