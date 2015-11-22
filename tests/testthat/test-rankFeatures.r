@@ -3,6 +3,7 @@ cost=80
 gamma=2    
 valid.times=2
 scale=F
+step.nb=40
 
 test_that("Rank features (df)", {
   

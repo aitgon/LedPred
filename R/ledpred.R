@@ -351,7 +351,7 @@ mapFeaturesToCRMs <-
 #'  gamma <- c.g.obj$best.parameters$gamma
 
 mcTune <- function(data = NULL, data.granges = NULL, cl = 1,
-                   ranges = NULL, kernel = "radial",scale = FALSE,
+                   ranges = list(gamma=c(1,10), cost=c(1,10)), kernel = "linear",scale = FALSE,
                    valid.times = 10,
                    file.prefix = NULL, numcores = parallel::detectCores() -
                      1) {
@@ -570,7 +570,7 @@ mcTune <- function(data = NULL, data.granges = NULL, cl = 1,
 #'      kernel='linear', file.prefix = "test", halve.above=10)
 
 rankFeatures = function(data = NULL, data.granges = NULL, cl = 1, halve.above = 100, valid.times =
-                          10, kernel = "radial", cost = NULL, gamma = NULL, scale = FALSE, numcores =
+                          10, kernel = "linear", cost = 1, gamma = 1, scale = FALSE, numcores =
                           parallel::detectCores() - 1, file.prefix = NULL) {
   message("rankFeatures is running ...")
   
@@ -836,7 +836,7 @@ rankFeatures = function(data = NULL, data.granges = NULL, cl = 1, halve.above = 
 #'  names(feature.nb.obj)
 
 tuneFeatureNb = function(data = NULL, data.granges = NULL, feature.ranking = NULL, cl = 1, valid.times =
-                           10, cost = NULL, gamma = NULL, kernel = "radial",scale = FALSE, step.nb = 10, numcores = parallel::detectCores() - 1,file.prefix = NULL) {
+                           10, cost = 1, gamma = 1, kernel = "linear",scale = FALSE, step.nb = 10, numcores = parallel::detectCores() - 1,file.prefix = NULL) {
   message("tuneFeatureNb is running ...")
   
   if (!is.null(data.granges)) {
@@ -944,12 +944,14 @@ tuneFeatureNb = function(data = NULL, data.granges = NULL, feature.ranking = NUL
   ))
 }
 
-.calculatePredictionProbability = function(testi, data = data, svm.model =
-                                             svm.model) {
+.calculatePredictionProbability = function(testi, data = data, cl=1, kernel = "radial", scale = FALSE, cost = NULL, gamma = NULL, feature.ranking=NULL, feature.nb=NULL) {
   trainset = data[-testi,]
   testset = data[testi,]
+classfit <- createModel(data = trainset, cl = cl,kernel = kernel, scale = scale,cost = cost,gamma =
+             gamma, feature.ranking = feature.ranking,feature.nb = feature.nb)
   library(e1071)
-  classpred = predict(svm.model, testset[,-1], probability = TRUE)
+  #classpred = predict(svm.model, testset[,-1], probability = TRUE)
+  classpred = predict(classfit, testset[,-1], probability = TRUE)
   #detach("package:e1071", unload=TRUE)
   probs = attr(classpred,"probabilities")[,1]
   labels = testset$cl
@@ -983,8 +985,8 @@ tuneFeatureNb = function(data = NULL, data.granges = NULL, feature.ranking = NUL
 #' feature.weights <- as.data.frame(t(t(svm.model$coefs) %*% svm.model$SV))
 
 createModel <-
-  function(data = NULL, data.granges = NULL, cl = 1,kernel = "radial",scale = FALSE,cost = NULL,gamma =
-             NULL, valid.times = NULL, feature.ranking = NULL,feature.nb = NULL,file.prefix = NULL) {
+  function(data = NULL, data.granges = NULL, cl = 1,kernel = "radial",scale = FALSE,cost = 1,gamma =
+             1, valid.times = 10, feature.ranking = NULL,feature.nb = NULL,file.prefix = NULL) {
     message("createModel is running ...")
     
     
@@ -1006,6 +1008,7 @@ createModel <-
     cost <- svm.params$cost
     gamma <- svm.params$gamma
     data <- data.frame(cl = cl,data)
+set.seed(123)
     if (kernel == "radial") {
       classfit <-
         e1071::svm(
@@ -1015,7 +1018,7 @@ createModel <-
     } else if (kernel == "linear") {
       classfit <-
         e1071::svm(
-          cl ~ .,data = data,kernel = kernel, cost = cost, scale = scale, probability =
+          cl ~ .,data = data, kernel = kernel, cost = cost, scale = scale, probability =
             TRUE
         )
     }
@@ -1049,12 +1052,14 @@ createModel <-
 #' data(feature.ranking)
 #' data(svm.model)
 #'probs.labels.list <- evaluateModelPerformance(data.granges=crm.features,
-#'    feature.ranking=feature.ranking, feature.nb=50, svm.model=svm.model,
+#'    feature.ranking=feature.ranking, feature.nb=50,
 #'    file.prefix = "test")
 #'names(probs.labels.list[[1]])
 
-evaluateModelPerformance = function(data = NULL, data.granges = NULL, cl = 1, valid.times = 10, svm.model, feature.ranking, feature.nb, numcores =
-                                      parallel::detectCores() - 1, file.prefix = NULL) {
+#evaluateModelPerformance = function(data = NULL, data.granges = NULL, cl = 1, valid.times = 10, svm.model, feature.ranking, feature.nb, numcores =
+#                                      parallel::detectCores() - 1, file.prefix = NULL) {
+evaluateModelPerformance = function(data = NULL, data.granges = NULL, cl = 1, valid.times = 10, feature.ranking = NULL, feature.nb =NULL, numcores =
+                                      parallel::detectCores() - 1, file.prefix = NULL, kernel = "linear", scale = FALSE, cost = 1, gamma = 1) {
   message("evaluateModelPerformance is running ...")
   
   if (!is.null(data.granges)) {
@@ -1084,7 +1089,7 @@ evaluateModelPerformance = function(data = NULL, data.granges = NULL, cl = 1, va
   }
   
   cv.probs.labels = parallel::mclapply(
-    test.ind, .calculatePredictionProbability, data = data, svm.model = svm.model, mc.cores =
+    test.ind, .calculatePredictionProbability, data = data, kernel = kernel, scale = scale, cost = cost, gamma = gamma, feature.ranking = feature.ranking, feature.nb = feature.nb, mc.cores =
       numcores, mc.set.seed = FALSE, mc.preschedule = TRUE
   )
   if (!is.null(file.prefix)) {
@@ -1221,12 +1226,13 @@ scoreData <-
 #'  names(ledpred.list)
 
 LedPred <-
-  function(data = NULL, data.granges = NULL, cl = 1, ranges,kernel = "radial", scale = FALSE, valid.times =
+  function(data = NULL, data.granges = NULL, cl = 1, ranges = list(gamma=seq(from = 1 , to = 10 , by = 9), cost=seq(from = 1 , to = 10 , by = 9)), kernel = "linear", scale = FALSE, valid.times =
              10, file.prefix = NULL, numcores = parallel::detectCores() - 1, step.nb =
-             10, halve.above = 100) {
-    # if (!is.null(data.granges)) {
-    # data = .crmFeaturesToDf(data.granges)
-    #}
+             20, halve.above = 100) {
+     if (!is.null(data.granges)) {
+     data = .crmFeaturesToDf(data.granges)
+    }
+#browser()
     
     c.g.obj <-
       mcTune(
@@ -1248,6 +1254,7 @@ LedPred <-
           numcores, file.prefix = file.prefix
       )
     feature.nb = feature.obj$best.feature.nb
+    write(feature.nb, paste(file.prefix, "_feature_nb.txt", sep=''))
     svm.model <-
       createModel(
         data = data, data.granges = data.granges, cl = cl, kernel=kernel, scale=scale, cost=cost, gamma = gamma, feature.ranking =
@@ -1255,7 +1262,7 @@ LedPred <-
       )
     probs.label.list <-
       evaluateModelPerformance(
-        data = data, data.granges = data.granges, cl = cl, valid.times = valid.times, svm.model = svm.model, feature.ranking =
+        data = data, data.granges = data.granges, cl = cl, kernel=kernel, scale=scale, cost=cost, gamma = gamma, valid.times = valid.times, feature.ranking =
           feature.ranking, feature.nb = feature.nb, numcores = numcores, file.prefix = file.prefix
       )
     ledpred.summary <-

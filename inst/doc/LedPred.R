@@ -19,7 +19,7 @@ data(crm.features)
 ##  TF.matrices <-  file.list[grep("tf", file.list)]
 ##  ngs.path <- system.file("extdata/ngs", package="LedPred")
 ##  ngs.files=list.files(ngs.path, full.names=TRUE)
-##  crm.features.list <- mapFeaturesToCRMs(URL = 'http://ifbprod.aitorgonzalezlab.org/map_features_to_crms.php', positive.bed=positive.regions, 
+##  crm.features.list <- mapFeaturesToCRMs(URL = 'http://ifbdev.aitorgonzalezlab.org/map_features_to_crms.php', positive.bed=positive.regions, 
 ##      negative.bed=negative.regions,  background.freqs=background.freq, 
 ##      pssm=TF.matrices, genome="dm3", ngs=ngs.files, 
 ##      crm.feature.file = "crm.features.tab", 
@@ -88,7 +88,7 @@ feature.weights <- as.data.frame(t(t(svm.model$coefs) %*% svm.model$SV))
 ### code chunk number 9: LedPred.Rnw:225-229
 ###################################################
 probs.labels.list <- evaluateModelPerformance(data.granges=crm.features, 
-    feature.ranking=feature.ranking, feature.nb=50, svm.model=svm.model, 
+    feature.ranking=feature.ranking, feature.nb=50, 
     file.prefix = "test")
 names(probs.labels.list[[1]])
 
@@ -105,7 +105,7 @@ ngs.path <- system.file("extdata/ngs", package="LedPred")
 ngs.files=list.files(ngs.path, full.names=TRUE)
 feature.nb=50
 
-prediction.crm.features.list <- mapFeaturesToCRMs(URL = 'http://ifbprod.aitorgonzalezlab.org/map_features_to_crms.php', positive.bed=positive.bed, 
+prediction.crm.features.list <- mapFeaturesToCRMs(URL = 'http://ifbdev.aitorgonzalezlab.org/map_features_to_crms.php', positive.bed=positive.bed, 
   pssm=TF.matrices, background.freqs=background.freqs, 
   genome='dm3', ngs=ngs.files, feature.ranking=feature.ranking, feature.nb=50, 
     crm.feature.file = "test_pred.crm.features.tab", 
