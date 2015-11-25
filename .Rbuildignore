@@ -6,8 +6,8 @@
 vignettes/.Rd2pdf*
 vignettes/test_*
 vignettes/LedPred.out
-tests/testthat/test-mapFeatures2Seqs.r
-tests/testthat/mapFeaturesToSeqs_test_data
+tests/testthat/test-mapFeaturesToCRMs.r
+tests/testthat/mapFeaturesToCRMs_test_data
 LetPred.BiocCheck 
 ^.*\.tar.gz$
 ^.*\.BiocCheck$
