@@ -1052,7 +1052,7 @@ set.seed(123)
 #' data(feature.ranking)
 #' data(svm.model)
 #'probs.labels.list <- evaluateModelPerformance(data.granges=crm.features,
-#'    feature.ranking=feature.ranking, feature.nb=50, svm.model=svm.model,
+#'    feature.ranking=feature.ranking, feature.nb=50,
 #'    file.prefix = "test")
 #'names(probs.labels.list[[1]])
 

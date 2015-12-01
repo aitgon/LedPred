@@ -20,5 +20,5 @@ vignettes/test_*
 LedPred.pdf
 BiocCheck.out
 man
-.svn/
+.svn
 data/datalist
