@@ -1038,6 +1038,10 @@ set.seed(123)
 #' @param data data.frame containing the training set
 #' @param data.granges Bioconductor GenomicRanges object containing the training set
 #' @param cl integer indicating the column number corresponding to the response vector that classify positive and negative regions (default = 1)
+#' @param kernel SVM kernel, a character string: "linear" or "radial". (default = "radial")
+#' @param scale Logical indicating if the data have to be scaled or not (default = FALSE)
+#' @param cost The SVM cost parameter for both linear and radial kernels. If NULL (default), the function \code{mcTune} is run.
+#' @param gamma The SVM gamma parameter for radial kernel. If radial kernel and NULL (default), the function \code{mcTune} is run.
 #' @param valid.times Integer indicating how many times the training set will be split for the cross validation step (default = 10). This number must be smaller than positive and negative sets sizes.
 #' @param svm.model the model to test
 #' @param feature.ranking List of ordered features.
