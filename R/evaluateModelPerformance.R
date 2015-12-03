@@ -22,8 +22,7 @@ evaluateModelPerformance <-
     return(cv.probs.labels)
   }
 
-.calculatePredictionProbability = function(testi, data = data, cl = 1, feature.ranking =
-                                             NULL, feature.nb = NULL) {
+.calculatePredictionProbability = function(testi, data = data, cl = 1) {
   trainset = data[-testi,]
   testset = data[testi,]
 

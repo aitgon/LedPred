@@ -1,3 +1,5 @@
 .Rproj.user
 .Rhistory
 .RData
+tests/testthat/allfeatures_ROC_perf.png
+tests/testthat/somefeatures_ROC_perf.png

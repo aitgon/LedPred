@@ -33,6 +33,6 @@ test_that("evaluateModelPerformance", {
 
 test_that(".calculatePredictionProbability", {
   prob.label.obj = .calculatePredictionProbability(
-    testi, data = mat, cl = 1, feature.ranking = fr, feature.nb = fn
+    testi, data = mat, cl = 1
   )
 })
