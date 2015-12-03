@@ -26,6 +26,14 @@ evaluateModelPerformance(data = NULL, data.granges = NULL, cl = 1,
 
 \item{file.prefix}{A character string that will be used as a prefix followed by "_ROCR_perf.png" for the result plot file, if it is NULL (default), no plot is returned}
 
+\item{kernel}{SVM kernel, a character string: "linear" or "radial". (default = "radial")}
+
+\item{scale}{Logical indicating if the data have to be scaled or not (default = FALSE)}
+
+\item{cost}{The SVM cost parameter for both linear and radial kernels. If NULL (default), the function \code{mcTune} is run.}
+
+\item{gamma}{The SVM gamma parameter for radial kernel. If radial kernel and NULL (default), the function \code{mcTune} is run.}
+
 \item{svm.model}{the model to test}
 }
 \value{
