@@ -57,6 +57,7 @@ return(list(feature.ids = feature.ids, train.data.ids = train.fold.i, test.data.
 },
 RunSVMRFE = function(x, y, k.folds, halve.above=100) {
 
+
 n = ncol(x)
 i.surviving = 1:n
 i.ranked    = n
@@ -90,6 +91,7 @@ ranked.list[1] = i.surviving # add latest i.surviving
 return(ranked.list)
 },
 CombineKFoldWeigths = function (w) {
+#browser()
 if (length(w) > 1) {
 w = do.call(rbind, w)
 
@@ -98,12 +100,12 @@ w = do.call(rbind, w)
               x / sqrt(sum(x ^ 2))))
 
             # Compute ranking criteria
-            v    = w * w
+            v    = w^2
             vbar = apply(v, 2, mean)
             vsd  = apply(v, 2, sd)
             c    = vbar / vsd
 } else {
-c = w * w
+c = unlist(w)^2
 }
 return(c)
 },
@@ -111,6 +113,7 @@ GetKFoldWeights = function(k.fold.i, x, y) {
 	x=x[k.fold.i,]
 	y=y[k.fold.i]
 	obj <- Model$new(x=x, y=y, valid.times=1)
+
 	return(obj$weights)
 }
   )
