@@ -23,6 +23,7 @@ Model <- R6::R6Class(
       self$weights = (t(self$model$coefs) %*% self$model$SV)
     },
     ScoreData = function(x) {
+      library(e1071)
       classpred = predict(self$model, x, decision.values = private$decision.values, probability = private$probability)
       probs = attr(classpred,"probabilities")[,1]
       scores = attr(classpred,"decision.values")[,1]
