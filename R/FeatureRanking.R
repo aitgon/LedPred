@@ -4,7 +4,7 @@ FeatureRanking <- R6::R6Class(
   public = list(
 	file.prefix = NULL,
     test.folds = NA,
-    kfold.nb = 5,
+    kfold.nb = 1,
     halve.above = 100,
     numcores = parallel::detectCores() - 1,
     feature.ranking = NULL,
