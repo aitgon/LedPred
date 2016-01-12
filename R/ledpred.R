@@ -19,8 +19,8 @@ createModel = function(x, y, feature.ranking = NULL, feature.nb = NULL, file.pre
 selected.features = as.character(feature.ranking$FeatureName[1:feature.nb])
 x = x[,selected.features]
 model.obj <- ledpred2::Model$new(x = x, y = y)
-model = model.obj$model
-save(model, file = paste(file.prefix,"_model.rda",sep = "")) # can save model for later use
+#model = model.obj$model
+save(model.obj, file = paste(file.prefix,"_model.rda",sep = "")) # can save model for later use
 
 return(model.obj)
 }
