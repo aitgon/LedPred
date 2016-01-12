@@ -27,7 +27,7 @@ return(model.obj)
 
 scoreData <- function(x, model, score.file = NULL) {
 
-scores = as.numeric(model$ScoreData(x=x)$scores)
+scores = model$ScoreData(x=x)$scores
 return(scores)
 
 }
