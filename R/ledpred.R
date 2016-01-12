@@ -25,4 +25,10 @@ save(model, file = paste(file.prefix,"_model.rda",sep = "")) # can save model fo
 return(model.obj)
 }
 
+scoreData <- function(x, model, score.file = NULL) {
+
+scores = as.numeric(model$ScoreData(x=x)$scores)
+return(scores)
+
+}
 
