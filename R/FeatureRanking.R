@@ -2,21 +2,21 @@ FeatureRanking <- R6::R6Class(
   "FeatureRanking",
   inherit = Data,
   public = list(
-	file.prefix = NULL,
     test.folds = NA,
     kfold.nb = 1,
     halve.above = 100,
     numcores = parallel::detectCores() - 1,
     feature.ranking = NULL,
-    initialize = function(x, y, valid.times, kfold.nb, halve.above, numcores, feature.ranking, file.prefix) {
-      self$x = x
-      self$y = y
+    file.prefix = NULL,
+    initialize = function(x, y, valid.times=self$valid.times, kfold.nb=self$kfold.nb, halve.above=self$halve.above, numcores=self$numcores, feature.ranking, file.prefix=self$file.prefix) {
       if (!missing(valid.times)) {
         self$valid.times = valid.times
         data.obj = Data$new(x = x, y = y, valid.times = valid.times)
       } else {
         data.obj = Data$new(x = x, y = y)
       }
+      self$x = data.obj$x
+      self$y = data.obj$y
       self$test.folds = data.obj$test.folds
       if (!missing(file.prefix)) self$file.prefix = file.prefix
       if (!missing(kfold.nb)) self$kfold.nb = kfold.nb
