@@ -1,31 +1,26 @@
-#rm(list=ls(all=TRUE))
-
-#source('Data.R')
-#source('Model.R')
-
 FeatureNbTuner <- R6::R6Class(
   "FeatureNbTuner",
   inherit = Data,
   public = list(
-    x = NA,
-    y = NA,
+    x = NULL,
+    y = NULL,
     valid.times = 5,
 	file.prefix = NULL,
-    test.folds = NA,
+    test.folds = NULL,
     numcores = parallel::detectCores() - 1,
     feature.ranking = NULL,
     feature.nb.vector = NULL,
     feature.performances = NULL,
     best.feature.nb = NULL,
-    initialize = function(x, y, valid.times=self$valid.times, numcores=self$numcores, feature.ranking, feature.nb.vector, file.prefix=self$prefix) {
-      self$x = x
-      self$y = y
+    initialize = function(x, y, valid.times=self$valid.times, numcores=self$numcores, feature.ranking=self$feature.ranking, feature.nb.vector=self$feature.nb.vector, file.prefix=self$file.prefix) {
       if (!missing(valid.times)) {
         self$valid.times = valid.times
         data.obj = Data$new(x = x, y = y, valid.times = valid.times)
       } else {
         data.obj = Data$new(x = x, y = y)
       }
+      self$x = data.obj$x
+      self$y = data.obj$y
       self$test.folds = data.obj$test.folds
       if (!missing(file.prefix)) self$file.prefix = file.prefix
       if (!missing(numcores)) self$numcores = numcores
