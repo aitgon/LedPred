@@ -1,15 +1,13 @@
 Data <- R6::R6Class(
   "Data",
   public = list(
-    x = NA,
+    x = NULL,
     y = NULL,
     valid.times = 5,
     test.folds = NA,
     initialize = function(x, y, valid.times) {
-#print(length(y==1))
 		self$x = x
 		self$y = y
-#print(length(self$y==1))
       if (!missing(valid.times)) self$valid.times <- valid.times
 if (self$valid.times > 1) self$test.folds = self$MakeCrossValidSets(self$valid.times)
     },
@@ -57,3 +55,4 @@ if (self$valid.times > 1) self$test.folds = self$MakeCrossValidSets(self$valid.t
     scale = FALSE
   )
 )
+

@@ -3,3 +3,6 @@
 .RData
 tests/testthat/allfeatures_ROC_perf.png
 tests/testthat/somefeatures_ROC_perf.png
+tests/testthat/_ROC_perf.png
+tests/testthat/_kappa_measures.png
+

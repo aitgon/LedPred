@@ -5,7 +5,7 @@ y=get(load(file="data_iris2/y.rda"))
 valid.times=5
 numcores=1
 
-test_that("fast_FeatureRanking_kfold.nb=5", {
+test_that("iris2_FeatureRanking_kfold.nb=5", {
 
 kfold.nb=5
 
@@ -16,14 +16,26 @@ testthat::expect_true(all(feature.ranking.obj$feature.ranking[c(11,12), 'AvgRnk'
 
 })
 
-test_that("fast_FeatureRanking_kfold.nb=1", {
+test_that("iris2_FeatureRanking_kfold.nb=1", {
 
 kfold.nb=1
 
 # -------------------------------------
 feature.ranking.obj <-FeatureRanking$new(x = x, y = y, valid.times = valid.times, kfold.nb=kfold.nb, numcores=numcores)
 testthat::expect_true(all(feature.ranking.obj$feature.ranking[c(1,2), 'FeatureName']==c('Petal.Length', 'Petal.Width')))
-testthat::expect_true(all(feature.ranking.obj$feature.ranking[c(11,12), 'AvgRnk']==c(8.8, 10.6)))
+testthat::expect_true(all(feature.ranking.obj$feature.ranking[c(11,12), 'AvgRnk']==c(8.8, 1.6)))
+
+})
+
+test_that("iris2_rankFeatures_kfold.nb=1", {
+
+kfold.nb=1
+
+# -------------------------------------
+feature.ranking <-rankFeatures(x = x, y = y, valid.times = valid.times, kfold.nb=kfold.nb, numcores=numcores)
+#print(feature.ranking)
+testthat::expect_true(all(feature.ranking[c(1,2), 'FeatureName']==c('Petal.Length', 'Petal.Width')))
+testthat::expect_true(all(feature.ranking[c(11,12), 'AvgRnk']==c(9.8, 10)))
 
 })
 
