@@ -2,22 +2,23 @@ Model <- R6::R6Class(
   "Model",
   inherit = Data,
   public = list(
-    x = NA,
+    x = NULL,
     y = NULL,
     valid.times = 5,
-    test.folds = NA,
-    model = NA,
-    weights = NA,
-    initialize = function(x, y, valid.times) {
+    test.folds = NULL,
+    model = NULL,
+    weights = NULL,
+    initialize = function(x, y, valid.times=self$valid.times) {
       self$x = x
       self$y = y
-#print(y)
       if (!missing(valid.times)) {
         self$valid.times = valid.times
         data.obj = Data$new(x = x, y = y, valid.times = valid.times)
       } else {
         data.obj = Data$new(x = x, y = y)
       }
+      self$x = data.obj$x
+      self$y = data.obj$y
       self$test.folds = data.obj$test.folds
       private$CreateModel()
       self$weights = (t(self$model$coefs) %*% self$model$SV)
