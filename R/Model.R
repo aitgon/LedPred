@@ -9,9 +9,17 @@ Model <- R6::R6Class(
     model = NULL,
     weights = NULL,
     scale.factors = NULL,
-    initialize = function(x, y, valid.times=self$valid.times) {
-      self$x = x
-      self$y = y
+    feature.ranking = NULL,
+    feature.nb = NULL,
+    initialize = function(x, y, valid.times=self$valid.times, feature.ranking=self$feature.ranking, feature.nb=self$feature.nb) {
+#      self$x = x
+#      self$y = y
+      if (!is.null(feature.ranking) && !is.null(feature.nb)) {
+      self$feature.ranking=feature.ranking
+      self$feature.nb=feature.nb
+		selected.features = as.character(self$feature.ranking$FeatureName[1:self$feature.nb])
+		x = x[,selected.features]
+      }
       if (!missing(valid.times)) {
         self$valid.times = valid.times
         data.obj = Data$new(x = x, y = y, valid.times = valid.times)
@@ -26,6 +34,10 @@ Model <- R6::R6Class(
       self$weights = (t(self$model$coefs) %*% self$model$SV)
     },
     ScoreData = function(x) {
+      if (!is.null(self$feature.ranking) && !is.null(self$feature.nb)) {
+		selected.features = as.character(self$feature.ranking$FeatureName[1:self$feature.nb])
+		x = x[,selected.features]
+      }
     x=x/self$scale.factors
       library(e1071)
       classpred = predict(self$model, x, decision.values = private$decision.values, probability = private$probability)

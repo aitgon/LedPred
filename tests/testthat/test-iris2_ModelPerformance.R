@@ -1,11 +1,8 @@
-test_that("fast_ModelPerformance", {
-
 x=get(load(file="data_iris2/x.rda"))
 y=get(load(file="data_iris2/y.rda"))
 # -------------------------------------
-valid.times=5
-kfold.nb=5
-numcores=1
+
+test_that("fast_ModelPerformance", {
 
 # --------------------------
 feature.ranking = get(load('data_iris2/feature.ranking.rda'))
