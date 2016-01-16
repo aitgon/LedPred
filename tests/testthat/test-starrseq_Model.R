@@ -13,8 +13,8 @@ model = model.obj$model
 
 scores = model.obj$ScoreData(x=x)$scores
 
-testthat::expect_equal(as.numeric(scores)[1], -1.072615, tolerance=1e-5)
 #browser()
+testthat::expect_equal(as.numeric(scores)[1], -1.072615, tolerance=1e-5)
 testthat::expect_equal(as.numeric(scoreData(x, model.obj))[1], -1.072615, tolerance=1e-5)
 }
 )

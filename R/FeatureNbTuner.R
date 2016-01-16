@@ -21,6 +21,7 @@ FeatureNbTuner <- R6::R6Class(
       }
       self$x = data.obj$x
       self$y = data.obj$y
+#      browser()
       self$test.folds = data.obj$test.folds
       if (!missing(file.prefix)) self$file.prefix = file.prefix
       if (!missing(numcores)) self$numcores = numcores

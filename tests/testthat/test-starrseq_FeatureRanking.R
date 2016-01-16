@@ -11,6 +11,7 @@ numcores=1
 
 # -------------------------------------
 feature.ranking.obj <-FeatureRanking$new(x = x, y = y, valid.times = valid.times, kfold.nb=kfold.nb)
-testthat::expect_true(all(feature.ranking.obj$feature.ranking[c(1,2), 'FeatureName']==c('peaks_ets1.bed', 'GPAM.output_1')))
+#browser()
+testthat::expect_true(all(feature.ranking.obj$feature.ranking[c(1,2), 'FeatureName']==c('Myb', 'peaks_ets1.bed')))
 })
 

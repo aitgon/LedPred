@@ -7,14 +7,14 @@ valid.times=5
 test_that("iris2_Model", {
 model.obj = Model$new( x = x, y = y)
 
-#browser()
-
 scores = model.obj$ScoreData(x=x)$scores
 model = model.obj$model
 
-testthat::expect_true(all(rownames(model$SV)[1:3]==c("21", "25", "35")))
-testthat::expect_equal(as.numeric(scores)[1], 1.3936184, tolerance=1e-6)
-testthat::expect_equal(as.numeric(scoreData(x, model.obj))[1], 1.393618, tolerance=1e-5)
+#browser()
+
+testthat::expect_true(all(rownames(model$SV)[1:3]==c("1", "2", "3")))
+testthat::expect_equal(as.numeric(scores)[1], -0.737, tolerance=1e-2)
+testthat::expect_equal(as.numeric(scoreData(x, model.obj))[1], -0.737, tolerance=1e-2)
 }
 )
 

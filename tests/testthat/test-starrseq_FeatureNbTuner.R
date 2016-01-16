@@ -14,7 +14,7 @@ feature.nb.vector = list(100, 200, 300, 400, 500, 600)
 feature.nb.tuner = FeatureNbTuner$new( x = x, y = y, valid.times = valid.times, feature.ranking = feature.ranking, feature.nb.vector = feature.nb.vector)
 #browser()
 testthat::expect_true(feature.nb.tuner$best.feature.nb==200)
-testthat::expect_equal(feature.nb.tuner$feature.performances['cv.kappa.mean',][[1]], 0.3654087, tolerance=1e-6)
+testthat::expect_equal(feature.nb.tuner$feature.performances['cv.kappa.mean',][[1]], 0.371, tolerance=1e-2)
 }
 )
 

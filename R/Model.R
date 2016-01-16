@@ -8,6 +8,7 @@ Model <- R6::R6Class(
     test.folds = NULL,
     model = NULL,
     weights = NULL,
+    scale.factors = NULL,
     initialize = function(x, y, valid.times=self$valid.times) {
       self$x = x
       self$y = y
@@ -20,10 +21,12 @@ Model <- R6::R6Class(
       self$x = data.obj$x
       self$y = data.obj$y
       self$test.folds = data.obj$test.folds
+      self$scale.factors = data.obj$scale.factors
       private$CreateModel()
       self$weights = (t(self$model$coefs) %*% self$model$SV)
     },
     ScoreData = function(x) {
+    x=x/self$scale.factors
       library(e1071)
       classpred = predict(self$model, x, decision.values = private$decision.values, probability = private$probability)
       probs = attr(classpred,"probabilities")[,1]
