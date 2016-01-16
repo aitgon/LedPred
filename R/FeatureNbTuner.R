@@ -33,7 +33,7 @@ self$feature.performances = private$FeatureKappaPerformance(feature.nb.vector=se
 kappa.vector=simplify2array(self$feature.performances["cv.kappa.mean",])
   self$best.feature.nb = self$feature.nb.vector[min(which(kappa.vector == max(kappa.vector)))][[1]]
 if (!is.null(self$file.prefix))
-write(self$best.feature.nb, file=paste(file.prefix, "best.feature.nb.txt", sep=""))
+write(self$best.feature.nb, file=paste(file.prefix, "_best.feature.nb.txt", sep=""))
     private$PlotKappa(feature_nb_obj, file.prefix)
     }
   ),
