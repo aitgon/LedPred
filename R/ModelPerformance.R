@@ -17,7 +17,7 @@ ModelPerformance <- R6::R6Class(
     feature.ranking = NULL,
     feature.nb = NULL,
     initialize = function(x, y, valid.times, numcores, file.prefix=self$file.prefix, feature.ranking=self$feature.ranking, feature.nb=self$feature.nb) {
-      self$model.obj = Model$new(x = x, y = y, valid.times = valid.times, feature.ranking=feature.ranking, feature.nb=feature.nb)
+      self$model.obj = Model$new(x = x, y = y, valid.times = valid.times, feature.ranking=feature.ranking, feature.nb=feature.nb, file.prefix=file.prefix)
       self$x = self$model.obj$x
       self$y = self$model.obj$y
       self$valid.times = self$model.obj$valid.times

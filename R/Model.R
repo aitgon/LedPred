@@ -11,7 +11,8 @@ Model <- R6::R6Class(
     scale.factors = NULL,
     feature.ranking = NULL,
     feature.nb = NULL,
-    initialize = function(x, y, valid.times=self$valid.times, feature.ranking=self$feature.ranking, feature.nb=self$feature.nb) {
+    file.prefix=NULL,
+    initialize = function(x, y, valid.times=self$valid.times, feature.ranking=self$feature.ranking, feature.nb=self$feature.nb, file.prefix=self$file.prefix) {
 #      self$x = x
 #      self$y = y
       if (!is.null(feature.ranking) && !is.null(feature.nb)) {
@@ -30,8 +31,12 @@ Model <- R6::R6Class(
       self$y = data.obj$y
       self$test.folds = data.obj$test.folds
       self$scale.factors = data.obj$scale.factors
+      self$file.prefix = file.prefix
       private$CreateModel()
       self$weights = (t(self$model$coefs) %*% self$model$SV)
+#      browser()
+if (!is.null(self$file.prefix)) 
+	save(self, file = paste(file.prefix,"_model.rda",sep = "")) # can save model for later use
     },
     ScoreData = function(x) {
       if (!is.null(self$feature.ranking) && !is.null(self$feature.nb)) {

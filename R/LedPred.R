@@ -20,7 +20,7 @@ LedPred <- R6::R6Class(
     cv.probs.labels = NULL,
     initialize = function(x, y, valid.times=self$valid.times, kfold.nb=self$kfold.nb, halve.above=self$halve.above, numcores=self$numcores, file.prefix=self$file.prefix, feature.nb.vector) {
     #
-    feature.ranking.obj <- ledpred2::FeatureRanking$new(x, y, valid.times=self$valid.times, kfold.nb=self$kfold.nb, halve.above=self$halve.above, numcores=self$numcores, file.prefix=self$file.prefix)
+    feature.ranking.obj <- ledpred2::FeatureRanking$new(x, y, valid.times=self$valid.times, kfold.nb=self$kfold.nb, halve.above=self$halve.above, numcores=self$numcores, file.prefix=file.prefix)
     #
     self$x = feature.ranking.obj$x
     self$y = feature.ranking.obj$y
@@ -38,7 +38,7 @@ LedPred <- R6::R6Class(
     self$feature.performances = feature.nb.tuner.obj$feature.performances
     self$best.feature.nb = feature.nb.tuner.obj$best.feature.nb
     #
-    model.perf.obj = ModelPerformance$new(x = x, y = y, feature.ranking=self$feature.ranking, feature.nb=self$best.feature.nb)
+    model.perf.obj = ModelPerformance$new(x = x, y = y, feature.ranking=self$feature.ranking, feature.nb=self$best.feature.nb, file.prefix=self$file.prefix)
 ##    #
     self$model = model.perf.obj$model
     self$model.obj = model.perf.obj$model.obj
