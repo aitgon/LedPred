@@ -8,7 +8,7 @@ FeatureRanking <- R6::R6Class(
     numcores = parallel::detectCores() - 1,
     feature.ranking = NULL,
     file.prefix = NULL,
-    initialize = function(x, y, valid.times=self$valid.times, kfold.nb=self$kfold.nb, halve.above=self$halve.above, numcores=self$numcores, feature.ranking, file.prefix=self$file.prefix) {
+    initialize = function(x, y, valid.times=self$valid.times, kfold.nb=self$kfold.nb, halve.above=self$halve.above, numcores=self$numcores, file.prefix=self$file.prefix) {
       if (!missing(valid.times)) {
         self$valid.times = valid.times
         data.obj = Data$new(x = x, y = y, valid.times = valid.times)

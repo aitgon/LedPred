@@ -1,6 +1,5 @@
 rankFeatures = function(x, y, ...) {
 	feature.ranking.obj <- ledpred2::FeatureRanking$new(x = x, y = y, ...)
-#print(feature.ranking.o)
 	feature.ranking = feature.ranking.obj$feature.ranking
 	return(feature.ranking)
 }
@@ -8,7 +7,6 @@ rankFeatures = function(x, y, ...) {
 tuneFeatureNb = function(x, y, feature.ranking, feature.nb.vector = NULL, step.nb=25, ...) {
 
 feature.nb.vector = seq(from = 10, to = (ncol(x) - 1), by = step.nb)
-#print(feature.nb.vector)
 feature.nb.tuner = ledpred2::FeatureNbTuner$new(
   x = x, y = y, feature.ranking = feature.ranking, feature.nb.vector = feature.nb.vector, ...)
     return(feature.nb.tuner)

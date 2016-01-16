@@ -9,18 +9,23 @@ ModelPerformance <- R6::R6Class(
     valid.times = 1,
     test.folds = NA,
     model = NA,
+    model.obj = NA,
     weights = NA,
     numcores = parallel::detectCores() - 1,
 	file.prefix = "",
     cv.probs.labels = NA,
-    initialize = function(x, y, valid.times, numcores, file.prefix=self$file.prefix) {
-      model.obj = Model$new(x = x, y = y, valid.times = valid.times)
-      self$x = model.obj$x
-      self$y = model.obj$y
-      self$valid.times = model.obj$valid.times
-      self$test.folds = model.obj$test.folds
-      self$model = model.obj$model
-      self$weights = model.obj$weights
+    feature.ranking = NULL,
+    feature.nb = NULL,
+    initialize = function(x, y, valid.times, numcores, file.prefix=self$file.prefix, feature.ranking=self$feature.ranking, feature.nb=self$feature.nb) {
+      self$model.obj = Model$new(x = x, y = y, valid.times = valid.times, feature.ranking=feature.ranking, feature.nb=feature.nb)
+      self$x = self$model.obj$x
+      self$y = self$model.obj$y
+      self$valid.times = self$model.obj$valid.times
+      self$test.folds = self$model.obj$test.folds
+      self$model = self$model.obj$model
+      self$weights = self$model.obj$weights
+      self$feature.ranking = self$model.obj$feature.ranking
+      self$feature.nb = self$model.obj$feature.nb
       if (!missing(numcores)) self$numcores = numcores
       if (!missing(file.prefix)) self$file.prefix = file.prefix
       self$cv.probs.labels = private$CVModelPeformanceAllFolds(test.folds = self$test.folds)

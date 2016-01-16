@@ -4,9 +4,10 @@ FeatureNbTuner <- R6::R6Class(
   public = list(
     x = NULL,
     y = NULL,
+    test.folds = NULL,
+    scale.factors = NULL,
     valid.times = 5,
 	file.prefix = NULL,
-    test.folds = NULL,
     numcores = parallel::detectCores() - 1,
     feature.ranking = NULL,
     feature.nb.vector = NULL,
