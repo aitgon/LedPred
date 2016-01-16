@@ -22,10 +22,19 @@ save(model.obj, file = paste(file.prefix,"_model.rda",sep = "")) # can save mode
 return(model.obj)
 }
 
-scoreData <- function(x, model, score.file = NULL) {
+scoreData <- function(x, ledpred=NULL, model=NULL, score.file = NULL) {
 
-scores = model$ScoreData(x=x)$scores
-return(scores)
+if(!is.null(ledpred))  {
+	scores = ledpred$model.obj$ScoreData(x=x)$scores
+	return(scores)
+
+}
+
+if(!is.null(model))  {
+	scores = model$ScoreData(x=x)$scores
+	return(scores)
+
+}
 
 }
 
