@@ -18,6 +18,7 @@ LedPred <- R6::R6Class(
     model.obj = NULL,
     weights = NULL,
     cv.probs.labels = NULL,
+    test.folds = NULL,
     initialize = function(x, y, valid.times=self$valid.times, kfold.nb=self$kfold.nb, halve.above=self$halve.above, numcores=self$numcores, file.prefix=self$file.prefix, feature.nb.vector) {
     #
     feature.ranking.obj <- ledpred2::FeatureRanking$new(x, y, valid.times=self$valid.times, kfold.nb=self$kfold.nb, halve.above=self$halve.above, numcores=self$numcores, file.prefix=file.prefix)
@@ -44,6 +45,8 @@ LedPred <- R6::R6Class(
     self$model.obj = model.perf.obj$model.obj
     self$weights = model.perf.obj$weights
     self$cv.probs.labels = model.perf.obj$cv.probs.labels
+if (!is.null(self$file.prefix))
+	save(self, file=paste(file.prefix, '_ledpred.rda', sep=""))
     #
 #    print(self$feature.ranking)
 #    print(self$best.feature.nb)

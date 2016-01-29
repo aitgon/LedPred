@@ -27,10 +27,10 @@ scoreData <- function(x, ledpred=NULL, model=NULL, score.file = NULL) {
 scores=NULL
 
 if(!is.null(ledpred))  {
-	scores = ledpred$model.obj$ScoreData(x=x)$scores
+	scores = ledpred$model.obj$ScoreData(x=x)$probs
 
 } else if (!is.null(model))  {
-	scores = model$ScoreData(x=x)$scores
+	scores = model$ScoreData(x=x)$probs
 }
 
 if(!is.null(score.file)) {
@@ -53,7 +53,7 @@ obj <- LedPred$new(x = x, y = y, ...)
     ledpred.summary <-
       list(
         feature.ranking = obj$feature.ranking, feature.nb =
-          obj$best.feature.nb, model.obj = obj$model.obj, probs.label.list = obj$probs.label.list
+          obj$best.feature.nb, model.obj = obj$model.obj, test.folds=obj$test.folds, probs.label.list = obj$probs.label.list
       )
       return(ledpred.summary)
 }
