@@ -7,30 +7,18 @@ Description: This package aims at creating a predictive model of regulatory
     based on the support vector machine (SVM) algorithm that maps features to
     sequences, optimize SVM parameters and feature number and creates a model that
     can be stored and used to score the regulatory potential of unknown sequences.
-Version: 1.3.3
+Version: 1.3.4
 Date: 2015-07-20
 Author: Elodie Darbo, Denis Seyres, Aitor Gonzalez
 Maintainer: Aitor Gonzalez <aitor.gonzalez@univ-amu.fr>
-Depends:
-    R (>= 3.2.0),
-    e1071 (>= 1.6)
-Imports:
-    akima,
-    GenomicRanges (>= 1.18.4),
-    irr,
-    jsonlite,
-    parallel,
-    plot3D,
-    plyr,
-    RCurl,
-    ROCR,
-    testthat
+Depends: R (>= 3.2.0), e1071 (>= 1.6)
+Imports: akima, GenomicRanges (>= 1.18.4), irr, jsonlite, parallel,
+        plot3D, plyr, RCurl, ROCR, testthat
 Suggests:
-    BiocStyle
 License: MIT | file LICENSE
 LazyData: true
-Packaged: 2015-09-17 13:20:49 UTC; gonzalez
+Packaged: 2016-03-09 12:11:12 UTC; gonzalez
 biocViews: SupportVectorMachine, Software, MotifAnnotation, ChIPSeq
 NeedsCompilation: no
 BugReports: http://bitbucket.org/aitgon/ledpred/issues
-RoxygenNote: 5.0.0
+RoxygenNote: 5.0.1

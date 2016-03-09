@@ -33,8 +33,6 @@ evaluateModelPerformance(data = NULL, data.granges = NULL, cl = 1,
 \item{cost}{The SVM cost parameter for both linear and radial kernels. If NULL (default), the function \code{mcTune} is run.}
 
 \item{gamma}{The SVM gamma parameter for radial kernel. If radial kernel and NULL (default), the function \code{mcTune} is run.}
-
-\item{svm.model}{the model to test}
 }
 \value{
 A list with two objects.
@@ -47,7 +45,6 @@ A list with two objects.
 \examples{
 data(crm.features)
 data(feature.ranking)
-data(svm.model)
 probs.labels.list <- evaluateModelPerformance(data.granges=crm.features,
    feature.ranking=feature.ranking, feature.nb=50,
    file.prefix = "test")
