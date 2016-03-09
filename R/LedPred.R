@@ -1,3 +1,13 @@
+ledpred = function(x, y, ...) {
+obj <- LedPred$new(x = x, y = y, ...)
+    ledpred.summary <-
+      list(
+        feature.ranking = obj$feature.ranking, feature.nb =
+          obj$best.feature.nb, model.obj = obj$model.obj, test.folds=obj$test.folds, probs.label.list = obj$probs.label.list
+      )
+      return(ledpred.summary)
+}
+
 LedPred <- R6::R6Class(
   "LedPred",
   inherit = Data,
