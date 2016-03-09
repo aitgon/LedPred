@@ -33,7 +33,7 @@ testthat::expect_true(all(obj$feature.ranking[c(11,12), 'AvgRank']==c(10.0, 10.4
 testthat::expect_true(obj$feature.nb==10)
 testthat::expect_true(all(rownames(obj$model$SV)[1:3]==c("1", "2", "3")))
 
-testthat::expect_equal(as.numeric(scores)[1], -0.684, tolerance=1e-2)
+testthat::expect_equal(as.numeric(scores)[1], 0.998, tolerance=1e-2)
 
 })
 
