@@ -11,3 +11,6 @@ tests/testthat/mapFeaturesToCRMs_test_data
 LetPred.BiocCheck 
 ^.*\.tar.gz$
 ^.*\.BiocCheck$
+.svnignore
+todo.md
+build

@@ -1043,7 +1043,6 @@ set.seed(123)
 #' @param cost The SVM cost parameter for both linear and radial kernels. If NULL (default), the function \code{mcTune} is run.
 #' @param gamma The SVM gamma parameter for radial kernel. If radial kernel and NULL (default), the function \code{mcTune} is run.
 #' @param valid.times Integer indicating how many times the training set will be split for the cross validation step (default = 10). This number must be smaller than positive and negative sets sizes.
-#' @param svm.model the model to test
 #' @param feature.ranking List of ordered features.
 #' @param feature.nb the optimal number of feature to use from the list of ordered features.
 #' @param file.prefix A character string that will be used as a prefix followed by "_ROCR_perf.png" for the result plot file, if it is NULL (default), no plot is returned
@@ -1054,13 +1053,12 @@ set.seed(123)
 #' @examples
 #'data(crm.features)
 #' data(feature.ranking)
-#' data(svm.model)
 #'probs.labels.list <- evaluateModelPerformance(data.granges=crm.features,
 #'    feature.ranking=feature.ranking, feature.nb=50,
 #'    file.prefix = "test")
 #'names(probs.labels.list[[1]])
 
-#evaluateModelPerformance = function(data = NULL, data.granges = NULL, cl = 1, valid.times = 10, svm.model, feature.ranking, feature.nb, numcores =
+#evaluateModelPerformance = function(data = NULL, data.granges = NULL, cl = 1, valid.times = 10, feature.ranking, feature.nb, numcores =
 #                                      parallel::detectCores() - 1, file.prefix = NULL) {
 evaluateModelPerformance = function(data = NULL, data.granges = NULL, cl = 1, valid.times = 10, feature.ranking = NULL, feature.nb =NULL, numcores =
                                       parallel::detectCores() - 1, file.prefix = NULL, kernel = "linear", scale = FALSE, cost = 1, gamma = 1) {
