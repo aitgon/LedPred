@@ -9,3 +9,4 @@ LedPred.Rcheck
 LedPred_*.tar.gz
 .Rhistory
 BiocCheck.out
+readme.md
