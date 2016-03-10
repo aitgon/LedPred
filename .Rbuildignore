@@ -13,4 +13,4 @@ LetPred.BiocCheck
 ^.*\.BiocCheck$
 .svnignore
 todo.md
-build
+readme.md
