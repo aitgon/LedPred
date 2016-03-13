@@ -5,10 +5,14 @@ Data <- R6::R6Class(
     y = NULL,
     valid.times = 5,
     test.folds = NULL,
-    scale.factors = NULL,
+    scale.center = NULL,
+    scale.scale = NULL,
     initialize = function(x, y, valid.times=self$valid.times) {
-self$scale.factors = apply(x, 2, function(x) sqrt(sum(x^2))) # store scale factors
-self$x = x/self$scale.factors # scale x
+#self$scale.factors = apply(x, 2, function(x) sqrt(sum(x^2))) # store scale factors
+self$scale.center=colMeans(x) # store scale center
+self$scale.scale=matrixStats::colSds(as.matrix(x)) # store scale scale
+self$x = scale(x, center=self$scale.center, scale=self$scale.scale)
+#self$x = x/self$scale.factors # scale x
 		self$y = y # store y
       if (!missing(valid.times)) self$valid.times <- valid.times
 if (self$valid.times > 1) self$test.folds = self$MakeCrossValidSets(self$valid.times)

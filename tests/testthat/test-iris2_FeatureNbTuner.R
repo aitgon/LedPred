@@ -11,7 +11,7 @@ feature.nb.vector = list(2,4,6,8,10,12)
 test_that("iris2_FeatureNbTuner", {
 feature.nb.tuner = tuneFeatureNb( x = x, y = y, valid.times = valid.times, feature.ranking = feature.ranking, feature.nb.vector = feature.nb.vector)
 testthat::expect_true(feature.nb.tuner$best.feature.nb==10)
-testthat::expect_equal(feature.nb.tuner$feature.performances['cv.kappa.mean',][[1]], 0.624,tolerance=1e-2)
+testthat::expect_equal(feature.nb.tuner$feature.performances['cv.kappa.mean',][[1]], 1,tolerance=1e-2)
 }
 )
 

@@ -8,8 +8,8 @@ numcores=1
 test_that("iris2_Model", {
 
 data.obj = Data$new(x=x, y=y)
-testthat::expect_equal(data.obj$x[1,1], 0.07056264, tolerance=1e-7)
-testthat::expect_equal(data.obj$scale.factors[[1]], 72.27621, tolerance=1e-7)
+testthat::expect_equal(data.obj$x[1], -0.898, tolerance=1e-2)
+testthat::expect_equal(data.obj$scale.center[[1]], 5.843333, tolerance=1e-7)
 })
 
 
