@@ -13,11 +13,11 @@ obj <- LedPred$new(x = x, y = y, numcores=numcores, feature.nb.vector=feature.nb
 scores = obj$model.obj$ScoreData(x=x)$scores
 
 testthat::expect_true(all(obj$feature.ranking[c(1,2), 'FeatureName']==c('Petal.Length', 'Petal.Width')))
-testthat::expect_true(obj$best.feature.nb==10)
-testthat::expect_true(all(rownames(obj$model$SV)[1:3]==c("1", "2", "3")))
+testthat::expect_true(obj$best.feature.nb==2)
+testthat::expect_true(all(rownames(obj$model$SV)[1:3]==c("24", "44", "45")))
 
-testthat::expect_equal(as.numeric(scores)[1], -0.684, tolerance=1e-2)
-testthat::expect_true(all(obj$feature.ranking[c(11,12), 'AvgRank']==c(10.0, 10.4)))
+testthat::expect_equal(as.numeric(scores)[1], 1.692278, tolerance=1e-5)
+testthat::expect_true(all(obj$feature.ranking[c(11,12), 'AvgRank']==c(9.4, 9.6)))
 
 })
 
@@ -29,9 +29,10 @@ scores = scoreData(x=x, ledpred=obj)
 #browser()
 
 testthat::expect_true(all(obj$feature.ranking[c(1,2), 'FeatureName']==c('Petal.Length', 'Petal.Width')))
-testthat::expect_true(all(obj$feature.ranking[c(11,12), 'AvgRank']==c(10.0, 10.4)))
-testthat::expect_true(obj$feature.nb==10)
-testthat::expect_true(all(rownames(obj$model$SV)[1:3]==c("1", "2", "3")))
+#browser()
+testthat::expect_true(all(obj$feature.ranking[c(11,12), 'AvgRank']==c(9.4, 9.6)))
+testthat::expect_true(obj$feature.nb==2)
+testthat::expect_true(all(rownames(obj$model$SV)[1:3]==c("24", "44", "45")))
 
 testthat::expect_equal(as.numeric(scores)[1], 0.998, tolerance=1e-2)
 

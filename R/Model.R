@@ -8,7 +8,9 @@ Model <- R6::R6Class(
     test.folds = NULL,
     model = NULL,
     weights = NULL,
-    scale.factors = NULL,
+#    scale.factors = NULL,
+    scale.center = NULL,
+    scale.scale = NULL,
     feature.ranking = NULL,
     feature.nb = NULL,
     file.prefix=NULL,
@@ -30,7 +32,9 @@ Model <- R6::R6Class(
       self$x = data.obj$x
       self$y = data.obj$y
       self$test.folds = data.obj$test.folds
-      self$scale.factors = data.obj$scale.factors
+#      self$scale.factors = data.obj$scale.factors
+      self$scale.center = data.obj$scale.center # store scale center
+      self$scale.scale = data.obj$scale.scale # store scale scale
       self$file.prefix = file.prefix
       private$CreateModel()
       self$weights = (t(self$model$coefs) %*% self$model$SV)
@@ -43,7 +47,8 @@ if (!is.null(self$file.prefix))
 		selected.features = as.character(self$feature.ranking$FeatureName[1:self$feature.nb])
 		x = x[,selected.features]
       }
-    x=x/self$scale.factors
+#    x=x/self$scale.factors
+    x = scale(x, center=self$scale.center, scale=self$scale.scale)
       library(e1071)
       classpred = predict(self$model, x, decision.values = private$decision.values, probability = private$probability)
       probs = attr(classpred,"probabilities")[,1]

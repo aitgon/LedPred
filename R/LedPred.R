@@ -15,7 +15,9 @@ LedPred <- R6::R6Class(
     x = NULL,
     y = NULL,
     valid.times = 5,
-    scale.factors = NULL,
+#    scale.factors = NULL,
+    scale.center = NULL,
+    scale.scale = NULL,
     kfold.nb = 1,
     halve.above = 100,
     numcores = parallel::detectCores() - 1,
@@ -37,7 +39,9 @@ LedPred <- R6::R6Class(
     self$y = feature.ranking.obj$y
     self$valid.times = feature.ranking.obj$valid.times
     self$test.folds = feature.ranking.obj$test.folds
-    self$scale.factors = feature.ranking.obj$scale.factors
+#    self$scale.factors = feature.ranking.obj$scale.factors
+    self$scale.center = feature.ranking.obj$scale.center
+    self$scale.scale = feature.ranking.obj$scale.scale
     self$file.prefix = feature.ranking.obj$file.prefix
     self$numcores = feature.ranking.obj$numcores
     self$feature.ranking = feature.ranking.obj$feature.ranking
