@@ -12,7 +12,7 @@ model = model.obj$model
 
 testthat::expect_true(all(rownames(model$SV)[1:3]==c("1", "2", "3")))
 testthat::expect_equal(as.numeric(scores)[1], -0.737, tolerance=1e-2)
-testthat::expect_equal(as.numeric(scoreData(x, model=model.obj))[1], 0.981, tolerance=1e-2)
+testthat::expect_equal(as.numeric(scoreData(x, model=model.obj))[1], 1, tolerance=1e-2)
 })
 
 test_that("iris2_Model_Features", {
@@ -25,8 +25,8 @@ scores = model.obj$ScoreData(x=x)$scores
 model = model.obj$model
 
 testthat::expect_true(all(rownames(model$SV)[1:3]==c("1", "2", "3")))
-testthat::expect_equal(as.numeric(scores)[1], -0.585, tolerance=1e-2)
-testthat::expect_equal(as.numeric(scoreData(x, model=model.obj))[1], 0.987, tolerance=1e-2)
+testthat::expect_equal(as.numeric(scores)[1], -0.5851782, tolerance=1e-2)
+testthat::expect_equal(as.numeric(scoreData(x, model=model.obj))[1], 0.9999998, tolerance=1e-2)
 
 })
 
@@ -40,8 +40,8 @@ scores = model.obj$ScoreData(x=x)$scores
 model = model.obj$model
 
 testthat::expect_true(all(rownames(model$SV)[1:3]==c("1", "2", "3")))
-testthat::expect_equal(as.numeric(scores)[1], -0.585, tolerance=1e-2)
-testthat::expect_equal(as.numeric(scoreData(x, model=model.obj))[1], 0.987, tolerance=1e-2)
+testthat::expect_equal(as.numeric(scores)[1], -0.5851782, tolerance=1e-2)
+testthat::expect_equal(as.numeric(scoreData(x, model=model.obj))[1], 0.9999998, tolerance=1e-2)
 
 })
 

@@ -9,6 +9,8 @@ if(!is.null(ledpred))  {
 	scores = model$ScoreData(x=x)$probs
 }
 
+scores=sort(scores, decreasing=T)
+
 if(!is.null(score.file)) {
 	write.table(scores, file=score.file, quote=FALSE, col.names=FALSE)
 }

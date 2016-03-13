@@ -38,7 +38,7 @@ testthat::expect_true(all(rownames(obj$model$SV)[1:3]==c("mm9_chr10_110522706_11
 
 scores = scoreData(x=x, ledpred=obj)
 #browser()
-testthat::expect_equal(as.numeric(scores)[1], -1.053714, tolerance=1e-2)
+testthat::expect_equal(as.numeric(scores)[1], 1, tolerance=1e-2)
 #browser()
 
 })
