@@ -25,7 +25,6 @@ Imports:
     RCurl,
     ROCR,
     testthat
-Suggests:
 License: MIT | file LICENSE
 LazyData: true
 Packaged: 2015-09-17 13:20:49 UTC; gonzalez
