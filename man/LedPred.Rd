@@ -46,10 +46,10 @@ The \code{LedPred} function computes the best SVM parameters, defines the optima
 }
 \examples{
  data(crm.features)
- cost_vector <- c(1,3,10)
- gamma_vector <- c(1,3,10)
- ledpred.list=LedPred(data.granges=crm.features, cl=1, ranges = list(cost=cost_vector,
-                           gamma=gamma_vector), kernel="linear", halve.above=50)
- names(ledpred.list)
+ #cost_vector <- c(1,3,10)
+ #gamma_vector <- c(1,3,10)
+ #ledpred.list=LedPred(data.granges=crm.features, cl=1, ranges = list(cost=cost_vector,
+ #                          gamma=gamma_vector), kernel="linear", halve.above=50)
+ #names(ledpred.list)
 }
 

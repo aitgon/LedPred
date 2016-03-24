@@ -42,7 +42,7 @@ The \code{rankFeatures} function  performs a Recursive Feature Elimination (RFE)
 data(crm.features)
 cost <- 1
 gamma <- 1
- feature.ranking <- rankFeatures(data.granges=crm.features, cost=cost,gamma=gamma,
-     kernel='linear', file.prefix = "test", halve.above=10)
+ #feature.ranking <- rankFeatures(data.granges=crm.features, cost=cost,gamma=gamma,
+ #    kernel='linear', file.prefix = "test", halve.above=10)
 }
 

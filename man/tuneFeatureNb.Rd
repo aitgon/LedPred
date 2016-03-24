@@ -47,9 +47,9 @@ data(crm.features)
 data(feature.ranking)
 cost <- 1
 gamma <- 1
- feature.nb.obj <- tuneFeatureNb(data.granges=crm.features,
-     feature.ranking=feature.ranking, kernel='linear', cost=cost,gamma=gamma,
-     file.prefix = "test")
- names(feature.nb.obj)
+ #feature.nb.obj <- tuneFeatureNb(data.granges=crm.features,
+ #    feature.ranking=feature.ranking, kernel='linear', cost=cost,gamma=gamma,
+ #    file.prefix = "test")
+ #names(feature.nb.obj)
 }
 

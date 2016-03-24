@@ -46,10 +46,10 @@ The \code{mcTune} function is a modified version of the function \code{tune}  fr
 data(crm.features)
 cost.vector <- c(1,3,10,30)
 gamma.vector <- c(1,3,10,30)
-c.g.obj <- mcTune(data.granges= crm.features, ranges = list(cost=cost.vector,
-    gamma=gamma.vector), kernel='linear', file.prefix = "test")
-names(c.g.obj)
- cost <- c.g.obj$best.parameters$cost
- gamma <- c.g.obj$best.parameters$gamma
+#c.g.obj <- mcTune(data.granges= crm.features, ranges = list(cost=cost.vector,
+#    gamma=gamma.vector), kernel='linear', file.prefix = "test")
+#names(c.g.obj)
+# cost <- c.g.obj$best.parameters$cost
+# gamma <- c.g.obj$best.parameters$gamma
 }
 

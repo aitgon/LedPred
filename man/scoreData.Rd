@@ -27,7 +27,7 @@ A 2-columns dataframe. First column containg the SVM model prediction probabilit
 \examples{
 data(crm.features)
 data(svm.model)
-pred.test <- scoreData(data.granges=crm.features, model=svm.model,
- score.file="test_prediction.tab")
+#pred.test <- scoreData(data.granges=crm.features, model=svm.model,
+# score.file="test_prediction.tab")
 }
 

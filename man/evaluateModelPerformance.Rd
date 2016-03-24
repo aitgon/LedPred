@@ -45,9 +45,9 @@ A list with two objects.
 \examples{
 data(crm.features)
 data(feature.ranking)
-probs.labels.list <- evaluateModelPerformance(data.granges=crm.features,
-   feature.ranking=feature.ranking, feature.nb=50,
-   file.prefix = "test")
-names(probs.labels.list[[1]])
+#probs.labels.list <- evaluateModelPerformance(data.granges=crm.features,
+#    feature.ranking=feature.ranking, feature.nb=50,
+#    file.prefix = "test")
+#names(probs.labels.list[[1]])
 }
 

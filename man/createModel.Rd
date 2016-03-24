@@ -43,8 +43,8 @@ the best SVM model
     gamma <- 1
     data(feature.ranking)
     feature.nb <- 70
-svm.model <- createModel(data.granges=crm.features, cost=cost, gamma=gamma,
-    feature.ranking=feature.ranking, feature.nb=feature.nb)
-feature.weights <- as.data.frame(t(t(svm.model$coefs) \%*\% svm.model$SV))
+#svm.model <- createModel(data.granges=crm.features, cost=cost, gamma=gamma,
+#    feature.ranking=feature.ranking, feature.nb=feature.nb)
+#feature.weights <- as.data.frame(t(t(svm.model$coefs) \%*\% svm.model$SV))
 }
 
