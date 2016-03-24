@@ -167,11 +167,11 @@ The \textit{mcTune} function is a modified version of the function \textit{tune}
 <<echo=TRUE,eval=TRUE>>=
 cost.vector <- c(1,3,10,30)
 gamma.vector <- c(1,3,10,30)
-c.g.obj <- mcTune(data.granges= crm.features, ranges = list(cost=cost.vector, 
-    gamma=gamma.vector), kernel='linear', file.prefix = "test")
-names(c.g.obj)
- cost <- c.g.obj$best.parameters$cost
- gamma <- c.g.obj$best.parameters$gamma
+#c.g.obj <- mcTune(data.granges= crm.features, ranges = list(cost=cost.vector, 
+#    gamma=gamma.vector), kernel='linear', file.prefix = "test")
+#names(c.g.obj)
+# cost <- c.g.obj$best.parameters$cost
+# gamma <- c.g.obj$best.parameters$gamma
 @
 
 \begin{figure}[H]
@@ -192,10 +192,10 @@ The \textit{rankFeatures} function performs a Recursive Feature Elimination (RFE
 The \textit{tuneFeatureNb} function computes the kappa measure on the feature matrix in which the features are ranked according to their decreasing importance. It starts with one feature and increases the number of features included in the matrix by an step (nb.step argument) until all features are included. This step depends \textit{feature.ranking} object from the step before. The returned object is a list contaning a data frame summarizing the kappa coefficient for the different number of features included in the model. We keep the number corresponding to the highest kappa for the following steps (Fig. \ref{fig2}).
 
 <<echo=TRUE,eval=FALSE>>=
- feature.nb.obj <- tuneFeatureNb(data.granges=crm.features, 
-     feature.ranking=feature.ranking, kernel='linear', cost=cost,gamma=gamma, 
-     file.prefix = "test")
- names(feature.nb.obj)
+# feature.nb.obj <- tuneFeatureNb(data.granges=crm.features, 
+#     feature.ranking=feature.ranking, kernel='linear', cost=cost,gamma=gamma, 
+#     file.prefix = "test")
+# names(feature.nb.obj)
 @
 
 \begin{figure}[H]
@@ -209,24 +209,24 @@ The \textit{createModel} function takes the tuned SVM parameters, the ranked fea
 
 <<echo=TRUE,eval=TRUE>>=
 feature.nb <- 50
-svm.model <- createModel(data.granges=crm.features, cost=cost, gamma=gamma, 
-    feature.ranking=feature.ranking, feature.nb=feature.nb)
+#svm.model <- createModel(data.granges=crm.features, cost=cost, gamma=gamma, 
+#    feature.ranking=feature.ranking, feature.nb=feature.nb)
 @
 
 An interesting information is the sign of the feature weights, which tells whether the feature is over- or under-represented in the positive or negative sets. It can be shown for each feature with this command:
 
 <<echo=TRUE,eval=TRUE>>=
-feature.weights <- as.data.frame(t(t(svm.model$coefs) %*% svm.model$SV))
+#feature.weights <- as.data.frame(t(t(svm.model$coefs) %*% svm.model$SV))
 @
 
 \subsubsection{Plotting model perfomance}
 The \textit{evaluateModelPerformance} function returns a list of prediction probabilities computed during the rounds of cross-validation and plots the performance results (Fig \ref{fig3}).
 
 <<echo=TRUE,eval=TRUE>>=
-probs.labels.list <- evaluateModelPerformance(data.granges=crm.features, 
-    feature.ranking=feature.ranking, feature.nb=50, 
-    file.prefix = "test")
-names(probs.labels.list[[1]])
+#probs.labels.list <- evaluateModelPerformance(data.granges=crm.features, 
+#    feature.ranking=feature.ranking, feature.nb=50, 
+#    file.prefix = "test")
+#names(probs.labels.list[[1]])
 @
 
 \begin{figure}[H]
@@ -249,20 +249,20 @@ ngs.path <- system.file("extdata/ngs", package="LedPred")
 ngs.files=list.files(ngs.path, full.names=TRUE)
 feature.nb=50
 
-prediction.crm.features.list <- mapFeaturesToCRMs(URL = 'http://ifbprod.aitorgonzalezlab.org/map_features_to_crms.php', positive.bed=positive.bed, 
-  pssm=TF.matrices, background.freqs=background.freqs, 
-  genome='dm3', ngs=ngs.files, feature.ranking=feature.ranking, feature.nb=50, 
-    crm.feature.file = "test_pred.crm.features.tab", 
-    stderr.log.file = "test_pred.stderr.log", stdout.log.file = "test_pred.stdout.log")
-names(prediction.crm.features.list)
-prediction.crm.features <- prediction.crm.features.list$crm.features
+#prediction.crm.features.list <- mapFeaturesToCRMs(URL = 'http://ifbprod.aitorgonzalezlab.org/map_features_to_crms.php', #positive.bed=positive.bed, 
+#  pssm=TF.matrices, background.freqs=background.freqs, 
+#  genome='dm3', ngs=ngs.files, feature.ranking=feature.ranking, feature.nb=50, 
+#    crm.feature.file = "test_pred.crm.features.tab", 
+#    stderr.log.file = "test_pred.stderr.log", stdout.log.file = "test_pred.stdout.log")
+#names(prediction.crm.features.list)
+#prediction.crm.features <- prediction.crm.features.list$crm.features
 @
 
 This creates a matrix for the unknown sequences that can be used by the \textit{scoreData} function with the \textit{model} argument to score the sequences of the matrix.
 
 <<echo=TRUE,eval=TRUE>>=
-pred.test <- scoreData(data.granges=prediction.crm.features, model=svm.model, 
-  score.file="test_prediction.tab")
+#pred.test <- scoreData(data.granges=prediction.crm.features, model=svm.model, 
+#  score.file="test_prediction.tab")
 @
 
 \subsubsection{From the matrix to the model in one function}

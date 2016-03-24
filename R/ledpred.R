@@ -344,11 +344,11 @@ mapFeaturesToCRMs <-
 #' data(crm.features)
 #' cost.vector <- c(1,3,10,30)
 #' gamma.vector <- c(1,3,10,30)
-#' c.g.obj <- mcTune(data.granges= crm.features, ranges = list(cost=cost.vector,
-#'     gamma=gamma.vector), kernel='linear', file.prefix = "test")
-#' names(c.g.obj)
-#'  cost <- c.g.obj$best.parameters$cost
-#'  gamma <- c.g.obj$best.parameters$gamma
+#' #c.g.obj <- mcTune(data.granges= crm.features, ranges = list(cost=cost.vector,
+#' #    gamma=gamma.vector), kernel='linear', file.prefix = "test")
+#' #names(c.g.obj)
+#' # cost <- c.g.obj$best.parameters$cost
+#' # gamma <- c.g.obj$best.parameters$gamma
 
 mcTune <- function(data = NULL, data.granges = NULL, cl = 1,
                    ranges = list(gamma=c(1,10), cost=c(1,10)), kernel = "linear",scale = FALSE,
@@ -566,8 +566,8 @@ mcTune <- function(data = NULL, data.granges = NULL, cl = 1,
 #' data(crm.features)
 #' cost <- 1
 #' gamma <- 1
-#'  feature.ranking <- rankFeatures(data.granges=crm.features, cost=cost,gamma=gamma,
-#'      kernel='linear', file.prefix = "test", halve.above=10)
+#'  #feature.ranking <- rankFeatures(data.granges=crm.features, cost=cost,gamma=gamma,
+#'  #    kernel='linear', file.prefix = "test", halve.above=10)
 
 rankFeatures = function(data = NULL, data.granges = NULL, cl = 1, halve.above = 100, valid.times =
                           10, kernel = "linear", cost = 1, gamma = 1, scale = FALSE, numcores =
@@ -830,10 +830,10 @@ rankFeatures = function(data = NULL, data.granges = NULL, cl = 1, halve.above = 
 #' data(feature.ranking)
 #' cost <- 1
 #' gamma <- 1
-#'  feature.nb.obj <- tuneFeatureNb(data.granges=crm.features,
-#'      feature.ranking=feature.ranking, kernel='linear', cost=cost,gamma=gamma,
-#'      file.prefix = "test")
-#'  names(feature.nb.obj)
+#'  #feature.nb.obj <- tuneFeatureNb(data.granges=crm.features,
+#'  #    feature.ranking=feature.ranking, kernel='linear', cost=cost,gamma=gamma,
+#'  #    file.prefix = "test")
+#'  #names(feature.nb.obj)
 
 tuneFeatureNb = function(data = NULL, data.granges = NULL, feature.ranking = NULL, cl = 1, valid.times =
                            10, cost = 1, gamma = 1, kernel = "linear",scale = FALSE, step.nb = 10, numcores = parallel::detectCores() - 1,file.prefix = NULL) {
@@ -980,9 +980,9 @@ classfit <- createModel(data = trainset, cl = cl,kernel = kernel, scale = scale,
 #'     gamma <- 1
 #'     data(feature.ranking)
 #'     feature.nb <- 70
-#' svm.model <- createModel(data.granges=crm.features, cost=cost, gamma=gamma,
-#'     feature.ranking=feature.ranking, feature.nb=feature.nb)
-#' feature.weights <- as.data.frame(t(t(svm.model$coefs) %*% svm.model$SV))
+#' #svm.model <- createModel(data.granges=crm.features, cost=cost, gamma=gamma,
+#' #    feature.ranking=feature.ranking, feature.nb=feature.nb)
+#' #feature.weights <- as.data.frame(t(t(svm.model$coefs) %*% svm.model$SV))
 
 createModel <-
   function(data = NULL, data.granges = NULL, cl = 1,kernel = "radial",scale = FALSE,cost = 1,gamma =
@@ -1053,10 +1053,10 @@ set.seed(123)
 #' @examples
 #'data(crm.features)
 #' data(feature.ranking)
-#'probs.labels.list <- evaluateModelPerformance(data.granges=crm.features,
-#'    feature.ranking=feature.ranking, feature.nb=50,
-#'    file.prefix = "test")
-#'names(probs.labels.list[[1]])
+#'#probs.labels.list <- evaluateModelPerformance(data.granges=crm.features,
+#'#    feature.ranking=feature.ranking, feature.nb=50,
+#'#    file.prefix = "test")
+#'#names(probs.labels.list[[1]])
 
 #evaluateModelPerformance = function(data = NULL, data.granges = NULL, cl = 1, valid.times = 10, feature.ranking, feature.nb, numcores =
 #                                      parallel::detectCores() - 1, file.prefix = NULL) {
@@ -1151,8 +1151,8 @@ evaluateModelPerformance = function(data = NULL, data.granges = NULL, cl = 1, va
 #' @examples
 #' data(crm.features)
 #' data(svm.model)
-#' pred.test <- scoreData(data.granges=crm.features, model=svm.model,
-#'  score.file="test_prediction.tab")
+#' #pred.test <- scoreData(data.granges=crm.features, model=svm.model,
+#' # score.file="test_prediction.tab")
 
 scoreData <-
   function(data = NULL, data.granges = NULL, model, score.file = NULL, score.bed.file = NULL) {
@@ -1221,11 +1221,11 @@ scoreData <-
 #' \item{probs.label.list}{The cross-validation results from \code{evaluateModelPerformance}}
 #' @examples
 #'  data(crm.features)
-#'  cost_vector <- c(1,3,10)
-#'  gamma_vector <- c(1,3,10)
-#'  ledpred.list=LedPred(data.granges=crm.features, cl=1, ranges = list(cost=cost_vector,
-#'                            gamma=gamma_vector), kernel="linear", halve.above=50)
-#'  names(ledpred.list)
+#'  #cost_vector <- c(1,3,10)
+#'  #gamma_vector <- c(1,3,10)
+#'  #ledpred.list=LedPred(data.granges=crm.features, cl=1, ranges = list(cost=cost_vector,
+#'  #                          gamma=gamma_vector), kernel="linear", halve.above=50)
+#'  #names(ledpred.list)
 
 LedPred <-
   function(data = NULL, data.granges = NULL, cl = 1, ranges = list(gamma=seq(from = 1 , to = 10 , by = 9), cost=seq(from = 1 , to = 10 , by = 9)), kernel = "linear", scale = FALSE, valid.times =

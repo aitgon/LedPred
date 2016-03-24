@@ -31,4 +31,4 @@ Packaged: 2015-09-17 13:20:49 UTC; gonzalez
 biocViews: SupportVectorMachine, Software, MotifAnnotation, ChIPSeq
 NeedsCompilation: no
 BugReports: http://bitbucket.org/aitgon/ledpred/issues
-RoxygenNote: 5.0.1
+RoxygenNote: 5.0.0
