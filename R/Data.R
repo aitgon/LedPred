@@ -7,6 +7,8 @@ Data <- R6::R6Class(
     test.folds = NULL,
     scale.center = NULL,
     scale.scale = NULL,
+    numcores = parallel::detectCores() - 1,
+    file.prefix = NULL,
     initialize = function(x, y, valid.times=self$valid.times) {
 #self$scale.factors = apply(x, 2, function(x) sqrt(sum(x^2))) # store scale factors
 self$scale.center=colMeans(x) # store scale center
