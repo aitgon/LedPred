@@ -23,6 +23,7 @@ FeatureNbTuner <- R6::R6Class(
       }
       self$x = data.obj$x
       self$y = data.obj$y
+#      browser()
       self$test.folds = data.obj$test.folds
       if (!missing(file.prefix))
         self$file.prefix = file.prefix
@@ -78,6 +79,7 @@ FeatureNbTuner <- R6::R6Class(
       return(list(cv.kappa.mean = cv.kappa.mean, cv.kappa.sd = cv.kappa.sd));
     },
     CalcKappaPerformanceOneFold = function(test.fold.i, x, y) {
+#    browser()
       test.set.x = x[test.fold.i,]
       test.set.y = y[test.fold.i]
       train.set.x = x[-test.fold.i,]

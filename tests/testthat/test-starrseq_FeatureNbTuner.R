@@ -10,7 +10,7 @@ valid.times=5
 
 # -------------------------------------
 feature.ranking = read.table('data_starrseq/_feature_ranking.txt', header=TRUE)
-feature.nb.vector = list(100, 200, 300, 400, 500, 600)
+feature.nb.vector = list(100, 200)
 feature.nb.tuner = FeatureNbTuner$new( x = x, y = y, valid.times = valid.times, feature.ranking = feature.ranking, feature.nb.vector = feature.nb.vector)
 
 testthat::expect_true(feature.nb.tuner$best.feature.nb==100)
