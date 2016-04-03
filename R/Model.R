@@ -56,7 +56,7 @@ Model <- R6::R6Class(
       probs = attr(classpred,"probabilities")[,1]
       scores = attr(classpred,"decision.values")[,1]
       return(list(
-        probs = probs, scores = scores, prediction = as.numeric(as.character(classpred))
+        probs = probs, scores = scores, prediction = classpred
       ))
     },
     CalcPredictionKappa = function(x, y) {
