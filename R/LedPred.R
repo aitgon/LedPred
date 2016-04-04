@@ -45,8 +45,8 @@ LedPred <- R6::R6Class(
       self$y = feature.ranking.obj$y
       self$test.folds = feature.ranking.obj$test.folds
       # self$scale.factors = feature.ranking.obj$scale.factors
-      self$scale.center = feature.ranking.obj$scale.center
-      self$scale.scale = feature.ranking.obj$scale.scale
+#      self$scale.center = feature.ranking.obj$scale.center
+#      self$scale.scale = feature.ranking.obj$scale.scale
       self$feature.ranking = feature.ranking.obj$feature.ranking
       #
       self$feature.nb.vector = feature.nb.vector

@@ -16,11 +16,10 @@ x = x[,selected.features]
 
 obj <- ModelPerformance$new(x = x, y = y)
 
-#browser()
-testthat::expect_equal(as.numeric(obj$cv.probs.labels$probs[[2]]['mm9_chr18_3932278_3932479_+']), 0.107162, tolerance=1e-4)
+testthat::expect_equal(as.numeric(obj$cv.probs.labels$probs[[2]]['mm9_chr18_3932278_3932479_+']), 0.02596943, tolerance=1e-4)
 
 cv.probs.labels <- evaluateModelPerformance(x = x, y = y)
-testthat::expect_equal(as.numeric(cv.probs.labels$probs[[2]]['mm9_chr18_3932278_3932479_+']), 0.107162, tolerance=1e-4)
+testthat::expect_equal(as.numeric(cv.probs.labels$probs[[2]]['mm9_chr18_3932278_3932479_+']), 0.02596943, tolerance=1e-6)
 }
 )
 

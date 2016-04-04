@@ -33,8 +33,8 @@ Model <- R6::R6Class(
       self$y = data.obj$y
       self$test.folds = data.obj$test.folds
       #      self$scale.factors = data.obj$scale.factors
-      self$scale.center = data.obj$scale.center # store scale center
-      self$scale.scale = data.obj$scale.scale # store scale scale
+#      self$scale.center = data.obj$scale.center # store scale center
+#      self$scale.scale = data.obj$scale.scale # store scale scale
       self$file.prefix = file.prefix
       private$CreateModel()
       self$weights = (t(self$model$coefs) %*% self$model$SV)
@@ -48,7 +48,7 @@ Model <- R6::R6Class(
         x = x[,selected.features]
       }
       #    x=x/self$scale.factors
-      x = scale(x, center = self$scale.center, scale = self$scale.scale)
+#      x = scale(x, center = self$scale.center, scale = self$scale.scale)
       library(e1071)
       classpred = predict(
         self$model, x, decision.values = private$decision.values, probability = private$probability

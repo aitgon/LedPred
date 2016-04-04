@@ -14,10 +14,10 @@ scores = obj$model.obj$ScoreData(x=x)$scores
 
 testthat::expect_true(all(obj$feature.ranking[c(1,2), 'FeatureName']==c('Petal.Length', 'Petal.Width')))
 testthat::expect_true(obj$best.feature.nb==2)
-testthat::expect_true(all(rownames(obj$model$SV)[1:3]==c("24", "44", "45")))
+testthat::expect_true(all(rownames(obj$model$SV)[1:2]==c("45", "99")))
 
-testthat::expect_equal(as.numeric(scores)[1], 1.692278, tolerance=1e-5)
-testthat::expect_true(all(obj$feature.ranking[c(11,12), 'AvgRank']==c(9.4, 9.6)))
+testthat::expect_equal(as.numeric(scores)[1], 1.6, tolerance=1e-5)
+testthat::expect_true(all(obj$feature.ranking[c(11,12), 'AvgRank']==c(9.8, 10.0)))
 
 })
 
@@ -25,12 +25,9 @@ test_that("iris2_LedPred_wrapper", {
 
 obj <- ledpred(x = x, y = y, numcores=numcores, feature.nb.vector=feature.nb.vector)
 scores = scoreData(x=x, ledpred=obj)
-#print(scores)
-#browser()
 
 testthat::expect_true(all(obj$feature.ranking[c(1,2), 'FeatureName']==c('Petal.Length', 'Petal.Width')))
-#browser()
-testthat::expect_true(all(obj$feature.ranking[c(11,12), 'AvgRank']==c(9.4, 9.6)))
+testthat::expect_true(all(obj$feature.ranking[c(11,12), 'AvgRank']==c(9.8, 10.0)))
 testthat::expect_true(obj$feature.nb==2)
 testthat::expect_true(all(rownames(obj$model$SV)[1:3]==c("24", "44", "45")))
 

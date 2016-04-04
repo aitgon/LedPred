@@ -10,8 +10,9 @@ model.obj = Model$new( x = x, y = y)
 model = model.obj$model
 
 scores = model.obj$ScoreData(x=x)$scores
-testthat::expect_equal(as.numeric(scores)[1], 1, tolerance=1e-2)
-testthat::expect_equal(as.numeric(scoreData(x, model=model.obj))[1], 0.619, tolerance=1e-2)
+
+testthat::expect_equal(as.numeric(scores)[1], -0.8782252, tolerance=1e-6)
+testthat::expect_equal(as.numeric(scoreData(x, model=model.obj))[1], 0.9425689, tolerance=1e-6)
 })
 
 test_that("starrseq_Model_Features", {
@@ -20,8 +21,7 @@ model.obj = Model$new( x = x, y = y, feature.ranking=feature.ranking, feature.nb
 model = model.obj$model
 scores = model.obj$ScoreData(x=x)$scores
 
-#browser()
-testthat::expect_equal(as.numeric(scores)[1], -1.200928, tolerance=1e-4)
-testthat::expect_equal(as.numeric(scoreData(x, model=model.obj))[1], 0.9707848, tolerance=1e-2)
+testthat::expect_equal(as.numeric(scores)[1], -1.072615, tolerance=1e-5)
+testthat::expect_equal(as.numeric(scoreData(x, model=model.obj))[1], 0.9974353, tolerance=1e-6)
 })
 
