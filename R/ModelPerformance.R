@@ -4,40 +4,46 @@ ModelPerformance <- R6::R6Class(
   "ModelPerformance",
   inherit = Model,
   public = list(
-    x = NA,
-    y = NULL,
-    valid.times = 1,
-    test.folds = NA,
-    model = NA,
-    model.obj = NA,
-    weights = NA,
-    numcores = parallel::detectCores() - 1,
-	file.prefix = "",
-    cv.probs.labels = NA,
-    feature.ranking = NULL,
-    feature.nb = NULL,
-    initialize = function(x, y, valid.times, numcores, file.prefix=self$file.prefix, feature.ranking=self$feature.ranking, feature.nb=self$feature.nb) {
-      self$model.obj = Model$new(x = x, y = y, valid.times = valid.times, feature.ranking=feature.ranking, feature.nb=feature.nb, file.prefix=file.prefix)
+    model.obj = NULL,
+    cv.probs.labels = NULL,
+    initialize = function(x, y, kernel = self$kernel, cost = self$cost, gamma =
+                            self$gamma, valid.times = self$valid.times, numcores = self$numcores, file.prefix =
+                            self$file.prefix, feature.ranking = self$feature.ranking, feature.nb = self$feature.nb) {
+      if (!missing(kernel))
+        self$kernel = kernel
+      if (!missing(cost))
+        self$cost = cost
+      if (!missing(gamma))
+        self$gamma = gamma
+      if (!missing(valid.times))
+        self$valid.times = valid.times
+      if (!missing(numcores))
+        self$numcores = numcores
+      if (!missing(feature.ranking))
+        self$feature.ranking = feature.ranking
+      if (!missing(feature.nb))
+        self$feature.nb = feature.nb
+      if (!missing(file.prefix))
+        self$file.prefix = file.prefix
+      self$model.obj = Model$new(
+        x = x, y = y, kernel = self$kernel, cost = self$cost, gamma = self$gamma, valid.times = self$valid.times, feature.ranking =
+          self$feature.ranking, feature.nb = self$feature.nb, file.prefix = self$file.prefix
+      )
       self$x = self$model.obj$x
       self$y = self$model.obj$y
-      self$valid.times = self$model.obj$valid.times
       self$test.folds = self$model.obj$test.folds
       self$model = self$model.obj$model
       self$weights = self$model.obj$weights
-      self$feature.ranking = self$model.obj$feature.ranking
-      self$feature.nb = self$model.obj$feature.nb
-      if (!missing(numcores)) self$numcores = numcores
-      if (!missing(file.prefix)) self$file.prefix = file.prefix
       self$cv.probs.labels = private$CVModelPeformanceAllFolds(test.folds = self$test.folds)
-      png(paste(self$file.prefix,"_ROC_perf.png", sep=""))
+      png(paste(self$file.prefix,"_ROC_perf.png", sep = ""))
       private$PlotROCR(
         labels = self$cv.probs.labels$labels, probs = self$cv.probs.labels$probs
       )
       garb = dev.off()
     },
     Tests = function() {
-	probs=private$CVModelPeformanceOneFold(test.fold.i=self$test.folds[[1]])$probs
-	testthat::expect_equal(probs[[1]], 0.9748439, tolerance=10-9)
+      probs = private$CVModelPeformanceOneFold(test.fold.i = self$test.folds[[1]])$probs
+      testthat::expect_equal(probs[[1]], 0.9748439, tolerance = 10 - 9)
     }
   ),
   private = list(
@@ -46,12 +52,17 @@ ModelPerformance <- R6::R6Class(
       train.set.x = self$x[-test.fold.i,]
       test.set.y = self$y[test.fold.i]
       train.set.y = self$y[-test.fold.i]
-      obj <- Model$new(x = train.set.x, y = train.set.y, valid.times = 5)
+      obj <-
+        Model$new(
+          x = train.set.x, y = train.set.y, kernel = self$kernel, cost = self$cost, gamma =
+            self$gamma, valid.times = 5
+        )
       probs = obj$ScoreData(x = test.set.x)$probs
       return(list(probs = probs, labels = test.set.y))
     },
     CVModelPeformanceAllFolds = function(test.folds = test.folds) {
-      cv.probs.labels = parallel::mclapply(test.folds, private$CVModelPeformanceOneFold, mc.cores=self$numcores)
+      cv.probs.labels = parallel::mclapply(test.folds, private$CVModelPeformanceOneFold, mc.cores =
+                                             self$numcores)
       labels = sapply(cv.probs.labels, function(x)
         x$labels)
       probs = sapply(cv.probs.labels, function(x)
