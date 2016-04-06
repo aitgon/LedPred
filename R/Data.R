@@ -8,18 +8,20 @@ Data <- R6::R6Class(
     gamma = 1,
     valid.times = 5,
     test.folds = NULL,
-    scale.center = NULL,
-    scale.scale = NULL,
+    scale.factors = NULL,
+#    scale.center = NULL,
+#    scale.scale = NULL,
     numcores = parallel::detectCores() - 1,
     file.prefix = NULL,
     initialize = function(x, y, kernel = self$kernel, cost = self$cost, gamma =
                             self$gamma, valid.times = self$valid.times, numcores = self$numcores, file.prefix = self$file.prefix) {
-      self$x = x
-      #self$scale.factors = apply(x, 2, function(x) sqrt(sum(x^2))) # store scale factors
+      self$x = x # assign to self
+      self$x[is.na(self$x)] <- 0 # replace NAs with zeros
+      self$scale.factors = apply(self$x, 2, function(x) sqrt(sum(x^2))) # store scale factors
 #      self$scale.center = colMeans(x) # store scale center
 #      self$scale.scale = matrixStats::colSds(as.matrix(x)) # store scale scale
 #      self$x = scale(x, center = self$scale.center, scale = self$scale.scale)
-      #self$x = x/self$scale.factors # scale x
+      self$x = t(t(self$x)/self$scale.factors) # scale x
       self$y = as.factor(y) # store y
       if (!missing(kernel))
         self$kernel = kernel

@@ -6,6 +6,7 @@ ModelPerformance <- R6::R6Class(
   public = list(
     model.obj = NULL,
     cv.probs.labels = NULL,
+    auc = NULL,
     initialize = function(x, y, kernel = self$kernel, cost = self$cost, gamma =
                             self$gamma, valid.times = self$valid.times, numcores = self$numcores, file.prefix =
                             self$file.prefix, feature.ranking = self$feature.ranking, feature.nb = self$feature.nb) {
@@ -37,7 +38,7 @@ ModelPerformance <- R6::R6Class(
       self$cv.probs.labels = private$CVModelPeformanceAllFolds(test.folds = self$test.folds)
       png(paste(self$file.prefix,"_ROC_perf.png", sep = ""))
       private$PlotROCR(
-        labels = self$cv.probs.labels$labels, probs = self$cv.probs.labels$probs
+        labels = self$cv.probs.labels$labels, probs = self$cv.probs.labels$probs, rocr.pred = self$cv.probs.labels$rocr.pred
       )
       garb = dev.off()
     },
@@ -57,7 +58,7 @@ ModelPerformance <- R6::R6Class(
           x = train.set.x, y = train.set.y, kernel = self$kernel, cost = self$cost, gamma =
             self$gamma, valid.times = 5
         )
-      probs = obj$ScoreData(x = test.set.x)$probs
+      probs = obj$ScoreData(x = test.set.x, scale=FALSE)$probs
       return(list(probs = probs, labels = test.set.y))
     },
     CVModelPeformanceAllFolds = function(test.folds = test.folds) {
@@ -67,10 +68,15 @@ ModelPerformance <- R6::R6Class(
         x$labels)
       probs = sapply(cv.probs.labels, function(x)
         x$probs)
-      return(list(labels = labels, probs = probs))
+        # Calculate AUC using ROCR package ----------------
+ rocr.pred = ROCR::prediction(probs,labels,label.ordering = c(-1, 1))
+      auc.tmp = ROCR::performance(rocr.pred, "auc");
+      self$auc = round(mean(as.numeric(auc.tmp@y.values)), digits = 2)
+        # End of Calculate AUC using ROCR package ----------------
+      return(list(labels = labels, probs = probs, rocr.pred= rocr.pred))
     },
-    PlotROCR = function (labels = labels, probs = probs) {
-      rocr.pred = ROCR::prediction(probs,labels,label.ordering = c(-1, 1))
+    PlotROCR = function (labels = labels, probs = probs, rocr.pred= rocr.pred) {
+#      rocr.pred = ROCR::prediction(probs,labels,label.ordering = c(-1, 1))
       prec_rec = ROCR::performance(rocr.pred, "prec", 'rec')
       prec = ROCR::performance(rocr.pred, measure = "prec")
       rec = ROCR::performance(rocr.pred, measure = "rec")
