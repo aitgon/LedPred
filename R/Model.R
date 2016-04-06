@@ -33,7 +33,6 @@ Model <- R6::R6Class(
       self$y = data.obj$y
       self$scale.factors = data.obj$scale.factors
       self$test.folds = data.obj$test.folds
-      #      self$scale.factors = data.obj$scale.factors
 #      self$scale.center = data.obj$scale.center # store scale center
 #      self$scale.scale = data.obj$scale.scale # store scale scale
       self$file.prefix = file.prefix
@@ -47,7 +46,10 @@ Model <- R6::R6Class(
         selected.features = as.character(self$feature.ranking$FeatureName[1:self$feature.nb])
         x = x[,selected.features]
       }
-      if (scale) x=x/self$scale.factors
+#      browser()
+      if (scale) {
+      x=t(t(x)/self$scale.factors)
+      }
 #      x = scale(x, center = self$scale.center, scale = self$scale.scale)
       library(e1071)
       classpred = predict(
