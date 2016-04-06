@@ -31,6 +31,7 @@ Model <- R6::R6Class(
       }
       self$x = data.obj$x
       self$y = data.obj$y
+      self$scale.factors = data.obj$scale.factors
       self$test.folds = data.obj$test.folds
       #      self$scale.factors = data.obj$scale.factors
 #      self$scale.center = data.obj$scale.center # store scale center
@@ -41,7 +42,7 @@ Model <- R6::R6Class(
       if (!is.null(self$file.prefix))
         save(self, file = paste(file.prefix,"_model.rda",sep = "")) # can save model for later use
     },
-    ScoreData = function(x, scale=FALSE) {
+    ScoreData = function(x, scale=TRUE) {
       if (!is.null(self$feature.ranking) && !is.null(self$feature.nb)) {
         selected.features = as.character(self$feature.ranking$FeatureName[1:self$feature.nb])
         x = x[,selected.features]

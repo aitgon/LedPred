@@ -5,8 +5,6 @@ y = crms[,1]
 x = crms[,-1]
 feature.ranking.obj = get(load('data_cad/feature.ranking.obj.rda'))
 feature.nb.vector = list(70, 90, 110)
-
-# -------------------------------------
 valid.times=5
 
 # -------------------------------------
