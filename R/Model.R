@@ -38,16 +38,15 @@ Model <- R6::R6Class(
       self$file.prefix = file.prefix
       private$CreateModel()
       self$weights = (t(self$model$coefs) %*% self$model$SV)
-      #      browser()
       if (!is.null(self$file.prefix))
         save(self, file = paste(file.prefix,"_model.rda",sep = "")) # can save model for later use
     },
-    ScoreData = function(x) {
+    ScoreData = function(x, scale=FALSE) {
       if (!is.null(self$feature.ranking) && !is.null(self$feature.nb)) {
         selected.features = as.character(self$feature.ranking$FeatureName[1:self$feature.nb])
         x = x[,selected.features]
       }
-      #    x=x/self$scale.factors
+      if (scale) x=x/self$scale.factors
 #      x = scale(x, center = self$scale.center, scale = self$scale.scale)
       library(e1071)
       classpred = predict(
@@ -59,8 +58,8 @@ Model <- R6::R6Class(
         probs = probs, scores = scores, prediction = classpred
       ))
     },
-    CalcPredictionKappa = function(x, y) {
-      prediction = self$ScoreData(x = x)$prediction
+    CalcPredictionKappa = function(x, y, scale=FALSE) {
+      prediction = self$ScoreData(x = x, scale=scale)$prediction
       return(irr::kappa2(cbind(y, prediction))$value)
     }
   ),

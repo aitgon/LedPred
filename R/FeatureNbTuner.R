@@ -23,7 +23,6 @@ FeatureNbTuner <- R6::R6Class(
       }
       self$x = data.obj$x
       self$y = data.obj$y
-#      browser()
       self$test.folds = data.obj$test.folds
       if (!missing(file.prefix))
         self$file.prefix = file.prefix
@@ -69,27 +68,23 @@ FeatureNbTuner <- R6::R6Class(
       return(feature.performances)
     },
     CalcKappaPerformanceAllFoldMean = function(test.folds, x, y) {
-      #print(CalcKappaPerformanceOneFold(obj$test.folds[[1]], x=x, y=y))
       cv.kappa = simplify2array(parallel::mclapply(test.folds, function(test.fold.i) {
         private$CalcKappaPerformanceOneFold(x = x, y = y, test.fold.i = test.fold.i)
       }, mc.cores = self$numcores))
-      #print(cv.kappa)
       cv.kappa.mean = mean(cv.kappa);
       cv.kappa.sd = sd(cv.kappa);
       return(list(cv.kappa.mean = cv.kappa.mean, cv.kappa.sd = cv.kappa.sd));
     },
     CalcKappaPerformanceOneFold = function(test.fold.i, x, y) {
-#    browser()
       test.set.x = x[test.fold.i,]
       test.set.y = y[test.fold.i]
       train.set.x = x[-test.fold.i,]
       train.set.y = y[-test.fold.i]
-      #browser()
-      obj = Model$new(
+      model.obj = Model$new(
         x = train.set.x, y = train.set.y, kernel = self$kernel, cost = self$cost, gamma =
           self$gamma, valid.times = 1
       )
-      kappa = obj$CalcPredictionKappa(x = test.set.x, y = test.set.y)
+      kappa = model.obj$CalcPredictionKappa(x = test.set.x, y = test.set.y)
       return(kappa)
     }
   )
