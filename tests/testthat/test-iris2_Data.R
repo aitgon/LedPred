@@ -8,9 +8,8 @@ numcores=1
 test_that("iris2_Model", {
 
 data.obj = Data$new(x=x, y=y)
-#browser()
-testthat::expect_equal(data.obj$x[1,1], 5.1, tolerance=1e-2)
-#testthat::expect_equal(data.obj$scale.center[[1]], 5.843333, tolerance=1e-7)
+
+testthat::expect_equal(as.numeric(data.obj$x[1,1]), 0.0706, tolerance=1e-3)
 })
 
 
