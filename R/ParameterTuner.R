@@ -37,11 +37,6 @@
   points (c.g.perf$cost,c.g.perf$gamma, pch = "x", cex = 2)
 }
 
-#.resp <- function(formula, data) {
-#  m.resp <- model.response(model.frame(formula, data))
-#  return(m.resp)
-#}
-
 
 ParameterTuner <- R6::R6Class(
   "ParameterTuner",
@@ -52,17 +47,29 @@ ParameterTuner <- R6::R6Class(
                             self$gamma, valid.times=self$valid.times, ranges = self$ranges, numcores=self$numcores, file.prefix=self$file.prefix) {
       if (!missing(kernel)) self$kernel = kernel
       if (!missing(ranges)) self$ranges = ranges
+      if (!missing(numcores)) self$numcores = numcores
+      if (!missing(file.prefix)) self$file.prefix = file.prefix
       if (!missing(valid.times)) {
         self$valid.times = valid.times
-        data.obj = Data$new(x = x, y = y, kernel = self$kernel, valid.times = valid.times)
+        data.obj = Data$new(x = x, y = y, kernel = self$kernel, valid.times = self$valid.times)
       } else {
         data.obj = Data$new(x = x, y = y, kernel = self$kernel)
       }
       self$x = data.obj$x
       self$y = data.obj$y
       self$test.folds = data.obj$test.folds
+      self$cost = data.obj$cost
+      self$gamma = data.obj$gamma
 
-# mctune function ------------------------------------
+if (is.null(self$cost) || (kernel=='radial' && is.null(self$gamma))) {
+	c.g.obj = private$mcTune()
+	self$cost = c.g.obj$best.parameters$cost
+	self$gamma = c.g.obj$best.parameters$gamma
+	}
+  }
+  ),
+  private = list(
+      mcTune = function(y=self$y, x=self$x, valid.times=self$valid.times, numcores=self$numcores, ranges=self$ranges, file.prefix=self$file.prefix) {
 
   message("mcTune is running ...")
   call <- match.call()
@@ -113,6 +120,7 @@ train.folds<-lapply(1:length(self$test.folds), function(xi) (1:nrow(x))[-self$te
     numcores = 1
   }
 
+# mctune function ------------------------------------
   train_results <-
     do.call(
       what = get("mclapply", asNamespace("parallel")), args = c(mc.cores = numcores, list(
@@ -128,13 +136,12 @@ train.folds<-lapply(1:length(self$test.folds), function(xi) (1:nrow(x))[-self$te
             for (reps in 1:tunecontrol$nrepeat) {
               #        print(ranges)
               
+
               ## train one model
               pars <- if (is.null(ranges))
                 NULL
               else
                 lapply(parameters[para.set,,drop = FALSE], unlist)
-              
-#          print(pars)
               if (self$kernel == "linear") {
                 model <-
                   e1071::svm(
@@ -216,35 +223,32 @@ train.folds<-lapply(1:length(self$test.folds), function(xi) (1:nrow(x))[-self$te
         best.performance = model.errors[best],
         method           = "svm",
         nparcomb         = nrow(parameters),
-        train.ind        = train.folds
-#        sampling         = switch(
-#          tunecontrol$sampling,
-#          fix = "fixed training/validation set",
-#          bootstrap = "bootstrapping",
-#          cross = if (tunecontrol$cross == nrow(data))
-#            "leave-one-out"
-#          else
-#            paste(tunecontrol$cross,"-fold cross validation", sep ="")
-#        ),
-#        performances     = if (tunecontrol$performances)
-#          cbind(parameters, error = model.errors, dispersion = model.variances),
-#        best.model       = if (tunecontrol$best.model) {
-#                modeltmp <- e1071::svm(y=self$y, x=self$x, scale = self$scale, kernel = self$kernel, type="C-classification", cost=parameters[best,,drop = FALSE]$cost, gamma=parameters[best,,drop = FALSE]$gamma)
-#          modeltmp
-#        }
+        train.ind        = train.folds,
+        sampling         = switch(
+          tunecontrol$sampling,
+          fix = "fixed training/validation set",
+          bootstrap = "bootstrapping",
+          cross = if (tunecontrol$cross == nrow(self$x))
+            "leave-one-out"
+          else
+            paste(tunecontrol$cross,"-fold cross validation", sep ="")
+        ),
+        performances     = if (tunecontrol$performances)
+          cbind(parameters, error = model.errors, dispersion = model.variances),
+        best.model       = if (tunecontrol$best.model) {
+                modeltmp <- e1071::svm(y=self$y, x=self$x, scale = self$scale, kernel = self$kernel, type="C-classification", cost=parameters[best,,drop = FALSE]$cost, gamma=parameters[best,,drop = FALSE]$gamma)
+          modeltmp
+        }
       ),
       class = "tune"
     )
-    browser()
   if (!is.null(file.prefix)) {
     png(paste(file.prefix,"_c_g_eval.png",sep = ""))
     .plotCostGamma(c.g.obj)
     garb = dev.off()
   }
-#    return(c.g.obj)
-# mctune function ------------------------------------
-  }
-  ),
-  private = list()
+return(c.g.obj)
+    }
+      )
 )
 

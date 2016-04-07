@@ -1,9 +1,10 @@
 x=get(load(file="data_iris2/x.rda"))
 y=get(load(file="data_iris2/y.rda"))
+cost=1
 # -------------------------------------
 
 test_that("iris2_Model", {
-model.obj = Model$new( x = x, y = y)
+model.obj = Model$new( x = x, y = y, cost=cost)
 
 scores = model.obj$ScoreData(x=x)$scores
 model = model.obj$model
@@ -18,7 +19,7 @@ test_that("iris2_Model_Features", {
 feature.ranking = get(load('data_iris2/feature.ranking.rda'))
 feature.nb = 4
 
-model.obj = Model$new(x = x, y = y, feature.ranking=feature.ranking, feature.nb=feature.nb)
+model.obj = Model$new(x = x, y = y, feature.ranking=feature.ranking, feature.nb=feature.nb, cost=cost)
 scores = model.obj$ScoreData(x=x)$scores
 model = model.obj$model
 
@@ -33,7 +34,7 @@ test_that("iris2_createModel", {
 feature.ranking = get(load('data_iris2/feature.ranking.rda'))
 feature.nb = 4
 
-model.obj = createModel(x = x, y = y, feature.ranking=feature.ranking, feature.nb=feature.nb)
+model.obj = createModel(x = x, y = y, feature.ranking=feature.ranking, feature.nb=feature.nb, cost=cost)
 scores = model.obj$ScoreData(x=x)$scores
 model = model.obj$model
 

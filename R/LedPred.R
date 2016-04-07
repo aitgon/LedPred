@@ -24,7 +24,7 @@ LedPred <- R6::R6Class(
     cv.probs.labels = NULL,
     initialize = function(x, y, valid.times = self$valid.times, kfold.nb =
                             self$kfold.nb, halve.above = self$halve.above, numcores = self$numcores, file.prefix =
-                            self$file.prefix, feature.nb.vector) {
+                            self$file.prefix, feature.nb.vector, cost=self$cost, gamma=self$gamma, kernel=self$kernel) {
       #
       if (!missing(valid.times))
         self$valid.times <- valid.times
@@ -34,11 +34,17 @@ LedPred <- R6::R6Class(
         self$numcores <- numcores
       if (!missing(file.prefix))
         self$file.prefix <- file.prefix
+      if (!missing(cost))
+        self$cost <- cost
+      if (!missing(gamma))
+        self$gamma <- gamma
+      if (!missing(kernel))
+        self$kernel <- kernel
       #
       feature.ranking.obj <-
         ledpred2::FeatureRanking$new(
           x, y, valid.times = self$valid.times, kfold.nb = self$kfold.nb, halve.above =
-            self$halve.above, numcores = self$numcores, file.prefix = file.prefix
+            self$halve.above, numcores = self$numcores, file.prefix = file.prefix, cost=self$cost, gamma=self$gamma, kernel=self$kernel
         )
       #
       self$x = feature.ranking.obj$x
@@ -55,7 +61,7 @@ LedPred <- R6::R6Class(
         ledpred2::FeatureNbTuner$new(
           x = self$x, y = self$y, valid.times = self$valid.times, numcores = self$numcores, feature.ranking =
             self$feature.ranking, feature.nb.vector = self$feature.nb.vector, file.prefix =
-            self$file.prefix
+            self$file.prefix, cost=self$cost, gamma=self$gamma, kernel=self$kernel
         )
       #
       self$feature.performances = feature.nb.tuner.obj$feature.performances
@@ -63,7 +69,7 @@ LedPred <- R6::R6Class(
       #
       model.perf.obj = ModelPerformance$new(
         x = x, y = y, feature.ranking = self$feature.ranking, feature.nb = self$best.feature.nb, file.prefix =
-          self$file.prefix
+          self$file.prefix, cost=self$cost, gamma=self$gamma, kernel=self$kernel
       )
       ##    #
       self$model = model.perf.obj$model

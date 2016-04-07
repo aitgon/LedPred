@@ -1,6 +1,7 @@
 crms = read.table('data_starrseq/crm_features.tab')
 y = crms[,1]
 x = crms[,-1]
+cost=1
 
 #numcores=1
 numcores = parallel::detectCores() - 1
@@ -11,7 +12,7 @@ feature.nb.vector = list(100, 200, 300, 400, 500, 600)
 
 test_that("starrseq_LedPred", {
 
-obj <- LedPred$new(x = x, y = y, numcores=numcores, feature.nb.vector=feature.nb.vector)
+obj <- LedPred$new(x = x, y = y, numcores=numcores, feature.nb.vector=feature.nb.vector, cost=cost)
 scores = obj$model.obj$ScoreData(x=x)$scores
 
 testthat::expect_true(all(obj$feature.ranking[c(1,2), 'FeatureName']==c('peaks_ets1.bed', 'Myb')))
@@ -25,7 +26,7 @@ testthat::expect_true(all(obj$feature.ranking[c(11,12), 'AvgRank']==c(39.0, 41.4
 
 test_that("starrseq_LedPred_wrapper", {
 
-obj <- ledpred(x = x, y = y, numcores=numcores, feature.nb.vector=feature.nb.vector)
+obj <- ledpred(x = x, y = y, numcores=numcores, feature.nb.vector=feature.nb.vector, cost=cost)
 
 testthat::expect_true(all(obj$feature.ranking[c(1,2), 'FeatureName']==c('peaks_ets1.bed', 'Myb')))
 testthat::expect_true(obj$feature.nb==200)

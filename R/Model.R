@@ -71,11 +71,18 @@ Model <- R6::R6Class(
     decision.values = TRUE,
     CreateModel = function() {
       set.seed(123)
+      if (self$kernel=="linear")
+      self$model = e1071::svm(
+        x = self$x, y = self$y, type = private$type, kernel = self$kernel, cost = self$cost, scale = private$scale, probability =
+          private$probability, decision.values = private$decision.values,
+        cachesize = 500
+      ) 
+      else if (self$kernel=="radial")
       self$model = e1071::svm(
         x = self$x, y = self$y, type = private$type, kernel = self$kernel, cost = self$cost, gamma = self$gamma, scale = private$scale, probability =
           private$probability, decision.values = private$decision.values,
         cachesize = 500
-      )
+      ) 
     }
   )
 )

@@ -1,15 +1,16 @@
 x=get(load(file="data_iris2/x.rda"))
 y=get(load(file="data_iris2/y.rda"))
 
-numcores=1
+numcores=parallel::detectCores() - 1
 
 feature.nb.vector = list(2,4,6,8,10,12)
+cost=1
 
 # -------------------------------------
 
 test_that("iris2_LedPred", {
 
-obj <- LedPred$new(x = x, y = y, numcores=numcores, feature.nb.vector=feature.nb.vector)
+obj <- LedPred$new(x = x, y = y, numcores=numcores, feature.nb.vector=feature.nb.vector, cost=cost)
 scores = obj$model.obj$ScoreData(x=x)$scores
 
 testthat::expect_true(all(obj$feature.ranking[c(1,2), 'FeatureName']==c('Petal.Width', 'Petal.Length')))
@@ -22,7 +23,7 @@ testthat::expect_true(all(obj$feature.ranking[c(11,12), 'AvgRank']==c(10.4, 11.4
 
 test_that("iris2_LedPred_wrapper", {
 
-obj <- ledpred(x = x, y = y, numcores=numcores, feature.nb.vector=feature.nb.vector)
+obj <- ledpred(x = x, y = y, numcores=numcores, feature.nb.vector=feature.nb.vector, cost=cost)
 scores = scoreData(x=x, ledpred=obj)
 
 testthat::expect_true(all(obj$feature.ranking[c(1,2), 'FeatureName']==c('Petal.Width', 'Petal.Length')))
