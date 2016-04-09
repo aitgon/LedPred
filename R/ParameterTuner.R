@@ -18,9 +18,9 @@
 }
 
 
-.plotCostGamma <- function(c.g.obj) {
-  c.g.perf <- c.g.obj$performances
-  if (length(c.g.obj$best.parameter) == 1) {
+.plotCostGamma <- function(e1071.tune.obj) {
+  c.g.perf <- e1071.tune.obj$performances
+  if (length(e1071.tune.obj$best.parameter) == 1) {
     c.g.perf[,"gamma"] <- 1:nrow(c.g.perf)
   }
   
@@ -31,18 +31,18 @@
     ylim = c(min(xyz$y[which(xyz$y > 0)]), max(x = xyz$y)),
     xlab = "cost", ylab = "gamma"
   )
-  cost = c.g.obj$best.parameters$cost
-  gamma = c.g.obj$best.parameters$gamma
+  cost = e1071.tune.obj$best.parameters$cost
+  gamma = e1071.tune.obj$best.parameters$gamma
   title(paste("best cost:", cost,' and gamma:', gamma))
   points (c.g.perf$cost,c.g.perf$gamma, pch = "x", cex = 2)
 }
-
 
 ParameterTuner <- R6::R6Class(
   "ParameterTuner",
   inherit = Data,
   public = list(
     ranges = list(gamma=c(1,10), cost=c(1,10)),
+    e1071.tune.obj = NULL,
     initialize = function(x, y, kernel = self$kernel, cost = self$cost, gamma =
                             self$gamma, valid.times=self$valid.times, ranges = self$ranges, numcores=self$numcores, file.prefix=self$file.prefix) {
       if (!missing(kernel)) self$kernel = kernel
@@ -62,9 +62,9 @@ ParameterTuner <- R6::R6Class(
       self$gamma = data.obj$gamma
 
 if (is.null(self$cost) || (kernel=='radial' && is.null(self$gamma))) {
-	c.g.obj = private$mcTune()
-	self$cost = c.g.obj$best.parameters$cost
-	self$gamma = c.g.obj$best.parameters$gamma
+	self$e1071.tune.obj = private$mcTune()
+	self$cost = self$e1071.tune.obj$best.parameters$cost
+	self$gamma = self$e1071.tune.obj$best.parameters$gamma
 	}
   }
   ),
@@ -216,7 +216,7 @@ train.folds<-lapply(1:length(self$test.folds), function(xi) (1:nrow(x))[-self$te
     NULL
   else
     lapply(parameters[best,,drop = FALSE], unlist)
-  c.g.obj <-
+  e1071.tune.obj <-
     structure(
       list(
         best.parameters  = parameters[best,,drop = FALSE],
@@ -244,10 +244,10 @@ train.folds<-lapply(1:length(self$test.folds), function(xi) (1:nrow(x))[-self$te
     )
   if (!is.null(file.prefix)) {
     png(paste(file.prefix,"_c_g_eval.png",sep = ""))
-    .plotCostGamma(c.g.obj)
+    .plotCostGamma(e1071.tune.obj)
     garb = dev.off()
   }
-return(c.g.obj)
+return(e1071.tune.obj)
     }
       )
 )
