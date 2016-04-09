@@ -1,6 +1,6 @@
 FeatureNbTuner <- R6::R6Class(
   "FeatureNbTuner",
-  inherit = Data,
+  inherit = ParameterTuner,
   public = list(
     feature.ranking = NULL,
     feature.nb.vector = NULL,
@@ -17,13 +17,15 @@ FeatureNbTuner <- R6::R6Class(
         self$gamma = gamma
       if (!missing(valid.times)) {
         self$valid.times = valid.times
-        data.obj = Data$new(x = x, y = y, valid.times = valid.times)
+        parent.obj = ParameterTuner$new(x = x, y = y, kernel = self$kernel, cost = self$cost, gamma = self$gamma, valid.times = self$valid.times)
       } else {
-        data.obj = Data$new(x = x, y = y)
+        parent.obj = ParameterTuner$new(x = x, y = y, kernel = self$kernel, cost = self$cost, gamma = self$gamma)
       }
-      self$x = data.obj$x
-      self$y = data.obj$y
-      self$test.folds = data.obj$test.folds
+      self$x = parent.obj$x
+      self$y = parent.obj$y
+      self$test.folds = parent.obj$test.folds
+      self$cost = parent.obj$cost
+      self$gamma = parent.obj$gamma
       if (!missing(file.prefix))
         self$file.prefix = file.prefix
       if (!missing(numcores))
@@ -90,12 +92,3 @@ FeatureNbTuner <- R6::R6Class(
   )
 )
 
-## -------------------------------------
-#crms = read.table('data2/crm_features.tab')
-#feature.ranking = read.table('data2/_feature_ranking.txt', header = T)
-#ranked.features = feature.ranking$FeatureName
-
-#crm.y = crms[,1]
-#crm.x = crms[,-1]
-#crm.x = crms[,ranked.features[1:515]]
-#obj <- Data$new(x=crm.x, y=crm.y, valid.times=5)

@@ -45,22 +45,27 @@ ParameterTuner <- R6::R6Class(
     e1071.tune.obj = NULL,
     initialize = function(x, y, kernel = self$kernel, cost = self$cost, gamma =
                             self$gamma, valid.times=self$valid.times, ranges = self$ranges, numcores=self$numcores, file.prefix=self$file.prefix) {
-      if (!missing(kernel)) self$kernel = kernel
+      if (!missing(kernel))
+        self$kernel = kernel
+      if (!missing(cost))
+        self$cost = cost
+      if (!missing(gamma))
+        self$gamma = gamma
       if (!missing(ranges)) self$ranges = ranges
       if (!missing(numcores)) self$numcores = numcores
       if (!missing(file.prefix)) self$file.prefix = file.prefix
       if (!missing(valid.times)) {
         self$valid.times = valid.times
-        data.obj = Data$new(x = x, y = y, kernel = self$kernel, valid.times = self$valid.times)
+        parent.obj = Data$new(x = x, y = y, kernel = self$kernel, cost = self$cost, gamma = self$gamma, valid.times = self$valid.times)
       } else {
-        data.obj = Data$new(x = x, y = y, kernel = self$kernel)
+        parent.obj = Data$new(x = x, y = y, kernel = self$kernel, cost = self$cost, gamma = self$gamma)
       }
-      self$x = data.obj$x
-      self$y = data.obj$y
-      self$test.folds = data.obj$test.folds
-      self$cost = data.obj$cost
-      self$gamma = data.obj$gamma
-
+      self$x = parent.obj$x
+      self$y = parent.obj$y
+      self$test.folds = parent.obj$test.folds
+      self$cost = parent.obj$cost
+      self$gamma = parent.obj$gamma
+      self$scale.factors = parent.obj$scale.factors
 if (is.null(self$cost) || (kernel=='radial' && is.null(self$gamma))) {
 	self$e1071.tune.obj = private$mcTune()
 	self$cost = self$e1071.tune.obj$best.parameters$cost

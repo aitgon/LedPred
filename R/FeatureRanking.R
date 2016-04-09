@@ -1,6 +1,6 @@
 FeatureRanking <- R6::R6Class(
   "FeatureRanking",
-  inherit = Data,
+  inherit = ParameterTuner,
   public = list(
     kfold.nb = 1,
     halve.above = 100,
@@ -17,13 +17,15 @@ FeatureRanking <- R6::R6Class(
         self$gamma = gamma
       if (!missing(valid.times)) {
         self$valid.times = valid.times
-        data.obj = Data$new(x = x, y = y, valid.times = valid.times)
+        parent.obj = ParameterTuner$new(x = x, y = y, kernel = self$kernel, cost = self$cost, gamma = self$gamma, valid.times = self$valid.times)
       } else {
-        data.obj = Data$new(x = x, y = y)
+        parent.obj = ParameterTuner$new(x = x, y = y, kernel = self$kernel, cost = self$cost, gamma = self$gamma)
       }
-      self$x = data.obj$x
-      self$y = data.obj$y
-      self$test.folds = data.obj$test.folds
+      self$x = parent.obj$x
+      self$y = parent.obj$y
+      self$test.folds = parent.obj$test.folds
+      self$cost = parent.obj$cost
+      self$gamma = parent.obj$gamma
       if (!missing(file.prefix))
         self$file.prefix = file.prefix
       if (!missing(kfold.nb))

@@ -1,6 +1,6 @@
 Model <- R6::R6Class(
   "Model",
-  inherit = Data,
+  inherit = ParameterTuner,
   public = list(
     model = NULL,
     weights = NULL,
@@ -25,14 +25,16 @@ Model <- R6::R6Class(
         self$gamma = gamma
       if (!missing(valid.times)) {
         self$valid.times = valid.times
-        data.obj = Data$new(x = x, y = y, valid.times = valid.times)
+        parent.obj = ParameterTuner$new(x = x, y = y, kernel = self$kernel, cost = self$cost, gamma = self$gamma, valid.times = self$valid.times)
       } else {
-        data.obj = Data$new(x = x, y = y)
+        parent.obj = ParameterTuner$new(x = x, y = y, kernel = self$kernel, cost = self$cost, gamma = self$gamma)
       }
-      self$x = data.obj$x
-      self$y = data.obj$y
-      self$scale.factors = data.obj$scale.factors
-      self$test.folds = data.obj$test.folds
+      self$x = parent.obj$x
+      self$y = parent.obj$y
+      self$test.folds = parent.obj$test.folds
+      self$cost = parent.obj$cost
+      self$gamma = parent.obj$gamma
+      self$scale.factors = parent.obj$scale.factors
 #      self$scale.center = data.obj$scale.center # store scale center
 #      self$scale.scale = data.obj$scale.scale # store scale scale
       self$file.prefix = file.prefix
@@ -46,7 +48,6 @@ Model <- R6::R6Class(
         selected.features = as.character(self$feature.ranking$FeatureName[1:self$feature.nb])
         x = x[,selected.features]
       }
-#      browser()
       if (scale) {
       x=t(t(x)/self$scale.factors)
       }

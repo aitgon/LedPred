@@ -3,8 +3,20 @@ y=get(load(file="data_iris2/y.rda"))
 cost=1
 # -------------------------------------
 
+test_that("iris2_Model_noCost", {
+model.obj = Model$new( x = x, y = y)
+
+scores = model.obj$ScoreData(x=x)$scores
+model = model.obj$model
+
+testthat::expect_true(all(rownames(model$SV)[1:3]==c("2", "4", "6")))
+testthat::expect_equal(as.numeric(scores)[1], 1.032471, tolerance=1e-2)
+testthat::expect_equal(as.numeric(scoreData(x, model=model.obj))[1], 0.9912151, tolerance=1e-2)
+})
+
 test_that("iris2_Model", {
 model.obj = Model$new( x = x, y = y, cost=cost)
+
 
 scores = model.obj$ScoreData(x=x)$scores
 model = model.obj$model
