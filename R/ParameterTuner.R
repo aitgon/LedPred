@@ -66,7 +66,7 @@ ParameterTuner <- R6::R6Class(
       self$cost = parent.obj$cost
       self$gamma = parent.obj$gamma
       self$scale.factors = parent.obj$scale.factors
-if (is.null(self$cost) || (kernel=='radial' && is.null(self$gamma))) {
+if (is.null(self$cost) || (self$kernel=='radial' && is.null(self$gamma))) {
 	self$e1071.tune.obj = private$mcTune()
 	self$cost = self$e1071.tune.obj$best.parameters$cost
 	self$gamma = self$e1071.tune.obj$best.parameters$gamma
@@ -147,23 +147,9 @@ train.folds<-lapply(1:length(self$test.folds), function(xi) (1:nrow(x))[-self$te
                 NULL
               else
                 lapply(parameters[para.set,,drop = FALSE], unlist)
-              if (self$kernel == "linear") {
-                model <-
-                  e1071::svm(
-                    x=self$x, y=self$y, subset = train.folds[[sample]], scale = FALSE, kernel = self$kernel,cost =
-                      pars$cost, type = 'C-classification'
-                  )
-              }
-              else{
-              
-                model <-
-                  e1071::svm(
-                    x=self$x, y=self$y, subset = train.folds[[sample]], scale = FALSE, kernel = self$kernel,cost =
-                      pars$cost,gamma = pars$gamma, type = 'C-classification'
-                  )
-              }
-              
-              
+                train.fold.i <- train.folds[[sample]]
+	            model.obj <- Model$new(x = self$x[train.fold.i,], y = self$y[train.fold.i], kernel=self$kernel, cost=pars$cost, gamma=pars$gamma)
+                model <- model.obj$model
               ## predict validation set
               
               

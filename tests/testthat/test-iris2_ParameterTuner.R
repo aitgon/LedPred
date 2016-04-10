@@ -3,6 +3,7 @@ type='C-classification'
 ranges = list(gamma = 2^(-1:1), cost = 2^(2:4))
 valid.times = 10
 numcores = parallel::detectCores() - 1
+#numcores = 1
 
 test_that("iris2_ParameterTuner", {
 
@@ -10,8 +11,6 @@ x = iris[,-which(names(iris) == "Species")]
 y = ifelse(iris$Species=='setosa',1,-1)
 
 e1071.tune <- e1071::tune(e1071::svm, train.y=as.factor(y), train.x=x, kernel=kernel, type=type, ranges = ranges, tunecontrol = e1071::tune.control(sampling = "cross", cross=valid.times))
-
-numcores = parallel::detectCores() - 1
 
 tune.parameters.obj <-ParameterTuner$new(x = x, y = y, kernel=kernel, ranges=ranges, valid.times = valid.times, numcores=numcores)
 

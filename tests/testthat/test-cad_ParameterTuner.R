@@ -15,7 +15,7 @@ numcores = parallel::detectCores() - 1
 
 tune.parameters.obj <-ParameterTuner$new(x = x, y = y, kernel=kernel, ranges=list(cost=cost.vector, gamma=gamma.vector), valid.times = valid.times, numcores=numcores)
 
-testthat::expect_true(tune.parameters.obj$cost==10)
+testthat::expect_true(tune.parameters.obj$cost==3)
 testthat::expect_true(tune.parameters.obj$gamma==3)
 })
 
