@@ -42,7 +42,7 @@ LedPred <- R6::R6Class(
         self$kernel <- kernel
       #
       feature.ranking.obj <-
-        ledpred2::FeatureRanking$new(
+        FeatureRanking$new(
           x, y, valid.times = self$valid.times, kfold.nb = self$kfold.nb, halve.above =
             self$halve.above, numcores = self$numcores, file.prefix = file.prefix, cost=self$cost, gamma=self$gamma, kernel=self$kernel
         )
@@ -58,7 +58,7 @@ LedPred <- R6::R6Class(
       self$feature.nb.vector = feature.nb.vector
       #
       feature.nb.tuner.obj <-
-        ledpred2::FeatureNbTuner$new(
+        FeatureNbTuner$new(
           x = self$x, y = self$y, valid.times = self$valid.times, numcores = self$numcores, feature.ranking =
             self$feature.ranking, feature.nb.vector = self$feature.nb.vector, file.prefix =
             self$file.prefix, cost=self$cost, gamma=self$gamma, kernel=self$kernel
