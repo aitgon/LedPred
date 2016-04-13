@@ -45,8 +45,11 @@ test_that("iris2_rankFeatures_kfold.nb=1", {
 
 kfold.nb=1
 
+data=get(load(file="data_iris2/iris2.rda"))
+cl=1
+
 # -------------------------------------
-feature.ranking <-rankFeatures(x = x, y = y, valid.times = valid.times, kfold.nb=kfold.nb, numcores=numcores, cost=cost)
+feature.ranking <-rankFeatures(data = data, cl =cl , valid.times = valid.times, kfold.nb=kfold.nb, numcores=numcores, cost=cost)
 #print(feature.ranking)
 testthat::expect_true(all(feature.ranking[c(1,2), 'FeatureName']==c('Petal.Width', 'Petal.Length')))
 testthat::expect_true(all(feature.ranking[c(11,12), 'AvgRnk']==c(9.8, 10)))

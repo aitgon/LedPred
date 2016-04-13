@@ -24,3 +24,15 @@ testthat::expect_true(feature.nb.tuner$best.feature.nb==4)
 testthat::expect_equal(feature.nb.tuner$feature.performances['cv.kappa.mean',][[1]], 0.9009967,tolerance=1e-6)
 })
 
+test_that("iris2_tuneFeatureNb", {
+
+data=get(load(file="data_iris2/iris2.rda"))
+cl=1
+step.nb=2
+
+feature.nb.tuner = tuneFeatureNb(data = data, cl = cl, step.nb=step.nb, valid.times = valid.times, feature.ranking = feature.ranking, numcores=numcores, cost=cost)
+
+testthat::expect_true(feature.nb.tuner$best.feature.nb==4)
+testthat::expect_equal(feature.nb.tuner$feature.performances['cv.kappa.mean',][[1]], 0.9009967,tolerance=1e-6)
+})
+

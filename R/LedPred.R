@@ -1,4 +1,8 @@
-LedPred = function(x, y, ...) {
+LedPred = function(data, cl=1, ...) {
+
+x=data[,-cl]
+y=data[,cl]
+
   obj <- LedPredClass$new(x = x, y = y, ...)
   ledpred.summary <-
     list(

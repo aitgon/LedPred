@@ -1,4 +1,7 @@
-createModel = function(x, y, feature.ranking = NULL, feature.nb = NULL, file.prefix = NULL, cost=NULL, ...) {
+createModel = function(data, cl=1, feature.ranking = NULL, feature.nb = NULL, file.prefix = NULL, cost=NULL, ...) {
+
+x=data[,-cl]
+y=data[,cl]
 
 #selected.features = as.character(feature.ranking$FeatureName[1:feature.nb])
 #x = x[,selected.features]

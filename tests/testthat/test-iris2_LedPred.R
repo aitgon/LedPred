@@ -23,8 +23,11 @@ testthat::expect_true(all(obj$feature.ranking[c(11,12), 'AvgRank']==c(10.4, 11.4
 
 test_that("iris2_LedPred", {
 
-obj <- LedPred(x = x, y = y, numcores=numcores, feature.nb.vector=feature.nb.vector, cost=cost)
-scores = scoreData(x=x, ledpred=obj)
+data=get(load(file="data_iris2/iris2.rda"))
+cl=1
+
+obj <- LedPred(data = data, cl = cl, numcores=numcores, feature.nb.vector=feature.nb.vector, cost=cost)
+scores = scoreData(data=x, ledpred=obj)
 
 testthat::expect_true(all(obj$feature.ranking[c(1,2), 'FeatureName']==c('Petal.Width', 'Petal.Length')))
 testthat::expect_true(all(obj$feature.ranking[c(11,12), 'AvgRank']==c(10.4, 11.4)))

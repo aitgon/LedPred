@@ -20,8 +20,8 @@ modelperf.obj <- ModelPerformance$new(x = x, y = y, valid.times=valid.times, cos
 testthat::expect_equal(modelperf.obj$auc, 0.9, tolerance=1e-2)
 testthat::expect_equal(as.numeric(modelperf.obj$cv.probs.labels$probs[[5]][1]), 0.2372886, tolerance=1e-1)
 
-cv.probs.labels <- evaluateModelPerformance(x = x, y = y, valid.times=valid.times, cost=cost)
-testthat::expect_equal(as.numeric(cv.probs.labels$probs[[5]][1]), 0.2338657, tolerance=1e-6)
+cv.probs.labels <- evaluateModelPerformance(data = crms, cl = 1, valid.times=valid.times, cost=cost)
+testthat::expect_equal(as.numeric(cv.probs.labels$probs[[5]][1]), 0.0919, tolerance=1e-2)
 }
 )
 
