@@ -1,8 +1,34 @@
 Package: LedPred
-Title: What the Package Does (one line, title case)
-Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-Depends: R (>= 3.2.0)
-License: What license is it under?
+Title: Learning from DNA to Predict enhancers
+Description: This package aims at creating a predictive model of regulatory
+    sequences used to score unknown sequences based on the content of DNA motifs,
+    next-generation sequencing (NGS) peaks and signals and other numerical scores of
+    the sequences using supervised classification. The package contains a workflow
+    based on the support vector machine (SVM) algorithm that maps features to
+    sequences, optimize SVM parameters and feature number and creates a model that
+    can be stored and used to score the regulatory potential of unknown sequences.
+Version: 1.4.0
+Date: 2016-03-26
+Author: Elodie Darbo, Denis Seyres, Aitor Gonzalez
+Maintainer: Aitor Gonzalez <aitor.gonzalez@univ-amu.fr>
+Depends:
+    R (>= 3.2.0),
+    e1071 (>= 1.6)
+Imports:
+    akima,
+    GenomicRanges (>= 1.18.4),
+    irr,
+    jsonlite,
+    parallel,
+    plot3D,
+    plyr,
+    RCurl,
+    ROCR,
+    testthat
+License: MIT | file LICENSE
 LazyData: true
+Packaged: 2015-09-17 13:20:49 UTC; gonzalez
+biocViews: SupportVectorMachine, Software, MotifAnnotation, ChIPSeq
+NeedsCompilation: no
+BugReports: https://github.com/aitgon/LedPred/issues
+RoxygenNote: 5.0.0
