@@ -10,9 +10,9 @@ feature.nb.vector = list(100, 200, 300, 400, 500, 600)
 
 # -------------------------------------
 
-test_that("starrseq_LedPred", {
+test_that("starrseq_LedPredClass", {
 
-obj <- LedPred$new(x = x, y = y, numcores=numcores, feature.nb.vector=feature.nb.vector, cost=cost)
+obj <- LedPredClass$new(x = x, y = y, numcores=numcores, feature.nb.vector=feature.nb.vector, cost=cost)
 scores = obj$model.obj$ScoreData(x=x)$scores
 
 testthat::expect_true(all(obj$feature.ranking[c(1,2), 'FeatureName']==c('peaks_ets1.bed', 'Myb')))
@@ -24,9 +24,9 @@ testthat::expect_true(all(obj$feature.ranking[c(11,12), 'AvgRank']==c(39.0, 41.4
 
 })
 
-test_that("starrseq_LedPred_wrapper", {
+test_that("starrseq_LedPred", {
 
-obj <- ledpred(x = x, y = y, numcores=numcores, feature.nb.vector=feature.nb.vector, cost=cost)
+obj <- LedPred(x = x, y = y, numcores=numcores, feature.nb.vector=feature.nb.vector, cost=cost)
 
 testthat::expect_true(all(obj$feature.ranking[c(1,2), 'FeatureName']==c('peaks_ets1.bed', 'Myb')))
 testthat::expect_true(obj$feature.nb==200)

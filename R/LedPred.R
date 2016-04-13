@@ -1,5 +1,5 @@
-ledpred = function(x, y, ...) {
-  obj <- LedPred$new(x = x, y = y, ...)
+LedPred = function(x, y, ...) {
+  obj <- LedPredClass$new(x = x, y = y, ...)
   ledpred.summary <-
     list(
       feature.ranking = obj$feature.ranking, feature.nb =
@@ -8,8 +8,8 @@ ledpred = function(x, y, ...) {
   return(ledpred.summary)
 }
 
-LedPred <- R6::R6Class(
-  "LedPred",
+LedPredClass <- R6::R6Class(
+  "LedPredClass",
   inherit = Data,
   public = list(
     kfold.nb = 1,

@@ -8,9 +8,9 @@ cost=1
 
 # -------------------------------------
 
-test_that("iris2_LedPred", {
+test_that("iris2_LedPredClass", {
 
-obj <- LedPred$new(x = x, y = y, numcores=numcores, feature.nb.vector=feature.nb.vector, cost=cost)
+obj <- LedPredClass$new(x = x, y = y, numcores=numcores, feature.nb.vector=feature.nb.vector, cost=cost)
 scores = obj$model.obj$ScoreData(x=x)$scores
 
 testthat::expect_true(all(obj$feature.ranking[c(1,2), 'FeatureName']==c('Petal.Width', 'Petal.Length')))
@@ -21,9 +21,9 @@ testthat::expect_true(all(obj$feature.ranking[c(11,12), 'AvgRank']==c(10.4, 11.4
 
 })
 
-test_that("iris2_LedPred_wrapper", {
+test_that("iris2_LedPred", {
 
-obj <- ledpred(x = x, y = y, numcores=numcores, feature.nb.vector=feature.nb.vector, cost=cost)
+obj <- LedPred(x = x, y = y, numcores=numcores, feature.nb.vector=feature.nb.vector, cost=cost)
 scores = scoreData(x=x, ledpred=obj)
 
 testthat::expect_true(all(obj$feature.ranking[c(1,2), 'FeatureName']==c('Petal.Width', 'Petal.Length')))
