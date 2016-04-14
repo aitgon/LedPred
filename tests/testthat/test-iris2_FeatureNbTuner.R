@@ -33,6 +33,6 @@ step.nb=2
 feature.nb.tuner = tuneFeatureNb(data = data, cl = cl, step.nb=step.nb, valid.times = valid.times, feature.ranking = feature.ranking, numcores=numcores, cost=cost)
 
 testthat::expect_true(feature.nb.tuner$best.feature.nb==4)
-testthat::expect_equal(feature.nb.tuner$feature.performances['cv.kappa.mean',][[1]], 0.9009967,tolerance=1e-6)
+testthat::expect_equal(feature.nb.tuner$feature.performances['cv.kappa.mean',][[1]], 0.958,tolerance=1e-2)
 })
 

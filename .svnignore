@@ -1,0 +1,12 @@
+.svnignore
+.Rbuildignore
+.git
+.gitignore
+mapFeaturesToCRMs_test_data
+test-mapFeaturesToCRMs.r
+todo.md
+LedPred.Rcheck
+LedPred_*.tar.gz
+.Rhistory
+BiocCheck.out
+readme.md

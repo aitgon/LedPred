@@ -1,0 +1,13 @@
+citEntry(entry="article",
+         title = "LedPred: An R/Bioconductor package to predict regulatory sequences using support vector machines",
+         author = personList( as.person("Denis Seyre" ),
+           as.person("Elodie Darbo" ),
+           as.person("Laurent Perrin" ),
+           as.person("Carl Herrmann" ),
+           as.person("Aitor Gonzalez" )),
+         year = 2015,
+         journal = "Bioinformatics",
+         doi = "10.1093/bioinformatics/btv705",
+         url = "http://bioinformatics.oxfordjournals.org/content/early/2016/01/14/bioinformatics.btv705.long",
+		textVersion = 
+         "Seyres D, et al. (2015) LedPred: An R/Bioconductor package to predict regulatory sequences using support vector machines. doi: 10.1093/bioinformatics/btv705" )

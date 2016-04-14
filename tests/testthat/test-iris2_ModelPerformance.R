@@ -20,7 +20,7 @@ testthat::expect_equal(modelperf.obj$auc, 1, tolerance=1e-2)
 testthat::expect_equal(as.numeric(modelperf.obj$cv.probs.labels$probs[1,1]), 0.9784439, tolerance=1e-5)
 
 cv.probs.labels <- evaluateModelPerformance(data = data, cl = 1, cost=cost)
-testthat::expect_equal(as.numeric(cv.probs.labels$probs[1,1]), 1, tolerance=1e-3)
+testthat::expect_equal(as.numeric(cv.probs.labels$probs[1,1]), 0.999, tolerance=1e-3)
 }
 )
 
@@ -37,7 +37,7 @@ testthat::expect_equal(modelperf.obj$auc, 1, tolerance=1e-2)
 testthat::expect_equal(as.numeric(modelperf.obj$cv.probs.labels$probs[1,1]), 0.999417, tolerance=1e-5)
 
 cv.probs.labels <- evaluateModelPerformance(data = data, cl = 1, cost=cost)
-testthat::expect_equal(as.numeric(cv.probs.labels$probs[1,1]), 1, tolerance=1e-3)
+testthat::expect_equal(as.numeric(cv.probs.labels$probs[1,1]), 0.999, tolerance=1e-3)
 }
 )
 

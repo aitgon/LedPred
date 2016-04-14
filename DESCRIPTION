@@ -7,7 +7,7 @@ Description: This package aims at creating a predictive model of regulatory
     based on the support vector machine (SVM) algorithm that maps features to
     sequences, optimize SVM parameters and feature number and creates a model that
     can be stored and used to score the regulatory potential of unknown sequences.
-Version: 1.4.0
+Version: 1.99.0
 Date: 2016-03-26
 Author: Elodie Darbo, Denis Seyres, Aitor Gonzalez
 Maintainer: Aitor Gonzalez <aitor.gonzalez@univ-amu.fr>
@@ -31,4 +31,4 @@ Packaged: 2015-09-17 13:20:49 UTC; gonzalez
 biocViews: SupportVectorMachine, Software, MotifAnnotation, ChIPSeq
 NeedsCompilation: no
 BugReports: https://github.com/aitgon/LedPred/issues
-RoxygenNote: 5.0.0
+RoxygenNote: 5.0.1

@@ -1,9 +1,48 @@
-LedPred = function(data, cl=1, ...) {
+#########################################################################################
+# A function to run the others
+
+#########################################################################################
+# A function to run the others
+
+#' Creates an SVM model given a feature matrix
+#'
+#' The \code{LedPred} function computes the best SVM parameters, defines the optimal features for creating the SVM model by running sequentially \code{mcTune},  \code{rankFeatures},  \code{tuneFeatureNb} and  \code{createModel}. The performances of this model are then computed usong \code{evaluateModelPerformance}.
+#'
+#' @param data data.frame containing the training set
+#' @param cl integer indicating the column number corresponding to the response vector that classify positive and negative regions (default = 1)
+#' @param ranges list object containing one (linear kernel) or two (radial kernel) vectors of integers corresponding to SVM cost and SVM gamma parameters to test.
+#' @param cost The SVM cost parameter for both linear and radial kernels. If NULL (default), the function \code{mcTune} is run.
+#' @param gamma The SVM gamma parameter for radial kernel. If radial kernel and NULL (default), the function \code{mcTune} is run.
+#' @param kernel SVM kernel, a character string: "linear" or "radial". (default = "radial")
+#' @param scale Logical indicating if the data have to be scaled or not (default = FALSE)
+#' @param valid.times Integer indicating how many times the training set will be split for the cross validation step (default = 10). This number must be smaller than positive and negative sets sizes.
+#' @param file.prefix A character string that will be used as a prefix for the result files. If it is NULL (default), no plot is returned
+#' @param step.nb Number of features to add at each step (default = 10)
+#' @param numcores Number of cores to use for parallel computing (default: the number of available cores in the machine - 1)
+#' @param halve.above During RFE, all the features are ranked at the first round and the half lowest ranked features (that contribute the least in the model) are removed for the next round. When the number of feauture is lower or equal to halve.above, the features are removed one by one. (default=100)
+#' @return A list of the object produced at each step
+#' \item{best.params}{A list of the parameters giving the lowest misclassification error}
+#' \item{feature.ranking}{List of ordered features from \code{rankFeatures}}
+#' \item{feature.nb}{he optimal number of feature to use from the list of ordered features from \code{tuneFeatureNb}}
+#' \item{model.svm}{The best SVM model \code{createModel}}
+#' \item{probs.label.list}{The cross-validation results from \code{evaluateModelPerformance}}
+#' @examples
+#'  data(crm.features)
+#'  #cost_vector <- c(1,3,10)
+#'  #gamma_vector <- c(1,3,10)
+#'  #ledpred.list=LedPred(data.granges=crm.features, cl=1, ranges = list(cost=cost_vector,
+#'  #                          gamma=gamma_vector), kernel="linear", halve.above=50)
+#'  #names(ledpred.list)
+
+
+LedPred = function(data = NULL, cl = 1, ranges = list(gamma=c(1,10), cost=c(1,10)), cost=1, gamma=1, kernel = "linear", valid.times = 10, file.prefix = NULL, numcores = parallel::detectCores() - 1, step.nb =20, halve.above = 100) {
 
 x=data[,-cl]
 y=data[,cl]
+feature.nb.vector = seq(from = step.nb, to = (ncol(x) - 1), by = step.nb)
 
-  obj <- LedPredClass$new(x = x, y = y, ...)
+  obj <- LedPredClass$new(x = x, y = y, ranges = list(gamma=c(1,10), cost=c(1,10)), cost=cost, gamma=gamma, kernel = kernel, valid.times =
+             10, file.prefix = NULL, numcores = parallel::detectCores() - 1, halve.above = 100, feature.nb.vector=feature.nb.vector)
   ledpred.summary <-
     list(
       feature.ranking = obj$feature.ranking, feature.nb =
@@ -12,81 +51,4 @@ y=data[,cl]
   return(ledpred.summary)
 }
 
-LedPredClass <- R6::R6Class(
-  "LedPredClass",
-  inherit = Data,
-  public = list(
-    kfold.nb = 1,
-    halve.above = 100,
-    feature.ranking = NULL,
-    feature.nb.vector = NULL,
-    feature.performances = NULL,
-    best.feature.nb = NULL,
-    model = NULL,
-    model.obj = NULL,
-    weights = NULL,
-    cv.probs.labels = NULL,
-    initialize = function(x, y, valid.times = self$valid.times, kfold.nb =
-                            self$kfold.nb, halve.above = self$halve.above, numcores = self$numcores, file.prefix =
-                            self$file.prefix, feature.nb.vector, cost=self$cost, gamma=self$gamma, kernel=self$kernel) {
-      #
-      if (!missing(valid.times))
-        self$valid.times <- valid.times
-      if (!missing(kfold.nb))
-        self$kfold.nb <- kfold.nb
-      if (!missing(numcores))
-        self$numcores <- numcores
-      if (!missing(file.prefix))
-        self$file.prefix <- file.prefix
-      if (!missing(cost))
-        self$cost <- cost
-      if (!missing(gamma))
-        self$gamma <- gamma
-      if (!missing(kernel))
-        self$kernel <- kernel
-      #
-      feature.ranking.obj <-
-        FeatureRanking$new(
-          x, y, valid.times = self$valid.times, kfold.nb = self$kfold.nb, halve.above =
-            self$halve.above, numcores = self$numcores, file.prefix = file.prefix, cost=self$cost, gamma=self$gamma, kernel=self$kernel
-        )
-      #
-      self$x = feature.ranking.obj$x
-      self$y = feature.ranking.obj$y
-      self$test.folds = feature.ranking.obj$test.folds
-      # self$scale.factors = feature.ranking.obj$scale.factors
-#      self$scale.center = feature.ranking.obj$scale.center
-#      self$scale.scale = feature.ranking.obj$scale.scale
-      self$feature.ranking = feature.ranking.obj$feature.ranking
-      #
-      self$feature.nb.vector = feature.nb.vector
-      #
-      feature.nb.tuner.obj <-
-        FeatureNbTuner$new(
-          x = self$x, y = self$y, valid.times = self$valid.times, numcores = self$numcores, feature.ranking =
-            self$feature.ranking, feature.nb.vector = self$feature.nb.vector, file.prefix =
-            self$file.prefix, cost=self$cost, gamma=self$gamma, kernel=self$kernel
-        )
-      #
-      self$feature.performances = feature.nb.tuner.obj$feature.performances
-      self$best.feature.nb = feature.nb.tuner.obj$best.feature.nb
-      #
-      model.perf.obj = ModelPerformance$new(
-        x = x, y = y, feature.ranking = self$feature.ranking, feature.nb = self$best.feature.nb, file.prefix =
-          self$file.prefix, cost=self$cost, gamma=self$gamma, kernel=self$kernel
-      )
-      ##    #
-      self$model = model.perf.obj$model
-      self$model.obj = model.perf.obj$model.obj
-      self$weights = model.perf.obj$weights
-      self$cv.probs.labels = model.perf.obj$cv.probs.labels
-      if (!is.null(self$file.prefix))
-        save(self, file = paste(file.prefix, '_ledpred.rda', sep = ""))
-      #
-      #    print(self$feature.ranking)
-      #    print(self$best.feature.nb)
-      #    print(rownames(self$model$SV)[1:3])
-      #    print(self$cv.probs.labels$probs[1,1])
-    }
-  )
-)
+

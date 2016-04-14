@@ -23,8 +23,8 @@ test_that("mcTune", {
 
 tune.parameters.obj <-mcTune(data = crms, cl = 1, kernel=kernel, ranges=list(cost=cost.vector, gamma=gamma.vector), valid.times = valid.times, numcores=numcores)
 
-testthat::expect_true(tune.parameters.obj$cost==3)
-testthat::expect_true(tune.parameters.obj$gamma==3)
+testthat::expect_true(tune.parameters.obj$cost==10)
+testthat::expect_true(tune.parameters.obj$gamma==1)
 })
 
 
