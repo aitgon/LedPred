@@ -11,6 +11,7 @@ cost=1
 valid.times=5
 
 # --------------------------
+
 feature.ranking = feature.ranking.obj$feature.ranking
 selected.features = as.character(feature.ranking$FeatureName[1:best.feature.nb])
 x = x[,selected.features]
@@ -21,7 +22,7 @@ testthat::expect_equal(modelperf.obj$auc, 0.9, tolerance=1e-2)
 testthat::expect_equal(as.numeric(modelperf.obj$cv.probs.labels$probs[[5]][1]), 0.2372886, tolerance=1e-1)
 
 cv.probs.labels <- evaluateModelPerformance(data = crms, cl = 1, valid.times=valid.times, cost=cost)
-testthat::expect_equal(as.numeric(cv.probs.labels$probs[[5]][1]), 0.705, tolerance=1e-2)
+
+testthat::expect_equal(as.numeric(cv.probs.labels$probs[[5]][1]), 0.0919, tolerance=1e-3)
 }
 )
-

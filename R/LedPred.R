@@ -35,14 +35,14 @@
 #'  #names(ledpred.list)
 
 
-LedPred = function(data = NULL, cl = 1, ranges = list(gamma=c(1,10), cost=c(1,10)), cost=1, gamma=1, kernel = "linear", valid.times = 10, file.prefix = NULL, numcores = parallel::detectCores() - 1, step.nb =20, halve.above = 100) {
+LedPred = function(data = NULL, cl = 1, ranges = list(gamma=c(1,10), cost=c(1,10)), cost=NULL, gamma=NULL, kernel = "linear", valid.times = 10, file.prefix = NULL, numcores = parallel::detectCores() - 1, step.nb =10, halve.above = 100) {
 
 x=data[,-cl]
 y=data[,cl]
 feature.nb.vector = seq(from = step.nb, to = (ncol(x) - 1), by = step.nb)
 
-  obj <- LedPredClass$new(x = x, y = y, ranges = list(gamma=c(1,10), cost=c(1,10)), cost=cost, gamma=gamma, kernel = kernel, valid.times =
-             10, file.prefix = NULL, numcores = parallel::detectCores() - 1, halve.above = 100, feature.nb.vector=feature.nb.vector)
+  obj <- LedPredClass$new(x = x, y = y, ranges = ranges, cost=cost, gamma=gamma, kernel = kernel, valid.times =
+             valid.times, file.prefix = file.prefix, numcores = numcores, halve.above = halve.above, feature.nb.vector=feature.nb.vector)
   ledpred.summary <-
     list(
       feature.ranking = obj$feature.ranking, feature.nb =

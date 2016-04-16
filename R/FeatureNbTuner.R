@@ -63,6 +63,9 @@ FeatureNbTuner <- R6::R6Class(
       garb = dev.off()
     },
     FeatureKappaPerformance = function(feature.nb.vector, ranked.features, test.folds, x, y) {
+    
+      message("tuneFeatureNb is running ...")
+      
       feature.performances = simplify2array(parallel::mclapply(feature.nb.vector, function(feature.nb) {
         x.features = x[, ranked.features[1:feature.nb]];  private$CalcKappaPerformanceAllFoldMean(test.folds =
                                                                                                     test.folds, x = x.features, y = y)

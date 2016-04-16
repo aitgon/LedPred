@@ -69,7 +69,7 @@ mapFeaturesToCRMs <-
              NULL, my.values =
              NULL, feature.ranking = NULL, feature.nb = NULL, crm.feature.file = NULL, stderr.log.file =
              NULL, stdout.log.file = NULL) {
-    message("mapFeaturesToCRMs is running ...")
+message("mapFeaturesToCRMs is running ...")
     postForm.cmd = "RCurl::postForm("
     if (!is.null(URL)) {
       postForm.cmd = paste(postForm.cmd,"uri='",URL,"'", sep = "")
@@ -197,7 +197,7 @@ mapFeaturesToCRMs <-
     }
     return(
       list(
-        crm.features = crm.feature.gr, stdout.log = stdout.log, stderr.log = stderr.log
+        crm.features = crm.feature.tab, stdout.log = stdout.log, stderr.log = stderr.log
       )
     )
   }

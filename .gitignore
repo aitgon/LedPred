@@ -22,3 +22,5 @@ BiocCheck.out
 man
 .svn
 data/datalist
+tests/testthat/_ROC_perf.png
+tests/testthat/_kappa_measures.png

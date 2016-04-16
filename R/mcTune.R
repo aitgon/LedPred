@@ -37,10 +37,9 @@ mcTune <- function(data, cl = 1,
 x=data[,-cl]
 y=data[,cl]
 
-tune.parameters.obj <-ParameterTuner$new(x = x, y = y, ranges=ranges, kernel = "linear",
-                   valid.times = 10,
-                   file.prefix = NULL, numcores = parallel::detectCores() -
-                     1)
+tune.parameters.obj <-ParameterTuner$new(x = x, y = y, ranges=ranges, kernel = kernel,
+                   valid.times = valid.times,
+                   file.prefix = file.prefix, numcores = numcores)
 
 return(tune.parameters.obj)
 }

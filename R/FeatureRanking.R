@@ -46,6 +46,7 @@ FeatureRanking <- R6::R6Class(
     probability = TRUE,
     decision.values = TRUE,
     RankFeatures = function (x, y, test.folds, halve.above) {
+    message("rankFeatures is running ...")
       feature.ranking_results = parallel::mclapply(
         test.folds, private$RunSVMRFEOneFold, x = x, y = y, mc.cores = self$numcores, mc.set.seed = FALSE
       )

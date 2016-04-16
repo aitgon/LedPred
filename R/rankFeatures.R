@@ -28,9 +28,9 @@ rankFeatures = function(data, cl = 1, halve.above = 100, valid.times =
 x=data[,-cl]
 y=data[,cl]
 
-	feature.ranking.obj <- FeatureRanking$new(x = x, y = y, halve.above = 100, valid.times =
-                          10, kernel = "linear", cost = 1, gamma = 1, numcores =
-                          parallel::detectCores() - 1, file.prefix = NULL)
+	feature.ranking.obj <- FeatureRanking$new(x = x, y = y, halve.above = halve.above, valid.times =
+                          valid.times, kernel = kernel, cost = cost, gamma = gamma, numcores =
+                          numcores, file.prefix = file.prefix)
 	feature.ranking = feature.ranking.obj$feature.ranking
 	return(feature.ranking)
 }

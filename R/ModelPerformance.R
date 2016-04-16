@@ -62,6 +62,7 @@ ModelPerformance <- R6::R6Class(
       return(list(probs = probs, labels = test.set.y))
     },
     CVModelPeformanceAllFolds = function(test.folds = test.folds) {
+    message("evaluateModelPerformance is running ...")
       cv.probs.labels = parallel::mclapply(test.folds, private$CVModelPeformanceOneFold, mc.cores =
                                              self$numcores)
       labels = sapply(cv.probs.labels, function(x)

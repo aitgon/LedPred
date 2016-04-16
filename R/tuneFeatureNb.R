@@ -25,8 +25,8 @@
 #'  #    file.prefix = "test")
 #'  #names(feature.nb.obj)
 
-tuneFeatureNb = function(data, cl = 1, feature.ranking = NULL, step.nb = 10, valid.times =
-                           10, cost = 1, gamma = 1, kernel = "linear",numcores = parallel::detectCores() - 1,file.prefix = NULL) {
+tuneFeatureNb = function(data, cl = 1, feature.ranking, step.nb = 10, valid.times =
+                           10, cost = NULL, gamma = NULL, kernel = "linear",numcores = parallel::detectCores() - 1,file.prefix = NULL) {
 
 x=data[,-cl]
 y=data[,cl]
@@ -35,6 +35,6 @@ feature.nb.vector = seq(from = step.nb, to = (ncol(x) - 1), by = step.nb)
 
 feature.nb.tuner = FeatureNbTuner$new(
   x = x, y = y, feature.ranking = feature.ranking, feature.nb.vector = feature.nb.vector, valid.times =
-                           10, cost = 1, gamma = 1, kernel = "linear", numcores = parallel::detectCores() - 1,file.prefix = NULL)
+                           valid.times, cost = gamma, gamma = gamma, kernel = kernel, numcores = numcores,file.prefix = file.prefix)
     return(feature.nb.tuner)
 }

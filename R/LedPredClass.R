@@ -1,6 +1,6 @@
 LedPredClass <- R6::R6Class(
   "LedPredClass",
-  inherit = Data,
+  inherit = ParameterTuner,
   public = list(
     kfold.nb = 1,
     halve.above = 100,
@@ -17,36 +17,41 @@ LedPredClass <- R6::R6Class(
                             self$kfold.nb, halve.above = self$halve.above, numcores = self$numcores, file.prefix =
                             self$file.prefix, feature.nb.vector, cost=self$cost, gamma=self$gamma, ranges = self$ranges, kernel=self$kernel) {
       #
-      if (!missing(valid.times))
-        self$valid.times <- valid.times
-      if (!missing(kfold.nb))
-        self$kfold.nb <- kfold.nb
-      if (!missing(numcores))
-        self$numcores <- numcores
-      if (!missing(file.prefix))
-        self$file.prefix <- file.prefix
-      if (!missing(cost))
-        self$cost <- cost
-      if (!missing(gamma))
-        self$gamma <- gamma
       if (!missing(kernel))
-        self$kernel <- kernel
+        self$kernel = kernel
+      if (!missing(cost))
+        self$cost = cost
+      if (!missing(gamma))
+        self$gamma = gamma
+      if (!missing(valid.times)) {
+        self$valid.times = valid.times
+        parent.obj = ParameterTuner$new(x = x, y = y, kernel = self$kernel, cost = self$cost, gamma = self$gamma, valid.times = self$valid.times)
+      } else {
+        parent.obj = ParameterTuner$new(x = x, y = y, kernel = self$kernel, cost = self$cost, gamma = self$gamma)
+      }
+      self$x = parent.obj$x
+      self$y = parent.obj$y
+      self$test.folds = parent.obj$test.folds
+      self$cost = parent.obj$cost
+      self$gamma = parent.obj$gamma
+      if (!missing(file.prefix))
+        self$file.prefix = file.prefix
+      if (!missing(kfold.nb))
+        self$kfold.nb = kfold.nb
+      if (!missing(numcores))
+        self$numcores = numcores
+      if (!missing(halve.above))
+        self$halve.above = halve.above
       #
       feature.ranking.obj <-
         FeatureRanking$new(
           x, y, valid.times = self$valid.times, kfold.nb = self$kfold.nb, halve.above =
             self$halve.above, numcores = self$numcores, file.prefix = file.prefix, cost=self$cost, gamma=self$gamma, kernel=self$kernel
         )
-      #
-      self$x = feature.ranking.obj$x
-      self$y = feature.ranking.obj$y
-      self$test.folds = feature.ranking.obj$test.folds
-      # self$scale.factors = feature.ranking.obj$scale.factors
-#      self$scale.center = feature.ranking.obj$scale.center
-#      self$scale.scale = feature.ranking.obj$scale.scale
       self$feature.ranking = feature.ranking.obj$feature.ranking
       #
-      self$feature.nb.vector = feature.nb.vector
+      if (!missing(feature.nb.vector))
+        self$feature.nb.vector = feature.nb.vector
       #
       feature.nb.tuner.obj <-
         FeatureNbTuner$new(
@@ -54,7 +59,6 @@ LedPredClass <- R6::R6Class(
             self$feature.ranking, feature.nb.vector = self$feature.nb.vector, file.prefix =
             self$file.prefix, cost=self$cost, gamma=self$gamma, kernel=self$kernel
         )
-      #
       self$feature.performances = feature.nb.tuner.obj$feature.performances
       self$best.feature.nb = feature.nb.tuner.obj$best.feature.nb
       #
@@ -62,7 +66,6 @@ LedPredClass <- R6::R6Class(
         x = x, y = y, feature.ranking = self$feature.ranking, feature.nb = self$best.feature.nb, file.prefix =
           self$file.prefix, cost=self$cost, gamma=self$gamma, kernel=self$kernel
       )
-      ##    #
       self$model = model.perf.obj$model
       self$model.obj = model.perf.obj$model.obj
       self$weights = model.perf.obj$weights

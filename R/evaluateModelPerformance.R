@@ -24,13 +24,13 @@
 #'#names(probs.labels.list[[1]])
 
 evaluateModelPerformance = function(data, cl = 1, valid.times = 10, feature.ranking = NULL, feature.nb =NULL, numcores =
-                                      parallel::detectCores() - 1, file.prefix = NULL, kernel = "linear", cost = 1, gamma = 1) {
+                                      parallel::detectCores() - 1, file.prefix = NULL, kernel = "linear", cost = NULL, gamma = NULL) {
 
 x=data[,-cl]
 y=data[,cl]
 
-cv.probs.labels = ModelPerformance$new(x, y, valid.times = 10, feature.ranking = NULL, feature.nb =NULL, numcores =
-                                      parallel::detectCores() - 1, file.prefix = NULL, kernel = "linear", cost = 1, gamma = 1)$cv.probs.labels
+cv.probs.labels = ModelPerformance$new(x, y, valid.times = valid.times, feature.ranking = feature.ranking, feature.nb =feature.nb, numcores =
+                                      numcores, file.prefix = file.prefix, kernel = kernel, cost = cost, gamma = gamma)$cv.probs.labels
 
 return(cv.probs.labels)
 
