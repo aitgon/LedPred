@@ -43,6 +43,7 @@ Data <- R6::R6Class(
         self$gamma = gamma
       if (!missing(valid.times))
         self$valid.times <- valid.times
+      if (.Platform$OS.type == "windows") self$numcores = 1
       if (self$valid.times > 1)
         self$test.folds = self$MakeCrossValidSets(self$valid.times)
     },

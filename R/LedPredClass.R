@@ -40,6 +40,7 @@ LedPredClass <- R6::R6Class(
         self$kfold.nb = kfold.nb
       if (!missing(numcores))
         self$numcores = numcores
+      if (.Platform$OS.type == "windows") self$numcores = 1
       if (!missing(halve.above))
         self$halve.above = halve.above
       #

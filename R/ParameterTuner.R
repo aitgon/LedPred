@@ -53,6 +53,7 @@ ParameterTuner <- R6::R6Class(
         self$gamma = gamma
       if (!missing(ranges)) self$ranges = ranges
       if (!missing(numcores)) self$numcores = numcores
+    if (.Platform$OS.type == "windows") self$numcores = 1
       if (!missing(file.prefix)) self$file.prefix = file.prefix
       if (!missing(valid.times)) {
         self$valid.times = valid.times
@@ -128,7 +129,7 @@ train.folds<-lapply(1:length(self$test.folds), function(xi) (1:nrow(x))[-self$te
 # mctune function ------------------------------------
   train_results <-
     do.call(
-      what = get("mclapply", asNamespace("parallel")), args = c(mc.cores = numcores, list(
+      what = get("mclapply", asNamespace("parallel")), args = c(mc.cores = self$numcores, list(
         X = 1:p, FUN = function(para.set) {
           sampling.errors <- c()
           sampling.confusions <- c()
