@@ -1,3 +1,15 @@
+#' This is data to be included in my package
+#'
+#' @name crm.features
+#' @docType data
+NULL
+
+#' This is data to be included in my package
+#'
+#' @name feature.ranking
+#' @docType data
+NULL
+
 Data <- R6::R6Class(
   "Data",
   public = list(

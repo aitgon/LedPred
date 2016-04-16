@@ -14,7 +14,6 @@
 #' @param cost The SVM cost parameter for both linear and radial kernels. If NULL (default), the function \code{mcTune} is run.
 #' @param gamma The SVM gamma parameter for radial kernel. If radial kernel and NULL (default), the function \code{mcTune} is run.
 #' @param kernel SVM kernel, a character string: "linear" or "radial". (default = "radial")
-#' @param scale Logical indicating if the data have to be scaled or not (default = FALSE)
 #' @param valid.times Integer indicating how many times the training set will be split for the cross validation step (default = 10). This number must be smaller than positive and negative sets sizes.
 #' @param file.prefix A character string that will be used as a prefix for the result files. If it is NULL (default), no plot is returned
 #' @param step.nb Number of features to add at each step (default = 10)

@@ -16,7 +16,6 @@ Depends:
     e1071 (>= 1.6)
 Imports:
     akima,
-    GenomicRanges (>= 1.18.4),
     irr,
     jsonlite,
     parallel,
