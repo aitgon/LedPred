@@ -5,7 +5,7 @@ data=get(load(file="data_iris2/iris2.rda"))
 cl=1
 # -------------------------------------
 
-numcores=1
+numcores <- ifelse(.Platform$OS.type != "windows", 1,  parallel::detectCores() - 1)
 cost=1
 
 test_that("fast_ModelPerformance", {

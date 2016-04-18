@@ -31,8 +31,7 @@
 mcTune <- function(data, cl = 1,
                    ranges = list(gamma=c(1,10), cost=c(1,10)), kernel = "linear",
                    valid.times = 10,
-                   file.prefix = NULL, numcores = parallel::detectCores() -
-                     1) {
+                   file.prefix = NULL, numcores=ifelse(.Platform$OS.type != "windows", 1,  parallel::detectCores() - 1)) {
 
 x=data[,-cl]
 y=data[,cl]

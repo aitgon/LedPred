@@ -5,7 +5,7 @@ valid.times = 2
 kernel="radial"
 cost.vector <- c(1, 3, 10) # best 3
 gamma.vector <- c(1, 3, 10) # best 1
-numcores = parallel::detectCores() - 1
+numcores <- ifelse(.Platform$OS.type != "windows", 1,  parallel::detectCores() - 1)
 
 # -------------------------------------
 

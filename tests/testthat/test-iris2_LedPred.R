@@ -1,7 +1,7 @@
 x=get(load(file="data_iris2/x.rda"))
 y=get(load(file="data_iris2/y.rda"))
 
-numcores=parallel::detectCores() - 1
+numcores <- ifelse(.Platform$OS.type != "windows", 1,  parallel::detectCores() - 1)
 
 feature.nb.vector = list(2,4,6,8,10,12)
 step.nb=2

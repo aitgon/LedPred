@@ -7,7 +7,7 @@ x = crms[,-1]
 # -------------------------------------
 valid.times=5
 kfold.nb=5
-numcores=1
+numcores <- ifelse(.Platform$OS.type != "windows", 1,  parallel::detectCores() - 1)
 cost=1
 
 # -------------------------------------

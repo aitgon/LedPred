@@ -53,7 +53,6 @@ ParameterTuner <- R6::R6Class(
         self$gamma = gamma
       if (!missing(ranges)) self$ranges = ranges
       if (!missing(numcores)) self$numcores = numcores
-    if (.Platform$OS.type == "windows") self$numcores = 1
       if (!missing(file.prefix)) self$file.prefix = file.prefix
       if (!missing(valid.times)) {
         self$valid.times = valid.times
@@ -121,9 +120,6 @@ train.folds<-lapply(1:length(self$test.folds), function(xi) (1:nrow(x))[-self$te
     if (tunecontrol$random > p)
       tunecontrol$random <- p
     parameters <- parameters[sample(1:p, tunecontrol$random),]
-  }
-  if (.Platform$OS.type == "windows") {
-    numcores = 1
   }
 
 # mctune function ------------------------------------

@@ -30,7 +30,6 @@ FeatureNbTuner <- R6::R6Class(
         self$file.prefix = file.prefix
       if (!missing(numcores))
         self$numcores = numcores
-              if (.Platform$OS.type == "windows") self$numcores = 1
       if (!missing(feature.nb.vector))
         self$feature.nb.vector = feature.nb.vector
       self$feature.ranking = feature.ranking

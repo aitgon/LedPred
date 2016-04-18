@@ -23,7 +23,7 @@ Data <- R6::R6Class(
     scale.factors = NULL,
 #    scale.center = NULL,
 #    scale.scale = NULL,
-    numcores = parallel::detectCores() - 1,
+    numcores = ifelse(.Platform$OS.type != "windows", 1,  parallel::detectCores() - 1),
     file.prefix = NULL,
     initialize = function(x, y, kernel = self$kernel, cost = self$cost, gamma =
                             self$gamma, valid.times = self$valid.times, numcores = self$numcores, file.prefix = self$file.prefix) {
@@ -43,7 +43,6 @@ Data <- R6::R6Class(
         self$gamma = gamma
       if (!missing(valid.times))
         self$valid.times <- valid.times
-      if (.Platform$OS.type == "windows") self$numcores = 1
       if (self$valid.times > 1)
         self$test.folds = self$MakeCrossValidSets(self$valid.times)
     },

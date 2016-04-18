@@ -20,7 +20,6 @@ ModelPerformance <- R6::R6Class(
         self$valid.times = valid.times
       if (!missing(numcores))
         self$numcores = numcores
-      if (.Platform$OS.type == "windows") self$numcores = 1
       if (!missing(feature.ranking))
         self$feature.ranking = feature.ranking
       if (!missing(feature.nb))

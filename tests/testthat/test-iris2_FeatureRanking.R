@@ -3,7 +3,7 @@ y=get(load(file="data_iris2/y.rda"))
 
 # -------------------------------------
 valid.times=5
-numcores=1
+numcores <- ifelse(.Platform$OS.type != "windows", 1,  parallel::detectCores() - 1)
 cost=1
 
 test_that("iris2_FeatureRanking_kfold.nb=1", {
