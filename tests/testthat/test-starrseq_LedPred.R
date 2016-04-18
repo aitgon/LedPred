@@ -4,7 +4,7 @@ x = crms[,-1]
 cost=1
 
 #numcores=1
-numcores <- ifelse(.Platform$OS.type != "windows", 1,  parallel::detectCores() - 1)
+numcores <- ifelse(.Platform$OS.type == "windows", 1,  parallel::detectCores() - 1)
 
 feature.nb.vector = list(100, 200, 300, 400, 500, 600)
 step.nb=200

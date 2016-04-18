@@ -23,7 +23,7 @@
 #'#    file.prefix = "test")
 #'#names(probs.labels.list[[1]])
 
-evaluateModelPerformance = function(data, cl = 1, valid.times = 10, feature.ranking = NULL, feature.nb =NULL, numcores=ifelse(.Platform$OS.type != "windows", 1,  parallel::detectCores() - 1), file.prefix = NULL, kernel = "linear", cost = NULL, gamma = NULL) {
+evaluateModelPerformance = function(data, cl = 1, valid.times = 10, feature.ranking = NULL, feature.nb =NULL, numcores=ifelse(.Platform$OS.type == "windows", 1,  parallel::detectCores() - 1), file.prefix = NULL, kernel = "linear", cost = NULL, gamma = NULL) {
 
 x=data[,-cl]
 y=data[,cl]

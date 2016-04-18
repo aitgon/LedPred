@@ -1,8 +1,6 @@
 x=get(load(file="data_iris2/x.rda"))
 y=get(load(file="data_iris2/y.rda"))
 
-numcores <- ifelse(.Platform$OS.type != "windows", 1,  parallel::detectCores() - 1)
-
 feature.nb.vector = list(2,4,6,8,10,12)
 step.nb=2
 cost=1
@@ -11,7 +9,7 @@ cost=1
 
 test_that("iris2_LedPredClass", {
 
-obj <- LedPredClass$new(x = x, y = y, numcores=numcores, feature.nb.vector=feature.nb.vector, cost=cost)
+obj <- LedPredClass$new(x = x, y = y, feature.nb.vector=feature.nb.vector, cost=cost)
 scores = obj$model.obj$ScoreData(x=x)$scores
 
 testthat::expect_true(all(obj$feature.ranking[c(1,2), 'FeatureName']==c('Petal.Width', 'Petal.Length')))
@@ -27,7 +25,7 @@ test_that("iris2_LedPred", {
 data=get(load(file="data_iris2/iris2.rda"))
 cl=1
 
-obj <- LedPred(data = data, cl = cl, numcores=numcores, step.nb=step.nb, cost=cost)
+obj <- LedPred(data = data, cl = cl, step.nb=step.nb, cost=cost)
 scores = scoreData(data=x, ledpred=obj)
 
 testthat::expect_true(all(obj$feature.ranking[c(1,2), 'FeatureName']==c('Petal.Width', 'Petal.Length')))

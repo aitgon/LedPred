@@ -2,7 +2,7 @@ kernel='linear'
 type='C-classification'
 ranges = list(gamma = 2^(-1:1), cost = 2^(2:4))
 valid.times = 10
-numcores <- ifelse(.Platform$OS.type != "windows", 1,  parallel::detectCores() - 1)
+numcores <- ifelse(.Platform$OS.type == "windows", 1,  parallel::detectCores() - 1)
 #numcores = 1
 
 test_that("iris2_ParameterTuner", {

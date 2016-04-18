@@ -34,7 +34,7 @@
 #'  #names(ledpred.list)
 
 
-LedPred = function(data = NULL, cl = 1, ranges = list(gamma=c(1,10), cost=c(1,10)), cost=NULL, gamma=NULL, kernel = "linear", valid.times = 10, file.prefix = NULL, numcores=ifelse(.Platform$OS.type != "windows", 1,  parallel::detectCores() - 1), step.nb =10, halve.above = 100) {
+LedPred = function(data = NULL, cl = 1, ranges = list(gamma=c(1,10), cost=c(1,10)), cost=NULL, gamma=NULL, kernel = "linear", valid.times = 10, file.prefix = NULL, numcores=ifelse(.Platform$OS.type == "windows", 1,  parallel::detectCores() - 1), step.nb =10, halve.above = 100) {
 
 x=data[,-cl]
 y=data[,cl]
