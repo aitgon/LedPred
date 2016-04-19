@@ -1,20 +1,20 @@
-.crmFeatureDfToGranges <- function(crm.feature.tab, genome = TRUE) {
-  mat <-
-    matrix(unlist(strsplit(rownames(crm.feature.tab), "_")), nrow = dim(crm.feature.tab)[1], byrow =
-             TRUE)
-  if (genome) {
-    colnames(mat) <- c("genome", "seqnames", "start", "end", "strand")
-  } else {
-    colnames(mat) <- c("seqnames", "start", "end", "strand")
-  }
-  df <- as.data.frame(mat)
-  df[,"start"] <- as.numeric(as.character(df[,"start"]))
-  df[,"end"] <- as.numeric(as.character(df[,"end"]))
-  crm.feature.gr <- GenomicRanges::makeGRangesFromDataFrame(df)
-  GenomicRanges::mcols(crm.feature.gr) <- crm.feature.tab
-  #genome(crm.feature.gr)=mat[1]
-  return(crm.feature.gr)
-}
+#.crmFeatureDfToGranges <- function(crm.feature.tab, genome = TRUE) {
+#  mat <-
+#    matrix(unlist(strsplit(rownames(crm.feature.tab), "_")), nrow = dim(crm.feature.tab)[1], byrow =
+#             TRUE)
+#  if (genome) {
+#    colnames(mat) <- c("genome", "seqnames", "start", "end", "strand")
+#  } else {
+#    colnames(mat) <- c("seqnames", "start", "end", "strand")
+#  }
+#  df <- as.data.frame(mat)
+#  df[,"start"] <- as.numeric(as.character(df[,"start"]))
+#  df[,"end"] <- as.numeric(as.character(df[,"end"]))
+#  crm.feature.gr <- GenomicRanges::makeGRangesFromDataFrame(df)
+#  GenomicRanges::mcols(crm.feature.gr) <- crm.feature.tab
+#  #genome(crm.feature.gr)=mat[1]
+#  return(crm.feature.gr)
+#}
 
 #' R interface to bed_to_matrix REST in server
 #'
@@ -183,7 +183,7 @@ message("mapFeaturesToCRMs is running ...")
 	while (!match){ Sys.sleep(5); data=readLines(json.decoded[['stdoutLog']]); match=any(grepl('Finished', data)) };
     crm.feature.tab <-
       read.table(json.decoded$crmFeatures, fill = TRUE)
-    crm.feature.gr <- .crmFeatureDfToGranges(crm.feature.tab)
+#    crm.feature.gr <- .crmFeatureDfToGranges(crm.feature.tab)
     stdout.log = RCurl::getURL(json.decoded$stdoutLog)
     stderr.log = RCurl::getURL(json.decoded$stderrLog)
     if (!is.null(crm.feature.file)) {
