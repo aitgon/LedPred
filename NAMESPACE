@@ -8,6 +8,8 @@ import(plyr)
 import(RCurl)
 import(ROCR)
 import(testthat)
+importFrom("GenomicRanges","mcols")
+importFrom("GenomicRanges",makeGRangesFromDataFrame)
 
 export(mapFeaturesToCRMs,
 mcTune,
