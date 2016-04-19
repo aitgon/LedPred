@@ -14,3 +14,21 @@ LetPred.BiocCheck
 .svnignore
 todo.md
 readme.md
+<<<<<<< HEAD
+=======
+tests/testthat/test-cad_ModelPerformance.R
+tests/testthat/test-cad_FeatureRanking.R
+tests/testthat/data_cad
+tests/testthat/test-cad_ParameterTuner.R
+tests/testthat/test-cad_Data.R
+tests/testthat/test-cad_FeatureNbTuner.R
+tests/testthat/test-cad_ModelCreate.R
+tests/testthat/data_starrseq
+tests/testthat/test-starrseq_FeatureRanking.R
+tests/testthat/test-starrseq_LedPred.R
+tests/testthat/test-starrseq_ModelPerformance.R
+tests/testthat/test-starrseq_FeatureNbTuner.R
+tests/testthat/test-starrseq_ModelCreate.R
+tests/testthat/test-starrseq_mapFeaturesToCRMs.R
+build
+>>>>>>> feature/ledpred2
