@@ -35,8 +35,8 @@ Model <- R6::R6Class(
       self$cost = parent.obj$cost
       self$gamma = parent.obj$gamma
       self$scale.factors = parent.obj$scale.factors
-#      self$scale.center = data.obj$scale.center # store scale center
-#      self$scale.scale = data.obj$scale.scale # store scale scale
+#      self$scale.center = data.obj$scale.center #store scale center
+#      self$scale.scale = data.obj$scale.scale #store scale scale
       self$file.prefix = file.prefix
       private$CreateModel()
       self$weights = (t(self$model$coefs) %*% self$model$SV)

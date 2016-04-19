@@ -122,7 +122,7 @@ train.folds<-lapply(1:length(self$test.folds), function(xi) (1:nrow(x))[-self$te
     parameters <- parameters[sample(1:p, tunecontrol$random),]
   }
 
-# mctune function ------------------------------------
+#mctune function ------------------------------------
   train_results <-
     do.call(
       what = get("mclapply", asNamespace("parallel")), args = c(mc.cores = self$numcores, list(

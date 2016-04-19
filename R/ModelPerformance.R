@@ -69,11 +69,11 @@ ModelPerformance <- R6::R6Class(
         x$labels)
       probs = sapply(cv.probs.labels, function(x)
         x$probs)
-        # Calculate AUC using ROCR package ----------------
+        #Calculate AUC using ROCR package ----------------
  rocr.pred = ROCR::prediction(probs,labels,label.ordering = c(-1, 1))
       auc.tmp = ROCR::performance(rocr.pred, "auc");
       self$auc = round(mean(as.numeric(auc.tmp@y.values)), digits = 2)
-        # End of Calculate AUC using ROCR package ----------------
+        #End of Calculate AUC using ROCR package ----------------
       return(list(labels = labels, probs = probs, rocr.pred= rocr.pred))
     },
     PlotROCR = function (labels = labels, probs = probs, rocr.pred= rocr.pred) {
