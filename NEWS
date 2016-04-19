@@ -1,0 +1,23 @@
+CHANGES IN VERSION 1.5.0 (April 19, 2016)
+-------------------------
+
+Large rewritten of core architecture using object-oriented R6 classes. There are almost not changes at the user-level
+
+CHANGES IN VERSION 1.3.5
+-------------------------
+
+## BUG FIXED
+
+- Fixed TIMEOUT
+
+# LedPred 0.99.5
+
+July 20, 2015
+
+## Release Notes
+
+- Some bug fixes
+
+## Bug fixes
+
+- One shot LedPred did not save model
