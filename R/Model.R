@@ -56,8 +56,10 @@ Model <- R6::R6Class(
       classpred = predict(
         self$model, x, decision.values = private$decision.values, probability = private$probability
       )
-      probs = attr(classpred,"probabilities")[,1]
+      probs = attr(classpred,"probabilities")[,c("1")]
       scores = attr(classpred,"decision.values")[,1]
+      if (colnames(attr(classpred,"decision.values"))=="-1/1") # predicts inverse: needs negative
+        scores = -scores
       return(list(
         probs = probs, scores = scores, prediction = classpred
       ))
