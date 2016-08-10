@@ -23,7 +23,7 @@
 rankFeatures = function(data, cl = 1, halve.above = 100, valid.times =
                           10, kernel = "linear", cost = 1, gamma = 1, numcores=ifelse(.Platform$OS.type == "windows", 1,  parallel::detectCores() - 1), file.prefix = NULL) {
 
-
+data = data[order(data[,cl], decreasing=TRUE), ] # sort positive labels first
 x=data[,-cl]
 y=data[,cl]
 

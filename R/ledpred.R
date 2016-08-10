@@ -36,18 +36,19 @@
 
 LedPred = function(data = NULL, cl = 1, ranges = list(gamma=c(1,10), cost=c(1,10)), cost=NULL, gamma=NULL, kernel = "linear", valid.times = 10, file.prefix = NULL, numcores=ifelse(.Platform$OS.type == "windows", 1,  parallel::detectCores() - 1), step.nb =10, halve.above = 100) {
 
+data = data[order(data[,cl], decreasing=TRUE), ] # sort positive labels first
 x=data[,-cl]
 y=data[,cl]
 feature.nb.vector = seq(from = step.nb, to = (ncol(x) - 1), by = step.nb)
 
   obj <- LedPredClass$new(x = x, y = y, ranges = ranges, cost=cost, gamma=gamma, kernel = kernel, valid.times =
              valid.times, file.prefix = file.prefix, numcores = numcores, halve.above = halve.above, feature.nb.vector=feature.nb.vector)
-  ledpred.summary <-
-    list(
-      feature.ranking = obj$feature.ranking, feature.nb =
-        obj$best.feature.nb, model.obj = obj$model.obj, test.folds = obj$test.folds, probs.label.list = obj$probs.label.list
-    )
-  return(ledpred.summary)
+#  ledpred.summary <-
+#    list(
+#      feature.ranking = obj$feature.ranking, feature.nb =
+#        obj$best.feature.nb, model.obj = obj$model.obj, test.folds = obj$test.folds, probs.label.list = obj$probs.label.list
+#    )
+  return(obj)
 }
 
 

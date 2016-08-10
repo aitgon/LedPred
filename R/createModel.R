@@ -25,6 +25,7 @@
 createModel = function(data, cl = 1,kernel = "radial",cost = 1,gamma =
              1, valid.times = 10, feature.ranking = NULL,feature.nb = NULL,file.prefix = NULL) {
 
+data = data[order(data[,cl], decreasing=TRUE), ] # sort positive labels first
 x=data[,-cl]
 y=data[,cl]
 

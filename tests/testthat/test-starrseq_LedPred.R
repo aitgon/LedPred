@@ -30,7 +30,7 @@ test_that("starrseq_LedPred", {
 obj <- LedPred(data = crms, cl = 1, numcores=numcores, step.nb=step.nb, cost=cost)
 
 testthat::expect_true(all(obj$feature.ranking[c(1,2), 'FeatureName']==c('peaks_ets1.bed', 'Myb')))
-testthat::expect_true(obj$feature.nb==200)
+testthat::expect_true(obj$best.feature.nb==200)
 testthat::expect_true(all(rownames(obj$model$model$SV)[1:3]==c("mm9_chr10_110522706_110522889_+", "mm9_chr10_117089250_117089433_+", "mm9_chr10_122088945_122089304_+")))
 testthat::expect_true(all(obj$feature.ranking[c(11,12), 'AvgRank']==c(33.6, 35.4)))
 

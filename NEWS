@@ -1,3 +1,9 @@
+CHANGES IN VERSION 1.7.3 (August 10, 2016)
+-------------------------
+
+- Fixed opposite sign of feature weigths in some situations
+- LedPred function returns object with many more informations
+
 CHANGES IN VERSION 1.7.1 (August 9, 2016)
 -------------------------
 
