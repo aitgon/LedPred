@@ -64,7 +64,7 @@ LedPredClass <- R6::R6Class(
       #
       model.perf.obj = ModelPerformance$new(
         x = x, y = y, feature.ranking = self$feature.ranking, feature.nb = self$best.feature.nb, file.prefix =
-          self$file.prefix, cost=self$cost, gamma=self$gamma, kernel=self$kernel
+          self$file.prefix, cost=self$cost, gamma=self$gamma, kernel=self$kernel, numcores = self$numcores
       )
       self$model = model.perf.obj$model
       self$model.obj = model.perf.obj$model.obj

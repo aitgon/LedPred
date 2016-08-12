@@ -1,3 +1,8 @@
+CHANGES IN VERSION 1.7.4 (August 12, 2016)
+-------------------------
+
+- Deals with error when at least one feature in some training fold of the ModelPerformance CV algo has all value zero -> removes it
+
 CHANGES IN VERSION 1.7.3 (August 10, 2016)
 -------------------------
 

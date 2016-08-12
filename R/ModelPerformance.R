@@ -53,6 +53,15 @@ ModelPerformance <- R6::R6Class(
       train.set.x = self$x[-test.fold.i,]
       test.set.y = self$y[test.fold.i]
       train.set.y = self$y[-test.fold.i]
+      
+      # Remove empty features because it triggers model errror
+      if (any(apply(train.set.x==0,2,all))) {
+        warning("Some features in this fold are zero everywhere and must be removed")
+        train.set.x = train.set.x[, !apply(train.set.x==0,2,all)]
+        test.set.x = test.set.x[, colnames(train.set.x)]
+      }
+      # End of - Remove empty features because it triggers model errror
+      
       obj <-
         Model$new(
           x = train.set.x, y = train.set.y, kernel = self$kernel, cost = self$cost, gamma =
