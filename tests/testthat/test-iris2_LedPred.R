@@ -30,7 +30,7 @@ scores = scoreData(data=x, ledpred=obj)
 
 testthat::expect_true(all(obj$feature.ranking[c(1,2), 'FeatureName']==c('Petal.Width', 'Petal.Length')))
 testthat::expect_true(all(obj$feature.ranking[c(11,12), 'AvgRank']==c(10.8, 11.4)))
-testthat::expect_true(obj$feature.nb==4)
+testthat::expect_true(obj$best.feature.nb==4)
 testthat::expect_true(all(rownames(obj$model$SV)[1:2]==c("1", "2")))
 
 testthat::expect_equal(as.numeric(scores)[1], 0.998, tolerance=1e-2)

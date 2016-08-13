@@ -25,6 +25,7 @@
 
 evaluateModelPerformance = function(data, cl = 1, valid.times = 10, feature.ranking = NULL, feature.nb =NULL, numcores=ifelse(.Platform$OS.type == "windows", 1,  parallel::detectCores() - 1), file.prefix = NULL, kernel = "linear", cost = NULL, gamma = NULL) {
 
+data = data[order(data[,cl], decreasing=TRUE), ] # sort positive labels first
 x=data[,-cl]
 y=data[,cl]
 
