@@ -14,8 +14,6 @@ LetPred.BiocCheck
 .svnignore
 todo.md
 readme.md
-<<<<<<< HEAD
-=======
 tests/testthat/test-cad_ModelPerformance.R
 tests/testthat/test-cad_FeatureRanking.R
 tests/testthat/data_cad
@@ -31,4 +29,10 @@ tests/testthat/test-starrseq_FeatureNbTuner.R
 tests/testthat/test-starrseq_ModelCreate.R
 tests/testthat/test-starrseq_mapFeaturesToCRMs.R
 build
->>>>>>> feature/ledpred2
+tests/testthat/data_iris2/learning_remap.csv
+tests/testthat/test-iris2_160812_ModelPerformance.R
+data/datalist
+data/feature.matrix.rda
+data/svm.model.RData
+tests/testthat/_ROC_perf.png
+tests/testthat/_kappa_measures.png
