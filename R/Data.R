@@ -10,6 +10,15 @@ NULL
 #' @docType data
 NULL
 
+.removeZeroFeatures <- function (x) {
+# This function will removed features that are zero everywhere
+      if (any(apply(x==0,2,all))) {
+        warning("Some data features are zero everywhere and must be removed")
+        x = x[, !apply(x==0,2,all)]
+      }
+      return(x)
+}
+
 Data <- R6::R6Class(
   "Data",
   public = list(
@@ -29,6 +38,8 @@ Data <- R6::R6Class(
                             self$gamma, valid.times = self$valid.times, numcores = self$numcores, file.prefix = self$file.prefix) {
       self$x = x #assign to self
       self$x[is.na(self$x)] <- 0 #replace NAs with zeros
+      self$x = .removeZeroFeatures(self$x) # remove features that are zero everywhere
+      
       self$scale.factors = apply(self$x, 2, function(x) sqrt(sum(x^2))) # store scale factors
 #      self$scale.center = colMeans(x) #store scale center
 #      self$scale.scale = matrixStats::colSds(as.matrix(x)) #store scale scale
@@ -50,7 +61,6 @@ Data <- R6::R6Class(
       nrows = nrow(self$y)
       perm.ind.pos = which(self$y == "1")
       nrows.pos = length(perm.ind.pos)
-#      browser()
       perm.ind.neg = which(self$y == "-1")
       nrows.neg = length(perm.ind.neg)
       if (valid.times > nrows.pos)

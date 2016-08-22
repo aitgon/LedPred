@@ -67,6 +67,7 @@ ParameterTuner <- R6::R6Class(
       self$gamma = parent.obj$gamma
       self$scale.factors = parent.obj$scale.factors
 if (is.null(self$cost) || (self$kernel=='radial' && is.null(self$gamma))) {
+
 	self$e1071.tune.obj = private$mcTune()
 	self$cost = self$e1071.tune.obj$best.parameters$cost
 	self$gamma = self$e1071.tune.obj$best.parameters$gamma

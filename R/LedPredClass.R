@@ -23,11 +23,13 @@ LedPredClass <- R6::R6Class(
         self$cost = cost
       if (!missing(gamma))
         self$gamma = gamma
+      if (!missing(numcores))
+        self$numcores = numcores
       if (!missing(valid.times)) {
         self$valid.times = valid.times
-        parent.obj = ParameterTuner$new(x = x, y = y, kernel = self$kernel, cost = self$cost, gamma = self$gamma, valid.times = self$valid.times)
+        parent.obj = ParameterTuner$new(x = x, y = y, kernel = self$kernel, cost = self$cost, gamma = self$gamma, valid.times = self$valid.times, numcores=self$numcores)
       } else {
-        parent.obj = ParameterTuner$new(x = x, y = y, kernel = self$kernel, cost = self$cost, gamma = self$gamma)
+        parent.obj = ParameterTuner$new(x = x, y = y, kernel = self$kernel, cost = self$cost, gamma = self$gamma, numcores=self$numcores)
       }
       self$x = parent.obj$x
       self$y = parent.obj$y
@@ -38,8 +40,6 @@ LedPredClass <- R6::R6Class(
         self$file.prefix = file.prefix
       if (!missing(kfold.nb))
         self$kfold.nb = kfold.nb
-      if (!missing(numcores))
-        self$numcores = numcores
       if (!missing(halve.above))
         self$halve.above = halve.above
       #
