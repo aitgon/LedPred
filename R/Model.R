@@ -54,7 +54,7 @@ Model <- R6::R6Class(
 #      x = scale(x, center = self$scale.center, scale = self$scale.scale)
       library(e1071)
       classpred = predict(
-        self$model, x, decision.values = private$decision.values, probability = private$probability
+        self$model, x[,colnames(self$model$SV)], decision.values = private$decision.values, probability = private$probability
       )
       probs = attr(classpred,"probabilities")[,c("1")]
       scores = attr(classpred,"decision.values")[,1]

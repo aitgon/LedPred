@@ -104,9 +104,6 @@ if (is.null(self$cost) || (self$kernel=='radial' && is.null(self$gamma))) {
   predict.func <- predict
   
   
-  ## prepare training indices  
-#  browser()
-#  train.ind <- .makeCrossValidSets(data, valid.times)
 train.folds<-lapply(1:length(self$test.folds), function(xi) (1:nrow(x))[-self$test.folds[[xi]]])
 
   parameters <- (if (is.null(self$ranges))
@@ -150,12 +147,12 @@ train.folds<-lapply(1:length(self$test.folds), function(xi) (1:nrow(x))[-self$te
                 model <- model.obj$model
               ## predict validation set
               
-              
-              pred <-
-                predict.func(model,x[-train.folds[[sample]],])
+#browser()
+#              pred <- predict.func(model,self$x[-train.folds[[sample]],])
+              pred <- predict.func(model, self$x[-train.fold.i, colnames(model$SV)])
               ## compute performance measure
 #              true.y <- .resp(train.x, data[-train.folds[[sample]],])
-              true.y <- self$y[-train.folds[[sample]]]
+              true.y <- self$y[-train.fold.i]
               
               if (is.null(true.y))
                 true.y <- rep(TRUE, length(pred))
