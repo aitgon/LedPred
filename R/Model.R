@@ -44,17 +44,20 @@ Model <- R6::R6Class(
         save(self, file = paste(file.prefix,"_model.rda",sep = "")) # can save model for later use
     },
     ScoreData = function(x, scale=TRUE) {
+    x = as.data.frame(x)
       if (!is.null(self$feature.ranking) && !is.null(self$feature.nb)) {
         selected.features = as.character(self$feature.ranking$FeatureName[1:self$feature.nb])
-        x = x[,selected.features]
+        x = x[, colnames(x) %in% selected.features]
       }
       if (scale) {
-      x=t(t(x)/self$scale.factors)
+      x=as.data.frame(t(t(x)/(self$scale.factors[colnames(x)])))
       }
 #      x = scale(x, center = self$scale.center, scale = self$scale.scale)
+      x[, setdiff(colnames(self$model$SV), colnames(x))] <- 0
+      x <- x[,colnames(self$model$SV)]
       library(e1071)
       classpred = predict(
-        self$model, x[,colnames(self$model$SV)], decision.values = private$decision.values, probability = private$probability
+        self$model, x, decision.values = private$decision.values, probability = private$probability
       )
       probs = attr(classpred,"probabilities")[,c("1")]
       scores = attr(classpred,"decision.values")[,1]
