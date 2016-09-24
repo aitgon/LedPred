@@ -55,12 +55,15 @@ Model <- R6::R6Class(
 #      x = scale(x, center = self$scale.center, scale = self$scale.scale)
       x[, setdiff(colnames(self$model$SV), colnames(x))] <- 0
       x <- x[,colnames(self$model$SV)]
+
       library(e1071)
       classpred = predict(
         self$model, x, decision.values = private$decision.values, probability = private$probability
       )
       probs = attr(classpred,"probabilities")[,c("1")]
+      names(probs) = rownames(x)
       scores = attr(classpred,"decision.values")[,1]
+      names(scores) = rownames(x)
       if (colnames(attr(classpred,"decision.values"))=="-1/1") # predicts inverse: needs negative
         scores = -scores
       return(list(
