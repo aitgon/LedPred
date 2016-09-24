@@ -1,3 +1,8 @@
+CHANGES IN VERSION 1.7.6 (Sep 24, 2016)
+-------------------------
+
+- Fixed bug: Some problems with Score that resulted in "Test data do not match model"
+
 CHANGES IN VERSION 1.7.5 (Sep 19, 2016)
 -------------------------
 
