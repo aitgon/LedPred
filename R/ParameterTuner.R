@@ -229,7 +229,8 @@ train.folds<-lapply(1:length(self$test.folds), function(xi) (1:nrow(x))[-self$te
       class = "tune"
     )
   if (!is.null(file.prefix)) {
-    png(paste(file.prefix,"_c_g_eval.png",sep = ""))
+  
+    try(png(paste(file.prefix,"_c_g_eval.png",sep = "")))
     .plotCostGamma(e1071.tune.obj)
     garb = dev.off()
   }

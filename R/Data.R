@@ -39,7 +39,6 @@ Data <- R6::R6Class(
       self$x = x #assign to self
       self$x[is.na(self$x)] <- 0 #replace NAs with zeros
       self$x = .removeZeroFeatures(self$x) # remove features that are zero everywhere
-      
       self$scale.factors = apply(self$x, 2, function(x) sqrt(sum(x^2))) # store scale factors
 #      self$scale.center = colMeans(x) #store scale center
 #      self$scale.scale = matrixStats::colSds(as.matrix(x)) #store scale scale

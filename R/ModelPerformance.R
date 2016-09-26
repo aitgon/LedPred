@@ -36,7 +36,7 @@ ModelPerformance <- R6::R6Class(
       self$model = self$model.obj$model
       self$weights = self$model.obj$weights
       self$cv.probs.labels = private$CVModelPeformanceAllFolds(test.folds = self$test.folds)
-      png(paste(self$file.prefix,"_ROC_perf.png", sep = ""))
+      try(png(paste(self$file.prefix,"_ROC_perf.png", sep = "")))
       private$PlotROCR(
         labels = self$cv.probs.labels$labels, probs = self$cv.probs.labels$probs, rocr.pred = self$cv.probs.labels$rocr.pred
       )

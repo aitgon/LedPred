@@ -52,6 +52,7 @@ FeatureNbTuner <- R6::R6Class(
       cv.kappa.mean = simplify2array(self$feature.performances["cv.kappa.mean",])
       cv.kappa.sd = simplify2array(self$feature.performances["cv.kappa.sd",])
       best.feature.nb = self$best.feature.nb
+      try({
       png()
       ggplot2::qplot(feature.nb.vector,cv.kappa.mean) + ggplot2::geom_errorbar(
         ggplot2::aes(
@@ -61,6 +62,7 @@ FeatureNbTuner <- R6::R6Class(
       ) + ggplot2::geom_line()
       ggplot2::ggsave(paste(file.prefix, "_kappa_measures.png", sep = ""));
       garb = dev.off()
+      }, )
     },
     FeatureKappaPerformance = function(feature.nb.vector, ranked.features, test.folds, x, y) {
     

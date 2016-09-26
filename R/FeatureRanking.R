@@ -72,6 +72,7 @@ FeatureRanking <- R6::R6Class(
       k.folds = lapply(1:self$kfold.nb, function(x)
         which(k.folds == x))
       
+
       feature.ids = private$RunSVMRFE(x, y, k.folds, halve.above)
       return(
         list(
@@ -89,6 +90,7 @@ FeatureRanking <- R6::R6Class(
       
       # ---------------------
       while (length(i.surviving) > 1) {
+
         k.fold.weights = lapply(k.folds, private$GetKFoldWeights, x = x.rfe, y =
                                   y)
         
