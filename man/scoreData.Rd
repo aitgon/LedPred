@@ -27,4 +27,3 @@ data(svm.model)
 #pred.test <- scoreData(data.granges=crm.features, model=svm.model,
 # score.file="test_prediction.tab")
 }
-

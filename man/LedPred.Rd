@@ -4,9 +4,10 @@
 \alias{LedPred}
 \title{Creates an SVM model given a feature matrix}
 \usage{
-LedPred(data = NULL, cl = 1, ranges = list(gamma = c(1, 10), cost = c(1,
-  10)), cost = NULL, gamma = NULL, kernel = "linear", valid.times = 10,
-  file.prefix = NULL, numcores = ifelse(.Platform$OS.type == "windows", 1,
+LedPred(data = NULL, cl = 1, ranges = list(gamma = c(1, 10), cost =
+  c(1, 10)), cost = NULL, gamma = NULL, kernel = "linear",
+  valid.times = 10, file.prefix = NULL,
+  numcores = ifelse(.Platform$OS.type == "windows", 1,
   parallel::detectCores() - 1), step.nb = 10, halve.above = 100)
 }
 \arguments{
@@ -51,4 +52,3 @@ The \code{LedPred} function computes the best SVM parameters, defines the optima
  #                          gamma=gamma_vector), kernel="linear", halve.above=50)
  #names(ledpred.list)
 }
-

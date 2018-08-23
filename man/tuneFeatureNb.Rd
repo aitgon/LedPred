@@ -6,8 +6,8 @@
 \usage{
 tuneFeatureNb(data, cl = 1, feature.ranking, step.nb = 10,
   valid.times = 10, cost = NULL, gamma = NULL, kernel = "linear",
-  numcores = ifelse(.Platform$OS.type == "windows", 1, parallel::detectCores()
-  - 1), file.prefix = NULL)
+  numcores = ifelse(.Platform$OS.type == "windows", 1,
+  parallel::detectCores() - 1), file.prefix = NULL)
 }
 \arguments{
 \item{data}{data.frame containing the training set}
@@ -48,4 +48,3 @@ gamma <- 1
  #    file.prefix = "test")
  #names(feature.nb.obj)
 }
-

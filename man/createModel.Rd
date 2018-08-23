@@ -43,4 +43,3 @@ the best SVM model
 #    feature.ranking=feature.ranking, feature.nb=feature.nb)
 #feature.weights <- as.data.frame(t(t(svm.model$coefs) \%*\% svm.model$SV))
 }
-

@@ -8,9 +8,10 @@
   mapFeaturesToCRMs(URL = "http://ifbprod.aitorgonzalezlab.org/map_features_to_crms.php",
   positive.bed = NULL, genome = NULL, negative.bed = NULL,
   shuffling = NULL, background.seqs = NULL, genome.info = NULL,
-  pssm = NULL, background.freqs = NULL, ngs = NULL, bed.overlap = NULL,
-  my.values = NULL, feature.ranking = NULL, feature.nb = NULL,
-  crm.feature.file = NULL, stderr.log.file = NULL, stdout.log.file = NULL)
+  pssm = NULL, background.freqs = NULL, ngs = NULL,
+  bed.overlap = NULL, my.values = NULL, feature.ranking = NULL,
+  feature.nb = NULL, crm.feature.file = NULL, stderr.log.file = NULL,
+  stdout.log.file = NULL)
 }
 \arguments{
 \item{URL}{URL of the server REST target}
@@ -77,4 +78,3 @@ The \code{mapFeaturesToCRMs} function allows the user to create a training set m
  crm.features.list$stderr.log
 }
 }
-

@@ -6,8 +6,8 @@
 \usage{
 rankFeatures(data, cl = 1, halve.above = 100, valid.times = 10,
   kernel = "linear", cost = 1, gamma = 1,
-  numcores = ifelse(.Platform$OS.type == "windows", 1, parallel::detectCores()
-  - 1), file.prefix = NULL)
+  numcores = ifelse(.Platform$OS.type == "windows", 1,
+  parallel::detectCores() - 1), file.prefix = NULL)
 }
 \arguments{
 \item{data}{data.frame containing the training set}
@@ -41,4 +41,3 @@ gamma <- 1
  #feature.ranking <- rankFeatures(data.granges=crm.features, cost=cost,gamma=gamma,
  #    kernel='linear', file.prefix = "test", halve.above=10)
 }
-

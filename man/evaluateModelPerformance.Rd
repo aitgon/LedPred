@@ -6,9 +6,9 @@
 \usage{
 evaluateModelPerformance(data, cl = 1, valid.times = 10,
   feature.ranking = NULL, feature.nb = NULL,
-  numcores = ifelse(.Platform$OS.type == "windows", 1, parallel::detectCores()
-  - 1), file.prefix = NULL, kernel = "linear", cost = NULL,
-  gamma = NULL)
+  numcores = ifelse(.Platform$OS.type == "windows", 1,
+  parallel::detectCores() - 1), file.prefix = NULL, kernel = "linear",
+  cost = NULL, gamma = NULL)
 }
 \arguments{
 \item{data}{data.frame containing the training set}
@@ -47,4 +47,3 @@ data(feature.ranking)
 #    file.prefix = "test")
 #names(probs.labels.list[[1]])
 }
-

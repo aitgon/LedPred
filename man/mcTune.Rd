@@ -6,8 +6,8 @@
 \usage{
 mcTune(data, cl = 1, ranges = list(gamma = c(1, 10), cost = c(1, 10)),
   kernel = "linear", valid.times = 10, file.prefix = NULL,
-  numcores = ifelse(.Platform$OS.type == "windows", 1, parallel::detectCores()
-  - 1))
+  numcores = ifelse(.Platform$OS.type == "windows", 1,
+  parallel::detectCores() - 1))
 }
 \arguments{
 \item{data}{data.frame containing the training set}
@@ -48,4 +48,3 @@ gamma.vector <- c(1,3,10,30)
 # cost <- c.g.obj$best.parameters$cost
 # gamma <- c.g.obj$best.parameters$gamma
 }
-

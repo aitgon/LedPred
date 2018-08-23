@@ -32,4 +32,4 @@ biocViews: SupportVectorMachine, Software, MotifAnnotation, ChIPSeq,
     Sequencing, Classification
 NeedsCompilation: no
 BugReports: https://github.com/aitgon/LedPred/issues
-RoxygenNote: 5.0.1
+RoxygenNote: 6.1.0
